@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+
+</head>
+<body>
+   
+    <div>
+        <nav class="bg-white border-gray-200 dark:bg-gray-900 fixed w-full z-50">
+            <div class=" mx-10 flex  items-center justify-between">
+              <a href="https://flowbite.com/" class="flex items-center">
+                  <img src="./Assets/logo.png" class="mr-3" alt="Flowbite Logo" width="250"/>
+                  <!-- <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span> -->
+              </a>
+              <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+              </button>
+              <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+                <ul class="font-medium flex flex-col items-center
+                 p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 
+                 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                  <li x-data="{dropdownOpen:false}">
+                    <a href="index.html" class="block py-2 pl-3 pr-4 text-[#57c0ac] bg-[#ed1d24] rounded md:bg-transparent 
+                    md:text-[#57c0ac] md:p-0 dark:text-[#57c0ac] md:dark:text-[#57c0ac] font-bold" aria-current="page"
+                       id="menu-btn" >
+                    Home 
+                    <!-- <span><i class="fa-solid fa-chevron-down mx-2 text-black"></i> -->
+                    </span></a>
+        
+                    
+                  </li>
+                  <li>
+                    <a href="aboutus.html" class="block py-2 pl-3 pr-4 text-sky-900 rounded hover:bg-gray-100
+                     md:hover:bg-transparent md:border-0 md:hover:text-[#57c0ac] font-bold md:p-0 dark:text-white 
+                     md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                     About Us
+                      <!-- <span> <i class="fa-solid fa-chevron-down mx-2 text-black"></i></span> -->
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#services" class="block py-2 pl-3 pr-4 text-sky-900 rounded hover:bg-gray-100
+                    md:hover:bg-transparent md:border-0 md:hover:text-[#57c0ac] font-bold md:p-0 dark:text-white 
+                    md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                    Our Services</a>
+                  </li>
+                  <li>
+                    <a href="contact.html" class="block py-2 pl-3 pr-4 text-sky-900 rounded hover:bg-gray-100
+                    md:hover:bg-transparent md:border-0 md:hover:text-[#57c0ac] font-bold md:p-0 dark:text-white 
+                    md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                    Contact Us </a>
+                  </li>
+                
+                     
+                   </div>
+                </ul>
+                </div>
+            </nav>
+              </div>
+    <!-- contact us -->
+    <div class="flex justify-center  ">
+        <div class="border mt-28 mb-10 rounded-lg w-2/5 ">
+            <div>
+            </div>
+          <div class=" p-10 py-20">
+              <!-- <i id="close-popup-btn" class="fa-solid fa-x border-2 border-black p-1 rounded relative -top-16 left-60" id="myModal"
+             ></i> -->
+              <h1 class="text-2xl font-bold text-gray-600 relative -top-10">Book an Appointment</h1>
+              <h1 class="text-sm text-gray-400 mt-3">Please Enter Your Contact Details</h1>
+              <form action="" id="myForm">
+            <div class="grid grid-cols-1 gap-8 mt-5">
+              
+                  <input type="text" placeholder="Name" autocomplete="off" id="name" name="name" class="border-b-2 border-0 border-gray-200 rounded-lg">
+                  <input type="email" id="email" name="email" name="email" placeholder="Email" autocomplete="off" class="border-b-2 border-0 border-gray-200 rounded-lg">
+                  <input type="number" id="contact" name="contact" placeholder="Contact Number" autocomplete="off" class="border-b-2 border-0 border-gray-200 rounded-lg">
+                <button class="mt-4 border rounded-lg py-2 bg-blue-100  font-bold hover:bg-blue-700" 
+                type="submit" value="Submit">Submit</button>
+              </div>
+              
+            
+              </form>
+              <!-- Thankyou modal -->
+              <div id="thankYouModal" class="modal hidden fixed inset-0 flex items-center justify-center">
+                  <div class="modal-overlay absolute inset-0 bg-gray-900 opacity-50"></div>
+                
+                  <div class="modal-content bg-white w-64 p-6 rounded">
+                    <h2 class="text-xl font-bold mb-2">Thank you!</h2>
+                    <p>Your form has been submitted successfully.</p>
+                  </div>
+                </div>
+                <script>
+                    const formData = [];
+                    
+                    const form = document.querySelector('form');
+                    
+                    form.addEventListener('submit', (event) => {
+                        const data = {
+                             name : document.querySelector("#name").value.trim(),
+                      emailInput : document.querySelector('#email').value.trim(),
+                    contact : document.querySelector('#contact').value.trim()
+                    };
+                    formData.push(data);
+                    console.log(formData);
+                    form.reset()
+                    
+                      if (data.emailInput === '') {
+                        alert('Please enter your email address.');
+                        event.preventDefault();
+                      }
+                      if (data.name === '') {
+                        alert('Please enter your name');
+                        event.preventDefault();
+                      }
+                      const regex = /^[789]\d{9}$/;
+                      if (!regex.test(data.contactInput )) {
+                        alert('Please enter a valid 10-digit phone number that starts with a number from 6 to 9.');
+                        event.preventDefault();
+                      }
+                    });
+                    
+                    form.addEventListener('submit', (event) => {
+                      event.preventDefault();
+                    });
+                                        </script> 
+            </div>
+        </div>
+        
+        
+        </div>
+<!-- feedback -->
+<div class="bg-[url('https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/banner-bg.jpg')]">
+    <div class="flex justify-between mx-20 py-10">
+      <div class="flex items-center border bg-white px-8 py-7 rounded-lg drop-shadow-lg gap-5">
+        <i class="fa fa-location-dot
+         border rounded-full bg-[#57c0ac] text-white text-5xl p-3 px-5 "></i>
+        <div>
+            <h1 class="text-xl font-bold text-[#ec1d24]">Hospital Address</h1>
+            <p class="font-semibold mt-2">Anandtara WhiteField,Keshav <br> Nagar,Pune 412307</p>
+        </div>
+      </div>
+      <div class="flex items-center border bg-white px-8 py-7 rounded-lg drop-shadow-lg gap-5">
+        <i class="fa-regular fa-envelope text-white
+        border rounded-full bg-[#57c0ac] text-4xl p-4 px-5 "></i>
+        <div>
+            <h1 class="text-xl font-bold text-[#ec1d24]">Email Us</h1>
+            <p class="font-semibold mt-2">contact@vighnahartahospital.in <br> contact1@vighnahartahospital.in</p>
+        </div>
+      </div>
+      <div class="flex items-center border bg-white px-8 py-7 w-96 rounded-lg drop-shadow-lg gap-8 justify-start">
+        <i class="fa-solid fa-phone text-white
+        border rounded-full bg-[#57c0ac] text-4xl p-4 px-5 "></i>
+        <div>
+            <h1 class="text-xl font-bold text-[#ec1d24]">Contact Us </h1>
+            <p class="font-semibold mt-2">(+91) 8208612746<br> (+91) 7709641657</p>
+        </div>
+      </div>
+    </div>
+        </div>
+<!-- feedback -->
+       
+    <!-- contact us -->
+
+    <!-- Footer -->
+    <div class="bg-indigo-950 px-20 py-10 flex justify-between ">
+        <div>
+            <h1 class="text-xl font-bold text-[#ec1d24] py-3">Vighnaharta</h1>
+            <p class="text-white">Lorem ipsum dolor sit <br> amet incidid tempor incididu ut aliqua exercitation  <br> ullam 
+                lorem ipsum dolor sit amet.</p>
+                <div class="text-white flex gap-4 py-3 ">
+                    <i class="fa-brands fa-facebook-f bg-[#57c0ac] p-3 px-4 rounded-full " id="facebook-icon"></i>
+                    <!-- <i class="fa-brands fa-twitter bg-[#57c0ac] p-3 rounded-full "></i> -->
+                    <!-- <i class="fa-brands fa-linkedin-in bg-[#57c0ac] p-3 rounded-full "></i> -->
+                    <i class="fa-brands fa-instagram bg-[#57c0ac] p-3 rounded-full " id="instagram-icon"></i>
+                    <a href="#" id="whatsapp-icon">
+                        <i class="fa-brands fa-whatsapp bg-[#57c0ac] p-3 rounded-full "></i>
+                    </a>
+                    <script>
+                        // whatsapp icons
+                        const whatsappIcon = document.getElementById("whatsapp-icon");
+                        const phoneNumber = "7709641657"; // Replace with the desired phone number
+                      
+                        whatsappIcon.addEventListener("click", function() {
+                            const url = `https://wa.me/${phoneNumber}`;
+          window.location.href = url;
+        
+                        });
+        // instagramicon
+                        const instagramIcon = document.getElementById('instagram-icon');
+        
+        instagramIcon.addEventListener('click', () => {
+          window.location.href = 'https://www.instagram.com/vighnahartahospitalpune/';
+        });
+        
+        // facebook icons
+        const facebookIcon = document.getElementById('facebook-icon');
+        
+        facebookIcon.addEventListener('click', () => {
+          window.location.href = 'https://www.facebook.com/vighnahartahospitalpune';
+        });
+                      </script>
+                </div>
+        </div>
+        <div>
+            <h1 class="text-lg font-semibold text-[#ec1d24] py-3">Links</h1>
+            <a href="./aboutus.html">
+                <h2 class="text-white ">-  About Us</h2>
+            </a>
+            <a href="#services">
+                <h2 class="text-white ">-  Our Services</h2>
+            </a>
+            <a href="./contact.html">
+                <h2 class="text-white ">-  Contact Us</h2>
+            </a>
+        </div>
+        <div>
+            <h1 class="text-lg font-semibold text-[#ec1d24] py-3">Our Services</h1>
+            <h2 class="text-white ">-  Dental</h2>
+            <h2 class="text-white ">-  Oncology</h2>
+            <h2 class="text-white ">-  Neurology</h2> 
+            <h2 class="text-white ">-  Dermatology</h2> 
+        </div>
+        <div>
+            <h1 class="text-lg font-semibold text-[#ec1d24] py-3">Working Days</h1>
+            <h2 class="text-white  flex gap-10"><span>Mon - Tue</span> <span class="">08:00 AM - 05:00PM</span></h2>
+            <h2 class="text-white  flex gap-10"><span>Wed - Thu</span> <span class="">09:00 AM - 06:00PM</span></h2>
+            <h2 class="text-white  flex gap-10"><span>Fri - Sat</span> <span class="pl-5">08:00 AM - 05:00PM</span></h2> 
+            <h2 class="text-white  flex gap-10"><span>Sunday</span> <span class="pl-6">Emergency Only</span></h2> 
+        </div>
+        <div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.989182286093!2d73.9471580748591!3d18.529390982565904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c3cc4c69112d%3A0xe908cbfa926a46fd!2sVighnaharta%20Urology%20and%20Gynecology%20Superspeciality%20Hospital!5e0!3m2!1sen!2sin!4v1683538215549!5m2!1sen!2sin" 
+            width="250" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        </div>
+    <!-- Footer -->
+     <!-- <button >Open Popup</button> -->
+     
+
+</body>
+</html>

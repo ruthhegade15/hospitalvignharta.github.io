@@ -11,6 +11,35 @@
     <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+   <style>
+      .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent background */
+  filter: blur(5px); /* blur effect */
+  z-index: 9999;
+  display: none;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  /* padding: 20px; */
+  /* border-radius: 5px; */
+  z-index: 10000;
+  display: none;
+}
+
+.popup-content {
+width:"1px"
+}
+   </style>
 </head>
 <body>
    
@@ -36,40 +65,7 @@
                     Home 
                     <!-- <span><i class="fa-solid fa-chevron-down mx-2 text-black"></i> -->
                     </span></a>
-                    <!-- menu -->
-                    <!-- <div class="absolute mt-5 shadow-lg drop-shadow-lg p-3 bg-gray-100 rounded text-sky-900 font-bold 
-                    leading-loose px-5 hidden" id="dropdown">
-        <ul>
-            <li class="hover:text-[#57c0ac]">
-                <a href="" class="px-2 py-1 ">Hospital Website</a>
-            </li>
-            <li class="hover:text-[#57c0ac]">
-                <a href="" class="px-2 py-1 ">Dental Clinic</a>
-            </li>
-            <li class="hover:text-[#57c0ac]">
-                <a href="" class="px-2 py-1 ">Child Care Services</a>
-            </li>
-        </ul>
-                    </div> -->
-                    <!-- js code -->
-                    <!-- <script>
-                        window.addEventListener('DOMContentLoaded',()=>{
-                            const menuBtn = document.querySelector('#menu-btn')
-                            const dropdown = document.querySelector('#dropdown')
         
-                            menuBtn.addEventListener('click',()=>{
-                                if(dropdown.classList.contains('hidden')){
-                                    dropdown.classList.remove('hidden')
-                                    dropdown.classList.add('flex')
-                                }else{
-                                    dropdown.classList.remove('flex')
-                                    dropdown.classList.add('hidden')
-                                }
-                            })
-                        })
-                    </script> -->
-                    <!-- js code -->
-                    <!-- menu -->
                     
                   </li>
                   <li>
@@ -84,38 +80,133 @@
                     <a href="#services" class="block py-2 pl-3 pr-4 text-sky-900 rounded hover:bg-gray-100
                     md:hover:bg-transparent md:border-0 md:hover:text-[#57c0ac] font-bold md:p-0 dark:text-white 
                     md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
-                    Our Services </a>
+                    Our Services</a>
                   </li>
                   <li>
-                    <a href="#contact" class="block py-2 pl-3 pr-4 text-sky-900 rounded hover:bg-gray-100
+                    <a href="contact.html" class="block py-2 pl-3 pr-4 text-sky-900 rounded hover:bg-gray-100
                     md:hover:bg-transparent md:border-0 md:hover:text-[#57c0ac] font-bold md:p-0 dark:text-white 
                     md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
                     Contact Us </a>
                   </li>
-                  <div class="flex items-center gap-6">
-                    <i class="fa fa-search hover:text-[#57c0ac] text-sky-900 "></i>
-                   <h2 class="bg-teal-500 p-4 rounded-lg px-6 text-white font-semibold hover:bg-sky-900">Book Appointment</h2>
-                </div>
+                  <div class="flex items-center gap-6 ">
+                    
+                    <button  id="open-popup-btn" class="bg-teal-500 p-4 rounded-lg px-6 text-white font-semibold hover:bg-sky-900" >Book Appointment</button>
+                   <div>
+                    <div id="popup" class="popup">
+                        <div class="popup-content">
+                          <div class="flex gap-3 ">
+                                     
+                              <div class="">
+                                <img src="./Assets/appointment1.jpeg" alt="" width="400" height="200" class="object-fill">
+                                <img src="./Assets/logo.png" alt="" width="200" height="50" class="absolute left- ml- top-5 ">
+                              </div>
+                              <div>
+                                <div class=" p-10 py-20">
+                                    <i id="close-popup-btn" class="fa-solid fa-x border-2 border-black p-1 rounded relative -top-16 left-60" id="myModal"
+                                   ></i>
+                                    <h1 class="text-2xl font-bold text-gray-600 relative -top-10">Book an Appointment</h1>
+                                    <h1 class="text-sm text-gray-400 mt-3">Please Enter Your Contact Details</h1>
+                                    <form action="" id="myForm">
+                                  <div class="grid grid-cols-1 gap-8 mt-5">
+                                    
+                                        <input type="text" placeholder="Name" autocomplete="off" id="name" name="name" class="border-b-2 border-0 border-gray-200 rounded-lg">
+                                        <input type="email" id="email" name="email" name="email" placeholder="Email" autocomplete="off" class="border-b-2 border-0 border-gray-200 rounded-lg">
+                                        <input type="number" id="contact" name="contact" placeholder="Contact Number" autocomplete="off" class="border-b-2 border-0 border-gray-200 rounded-lg">
+                                      <button class="mt-4 border rounded-lg py-2 bg-blue-100  font-bold hover:bg-blue-700" 
+                                      type="submit" value="Submit">Submit</button>
+                                    </div>
+                                    
+                                  
+                                    </form>
+                                    <!-- Thankyou modal -->
+                                    <div id="thankYouModal" class="modal hidden fixed inset-0 flex items-center justify-center">
+                                        <div class="modal-overlay absolute inset-0 bg-gray-900 opacity-50"></div>
+                                      
+                                        <div class="modal-content bg-white w-64 p-6 rounded">
+                                          <h2 class="text-xl font-bold mb-2">Thank you!</h2>
+                                          <p>Your form has been submitted successfully.</p>
+                                        </div>
+                                      </div>
+                      
+                                  </div>
+                              </div>
+                              
+                              
+                              </div>
+                              <!-- Modal content goes here -->
+                            </div>
+                          </div>
+                      
+                        </div>
+                      </div>
+                      
+                      <div id="overlay" class="overlay"></div>
+                      <script>
+                        const formData = [];
+                        
+                        const form = document.querySelector('form');
+                        
+                        form.addEventListener('submit', (event) => {
+                            const data = {
+                                 name : document.querySelector("#name").value.trim(),
+                          emailInput : document.querySelector('#email').value.trim(),
+                        contact : document.querySelector('#contact').value.trim()
+                        };
+                        formData.push(data);
+                        console.log(formData);
+                        form.reset()
+                        
+                          if (data.emailInput === '') {
+                            alert('Please enter your email address.');
+                            event.preventDefault();
+                          }
+                          if (data.name === '') {
+                            alert('Please enter your name');
+                            event.preventDefault();
+                          }
+                          const regex = /^[789]\d{9}$/;
+                          if (!regex.test(data.contactInput === "")) {
+                            alert('Please enter a valid 10-digit phone number that starts with a number from 6 to 9.');
+                            event.preventDefault();
+                          }
+                        });
+                        
+                        form.addEventListener('submit', (event) => {
+                          event.preventDefault();
+                        });
+                                            </script> 
+                      <script>
+                          const openPopupBtn = document.getElementById('open-popup-btn');
+                      const closePopupBtn = document.getElementById('close-popup-btn');
+                      const popup = document.getElementById('popup');
+                      const overlay = document.getElementById('overlay');
+                      
+                      openPopupBtn.addEventListener('click', () => {
+                        popup.style.display = 'block';
+                        overlay.style.display = 'block';
+                      });
+                      
+                      closePopupBtn.addEventListener('click', () => {
+                        popup.style.display = 'none';
+                        overlay.style.display = 'none';
+                      });
+                      </script>
+             
+                   </div>
                 </ul>
-        <!-- About Us -->
-        <!-- <div>
-            <section id="about">
-        <h1>Hello this is my about page</h1>
-            </section>
-        </div> -->
-        <!-- About Us -->
+                </div>
+            </nav>
               </div>
-            </div>
-          </nav>
-
-    </div>
     <!-- About us -->
-<div class="pt-20 flex px-10 gap-20 items-center">
+    
+<div class="pt-40 ">
+    <h1 class="relative ml-60 left-96 text-4xl font-bold text-[#ec1d24]">About Us</h1>
+   <div class="flex px-10 gap-20 items-center -mt-20">
     <img src="./Assets/about3.jpg" alt="" width="600">
-    <p class="text-lg"> <span class="font-semibold ">Vighanharta Urology and Gynecology Super Speciality Hospital</span>  is a world class Super specialty kidney center in Pune.
+    <p class="text-lg"> <span class="font-semibold ">Vighanharta Urology and Gynecology Super Speciality Hospital</span>  is a world class Super specialty hospital in Pune.
 
         We provide comprehensive urology care which involves cutting edge technology with a human touch.
-         We treat patients with kidney stones, for prostate enlargement ,a leading healthcare hospital dedicated to
+         We treat patients with kidney stones, for prostate enlargement, a leading healthcare hospital dedicated to
           providing specialized care for urological and gynaecological conditions. We strive to offer exceptional
            medical services, state-of-the-art facilities, and compassionate care to patients from all 
            walks of life. <br> <br>
@@ -125,35 +216,101 @@
            gynaecological health concerns and provide a comfortable and respectful environment where patients 
            can receive the highest standard of care.
         </p>
+   </div>
+
            
 </div>
 
 <!-- our Department -->
-<div>
-
+<div class="bg-[#57c0bb] pt-4">
+<h1 class="text-center text-3xl font-bold underline">Our Department</h1>
+<div class="px-20 py-10 grid grid-cols-3 justify-center gap-10">
+    <div class="bg-white p-3 px-12 py-5 drop-shadow-lg shadow-lg rounded-lg ">
+            <!-- <img src="./Assets/sym1.png" alt="" width="50" class="drop-shadow-lg " > -->
+        <h1 class="text-center font-semibold text-xl">Department of Urology</h1>
+        <img src="./Assets/all1.png" alt="" class="mt-6 mx-auto">
+        
+        <p>Our urologists specialize in the diagnosis and treatment of common urological conditions, 
+            including urinary tract infections, kidney stones, bladder problems, prostate issues,
+             and urinary incontinence. We offer comprehensive evaluations, diagnostic tests, and personalized 
+             treatment plans tailored to your specific needs.</p>
+    </div>
+    <div class="bg-white p-3 px-12 py-5 drop-shadow-lg shadow-lg rounded-lg ">
+        <h1 class="text-center font-semibold text-xl">Urological (Genitourinary) Cancers</h1>
+        <!-- <img src="./Assets/cancersym1.png" alt="" width="80" class="absolute top-12 left-40 "> -->
+        <img src="./Assets/all2.png" alt="" class="mt-6 mx-auto">
+        
+        <p>Urological (genitourinary) cancers refer to the types of cancers that affect the organs
+             and structures of the genitourinary system. The genitourinary system includes the urinary
+              tract (kidneys, bladder, ureters, and urethra) as well as the male reproductive system
+               (prostate, testicles, and penis). Urological cancers can occur in any  organs.</p>
+    </div>
+       <div class="bg-white p-3 px-12 py-5 drop-shadow-lg shadow-lg rounded-lg ">
+        <h1 class="text-center font-semibold text-xl">Department of Female Urology</h1>
+        <!-- <img src="./Assets/sym3.png" alt="" width="80" class="absolute top-14 left-40 "> -->
+        <img src="./Assets/all2.png" alt="" class="mt-6 mx-auto">
+        
+        <p>The Department of Female Urology is a specialized branch of urology that focuses on
+            the diagnosis and treatment of urological conditions specific to female patients.
+             It addresses a range of urological issues that primarily affect women, including conditions 
+             related to the urinary tract, pelvic floor, and female reproductive system.</p>
+    </div>
+</div>
 </div>
 <!-- our Department -->
     <!-- About us -->
 
     <!-- Footer -->
-    <!-- <div class="bg-indigo-950 px-20 py-10  mt-20 flex justify-between ">
+    <div class="bg-indigo-950 px-20 py-10 flex justify-between ">
         <div>
             <h1 class="text-xl font-bold text-[#ec1d24] py-3">Vighnaharta</h1>
             <p class="text-white">Lorem ipsum dolor sit <br> amet incidid tempor incididu ut aliqua exercitation  <br> ullam 
                 lorem ipsum dolor sit amet.</p>
                 <div class="text-white flex gap-4 py-3 ">
-                    <i class="fa-brands fa-facebook-f bg-[#57c0ac] p-3 px-4 rounded-full "></i>
-                    <i class="fa-brands fa-twitter bg-[#57c0ac] p-3 rounded-full "></i>
-                    <i class="fa-brands fa-linkedin-in bg-[#57c0ac] p-3 rounded-full "></i>
-                    <i class="fa-brands fa-instagram bg-[#57c0ac] p-3 rounded-full "></i>
-                    <i class="fa-brands fa-whatsapp bg-[#57c0ac] p-3 rounded-full "></i>
+                    <i class="fa-brands fa-facebook-f bg-[#57c0ac] p-3 px-4 rounded-full " id="facebook-icon"></i>
+                    <!-- <i class="fa-brands fa-twitter bg-[#57c0ac] p-3 rounded-full "></i> -->
+                    <!-- <i class="fa-brands fa-linkedin-in bg-[#57c0ac] p-3 rounded-full "></i> -->
+                    <i class="fa-brands fa-instagram bg-[#57c0ac] p-3 rounded-full " id="instagram-icon"></i>
+                    <a href="#" id="whatsapp-icon">
+                        <i class="fa-brands fa-whatsapp bg-[#57c0ac] p-3 rounded-full "></i>
+                    </a>
+                    <script>
+                        // whatsapp icons
+                        const whatsappIcon = document.getElementById("whatsapp-icon");
+                        const phoneNumber = "7709641657"; // Replace with the desired phone number
+                      
+                        whatsappIcon.addEventListener("click", function() {
+                            const url = `https://wa.me/${phoneNumber}`;
+          window.location.href = url;
+        
+                        });
+        // instagramicon
+                        const instagramIcon = document.getElementById('instagram-icon');
+        
+        instagramIcon.addEventListener('click', () => {
+          window.location.href = 'https://www.instagram.com/vighnahartahospitalpune/';
+        });
+        
+        // facebook icons
+        const facebookIcon = document.getElementById('facebook-icon');
+        
+        facebookIcon.addEventListener('click', () => {
+          window.location.href = 'https://www.facebook.com/vighnahartahospitalpune';
+        });
+                      </script>
                 </div>
         </div>
         <div>
             <h1 class="text-lg font-semibold text-[#ec1d24] py-3">Links</h1>
-            <h2 class="text-white ">-  About Us</h2>
-            <h2 class="text-white ">-  Our Services</h2>
-            <h2 class="text-white ">-  Contact Us</h2>
+            <a href="./aboutus.html">
+                <h2 class="text-white ">-  About Us</h2>
+            </a>
+            <a href="#services">
+                <h2 class="text-white ">-  Our Services</h2>
+            </a>
+            <a href="./contact.html">
+                <h2 class="text-white ">-  Contact Us</h2>
+            </a>
         </div>
         <div>
             <h1 class="text-lg font-semibold text-[#ec1d24] py-3">Our Services</h1>
@@ -173,142 +330,10 @@
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.989182286093!2d73.9471580748591!3d18.529390982565904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c3cc4c69112d%3A0xe908cbfa926a46fd!2sVighnaharta%20Urology%20and%20Gynecology%20Superspeciality%20Hospital!5e0!3m2!1sen!2sin!4v1683538215549!5m2!1sen!2sin" 
             width="250" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
-        </div> -->
+        </div>
     <!-- Footer -->
-    <section class="products" id="products">
+     <!-- <button >Open Popup</button> -->
+     
 
-        <h1 class="heading">our <span>products</span></h1>
-    
-        <div class="swiper product-slider">
-    
-            <div class="swiper-wrapper">
-    
-                <div class="swiper-slide box">
-                    <img src="./orange product.jpeg" alt="">
-                    <h3>fresh orange</h3>
-                    <div class="price">$4.99/- - 10.99/-</div>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <a href="#" class="btn">add to cart</a>
-                </div>
-    
-                <div class="swiper-slide box">
-                    <img src="./onion product.jpeg" alt="">
-                    <h3>fresh onion</h3>
-                    <div class="price">$4.99/- - 10.99/-</div>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <a href="#" class="btn">add to cart</a>
-                </div>
-    
-                <div class="swiper-slide box">
-                    <img src="./meat product.jpeg" alt="">
-                    <h3>fresh meat</h3>
-                    <div class="price">$4.99/- - 10.99/-</div>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <a href="#" class="btn">add to cart</a>
-                </div>
-    
-                <div class="swiper-slide box">
-                    <img src="./cabbege product.jpeg" alt="">
-                    <h3>fresh cabbage</h3>
-                    <div class="price">$4.99/- - 10.99/-</div>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <a href="#" class="btn">add to cart</a>
-                </div>
-    
-            </div>
-    
-        </div>
-    
-        <div class=" swiper product-slider">
-    
-            <div class="swiper-wrapper">
-    
-                <div class="swiper-slide box">
-                    <img src="./potato product.jpeg" alt="">
-                    <h3>fresh potato</h3>
-                    <div class="price">$4.99/- - 10.99/-</div>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <a href="#" class="btn">add to cart</a>
-                </div>
-    
-                <div class="swiper-slide box">
-                    <img src="./avocado.jpeg" alt="">
-                    <h3>fresh avocado</h3>
-                    <div class="price">$4.99/- - 10.99/-</div>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <a href="#" class="btn">add to cart</a>
-                </div>
-    
-                <div class="swiper-slide box">
-                    <img src="./carrot.jpeg" alt="">
-                    <h3>fresh carrot</h3>
-                    <div class="price">$4.99/- - 10.99/-</div>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <a href="#" class="btn">add to cart</a>
-                </div>
-    
-                <div class="swiper-slide box">
-                    <img src="./lemon product.jpeg" alt="">
-                    <h3>green lemon</h3>
-                    <div class="price">$4.99/- - 10.99/-</div>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <a href="#" class="btn">add to cart</a>
-                </div>
-    
-            </div>
-    
-        </div>
-    
-    
-    </section>
-    
 </body>
 </html>

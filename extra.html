@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+                        <!-- menu -->
+                    <!-- <div class="absolute mt-5 shadow-lg drop-shadow-lg p-3 bg-gray-100 rounded text-sky-900 font-bold 
+                    leading-loose px-5 hidden" id="dropdown">
+        <ul>
+            <li class="hover:text-[#57c0ac]">
+                <a href="" class="px-2 py-1 ">Hospital Website</a>
+            </li>
+            <li class="hover:text-[#57c0ac]">
+                <a href="" class="px-2 py-1 ">Dental Clinic</a>
+            </li>
+            <li class="hover:text-[#57c0ac]">
+                <a href="" class="px-2 py-1 ">Child Care Services</a>
+            </li>
+        </ul>
+                    </div> -->
+                    <!-- js code -->
+                    <!-- <script>
+                        window.addEventListener('DOMContentLoaded',()=>{
+                            const menuBtn = document.querySelector('#menu-btn')
+                            const dropdown = document.querySelector('#dropdown')
+        
+                            menuBtn.addEventListener('click',()=>{
+                                if(dropdown.classList.contains('hidden')){
+                                    dropdown.classList.remove('hidden')
+                                    dropdown.classList.add('flex')
+                                }else{
+                                    dropdown.classList.remove('flex')
+                                    dropdown.classList.add('hidden')
+                                }
+                            })
+                        })
+                    </script> -->
+                    <!-- js code -->
+                    <!-- menu -->
+    <div id="myModal" class="fixed inset-0 z-50 hidden flex justify-center items-center mt-28">
+        <div class="bg-white  rounded shadow-lg">
+          <!-- Modal content goes here -->
+          <div class="flex gap-3 ">
+           
+          <div class="">
+            <img src="./Assets/appointment1.jpeg" alt="" width="400" height="200" class="object-fill">
+            <img src="./Assets/logo.png" alt="" width="200" height="50" class="absolute left-96 ml- top-5 ">
+
+            <!-- <h1 class="text-blue-950 font-semibold ">Register here for your tests,
+                <br> Now!</h1> -->
+            <!-- <img  src="./Assets/logo.png" width="250" class="mt-4"> -->
+<!-- <img src="./Assets/hospi2.png" alt="" width="200" class="mx-5 drop-shadow-lg"> -->
+          </div>
+          <div>
+            <div class=" p-10 py-20">
+                <i class="fa-solid fa-x border-2 border-black p-1 rounded relative -top-16 left-60" id="myModal"
+                onclick="closeModal()"></i>
+                <h1 class="text-2xl font-bold text-gray-600 relative -top-10">Book an Appointment</h1>
+                <h1 class="text-sm text-gray-400 mt-3">Please Enter Your Contact Details</h1>
+                <form action="" id="myForm">
+              <div class="grid grid-cols-1 gap-8 mt-5">
+                
+                    <input type="text" placeholder="Name" autocomplete="off" id="name" name="name" class="border-b-2 border-0 border-gray-200 rounded-lg">
+                    <input type="email" id="email" name="email" name="email" placeholder="Email" autocomplete="off" class="border-b-2 border-0 border-gray-200 rounded-lg">
+                    <input type="number" id="contact" name="contact" placeholder="Contact Number" autocomplete="off" class="border-b-2 border-0 border-gray-200 rounded-lg">
+                  <button class="mt-4 border rounded-lg py-2 bg-blue-100  font-bold hover:bg-blue-700" 
+                  type="submit" value="Submit">Submit</button>
+                </div>
+                
+              
+                </form>
+                <!-- Thankyou modal -->
+                <div id="thankYouModal" class="modal hidden fixed inset-0 flex items-center justify-center">
+                    <div class="modal-overlay absolute inset-0 bg-gray-900 opacity-50"></div>
+                  
+                    <div class="modal-content bg-white w-64 p-6 rounded">
+                      <h2 class="text-xl font-bold mb-2">Thank you!</h2>
+                      <p>Your form has been submitted successfully.</p>
+                    </div>
+                  </div>
+                  
+                <script>
+const formData = [];
+
+const form = document.querySelector('form');
+
+form.addEventListener('submit', (event) => {
+    const data = {
+         name : document.querySelector("#name").value.trim(),
+  emailInput : document.querySelector('#email').value.trim(),
+contact : document.querySelector('#contact').value.trim()
+};
+formData.push(data);
+console.log(formData);
+form.reset()
+
+  if (data.emailInput === '') {
+    alert('Please enter your email address.');
+    event.preventDefault();
+  }
+  if (data.name === '') {
+    alert('Please enter your name');
+    event.preventDefault();
+  }
+  const regex = /^[789]\d{9}$/;
+  if (!regex.test(data.contactInput === "")) {
+    alert('Please enter a valid 10-digit phone number that starts with a number from 6 to 9.');
+    event.preventDefault();
+  }
+});
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+});
+                    </script> 
+<script>
+document.getElementById("myForm").addEventListener("submit", function(event) {
+var nameInput = document.getElementById("nameInput");
+var emailInput = document.getElementById("emailInput");
+
+if (nameInput.value === "" || emailInput.value === "") {
+event.preventDefault(); // Prevent the form from submitting
+alert("Please fill in all required fields.");
+}
+});
+</script>
+              </div>
+              <div class="bg-blue-950 p-2 px-6 w-auto relative right-2 top-1">
+                <h1 class="text-white">©Vighnaharta is proudly created by Rio</h1>
+            </div>
+          </div>
+          
+          
+          </div>
+
+          <!-- Modal content goes here -->
+                      <!-- menu -->
+            <!-- <div class="absolute mt-5 shadow-lg drop-shadow-lg p-3 bg-gray-100 rounded text-sky-900 font-bold 
+            leading-loose px-5 hidden" id="dropdown">
+<ul>
+    <li class="hover:text-[#57c0ac]">
+        <a href="" class="px-2 py-1 ">Hospital Website</a>
+    </li>
+    <li class="hover:text-[#57c0ac]">
+        <a href="" class="px-2 py-1 ">Dental Clinic</a>
+    </li>
+    <li class="hover:text-[#57c0ac]">
+        <a href="" class="px-2 py-1 ">Child Care Services</a>
+    </li>
+</ul>
+            </div> -->
+            <!-- js code -->
+            <!-- <script>
+                window.addEventListener('DOMContentLoaded',()=>{
+                    const menuBtn = document.querySelector('#menu-btn')
+                    const dropdown = document.querySelector('#dropdown')
+
+                    menuBtn.addEventListener('click',()=>{
+                        if(dropdown.classList.contains('hidden')){
+                            dropdown.classList.remove('hidden')
+                            dropdown.classList.add('flex')
+                        }else{
+                            dropdown.classList.remove('flex')
+                            dropdown.classList.add('hidden')
+                        }
+                    })
+                })
+            </script> -->
+            <!-- js code -->
+            <!-- menu -->
+            <!-- navbar -->
+                <!-- <div class="flex justify-between px-10 py-3 bg-[#ec1d24] items-center">
+        <div class="flex gap-5 text-white">
+            <i class="fa-brands fa-twitter border-r-2 border-r-gray-600 pr-5"></i>
+            <i class="fa-brands fa-facebook-f border-r-2 border-r-gray-600 pr-5"></i>
+            <i class="fa-brands fa-instagram border-r-2 border-r-gray-600 pr-5"></i>
+            <i class="fa-brands fa-linkedin-in"></i>
+        </div>
+        <div class="flex text-white gap-4 font-semibold">
+            <div class="border-r-2 border-r-gray-600 px-3 flex gap-3 items-center">
+                <i class="fa-solid fa-phone"></i>
+                <span>(+91) 7709641657</span>
+            </div>
+            <div class="flex gap-3 items-center">
+                <i class="fa-sharp fa-solid fa-envelope"></i>
+                <span>contact@vighnahartahospital.in</span>
+            </div>
+        </div>
+    </div> -->
+            <!-- navbar -->
+                <!-- Appointment From  -->
+    <!-- <div class="bg-[url('https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/appointment-bg.jpg')] -mb-6
+    ">
+    <div class="text-center pt-16">
+        <h1 class=" text-white text-2xl">Appointment</h1>
+        <h1 class="text-white my-5 text-4xl font-bold">Book an Appointment</h1>
+    </div>
+   
+    <div class="px-28 pt-3">
+        <form>
+            <label >
+                <input type="text" id="yourname" name="yourname" placeholder="Your Name"
+                class="rounded backdrop-invert-0 bg-white/50 shadow-lg  ">
+      
+
+            </label>
+        </form>
+    </div>
+   
+    </div> -->
+    <!-- end of Appointment From  -->
+
+    <script>
+        const dataFrom = [];
+        
+        const forms = document.querySelector('form');
+        
+        form.addEventListener('submit', (event) => {
+            const data = {
+                 name : document.querySelector("#name").value.trim(),
+          emailInput : document.querySelector('#email').value.trim(),
+        contact : document.querySelector('#contact').value.trim()
+        };
+        formData.push(data);
+        console.log(formData);
+        form.reset()
+        
+          if (data.emailInput === '') {
+            alert('Please enter your email address.');
+            event.preventDefault();
+          }
+          if (data.name === '') {
+            alert('Please enter your name');
+            event.preventDefault();
+          }
+          const regex = /^[789]\d{9}$/;
+          if (!regex.test(data.contactInput === "")) {
+            alert('Please enter a valid 10-digit phone number that starts with a number from 6 to 9.');
+            event.preventDefault();
+          }
+        });
+        
+        form.addEventListener('submit', (event) => {
+          event.preventDefault();
+        });
+                            </script> 
+      <script>
+          const openPopupBtns = document.getElementById('open-popup-btn');
+      const closePopupBtns = document.getElementById('close-popup-btn');
+      const popups = document.getElementById('popup');
+      const overlays = document.getElementById('overlay');
+      
+      openPopupBtns.addEventListener('click', () => {
+        popups.style.display = 'block';
+        overlays.style.display = 'block';
+      });
+      
+      closePopupBtns.addEventListener('click', () => {
+        popups.style.display = 'none';
+        overlays.style.display = 'none';
+      });
+      </script>
+        </div>
+      </div>
+</body>
+</html>
