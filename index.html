@@ -16,8 +16,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 200%;
+  height: 200%;
   background-color: rgba(0, 0, 0, 0.5); /* semi-transparent background */
   filter: blur(5px); /* blur effect */
   z-index: 9999;
@@ -46,146 +46,42 @@ width:"1px"
 
     <!-- navbar -->
     <div>
-<nav class="bg-white border-gray-200 dark:bg-gray-900 fixed w-full z-50">
-    <div class=" mx-10 flex  items-center justify-between">
-        
-      <a href="./index.html" class="flex items-center">
-          <img src="./Assets/logo.png" class="mr-3" alt="Flowbite Logo" width="250"/>
-          <!-- <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span> -->
-      </a>
+        <nav class="bg-white border-gray-200 dark:bg-gray-900 fixed w-full z-50">
+            <div class=" mx-10 flex  items-center justify-between">
+              <a href="./index.html" class="flex items-center">
+                  <img src="./Assets/logo.png" class="mr-3" alt="Flowbite Logo" width="250" />
+                  <!-- <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span> -->
+              </a>
+             
+ <!-- hamburger -->
+ <div class="relative">
+    <button ><i id="hamburger" class="border-2 rounded-lg p-2 drop-shadow-lg text-gray-700 block lg:hidden text-2xl fas fa-bars float-right"></i>
     
-
-      <!-- hamburger -->
-      <div class="relative">
-        <button ><i id="hamburger" class="border-2 rounded-lg p-2 drop-shadow-lg text-gray-700 block lg:hidden text-2xl fas fa-bars float-right"></i>
+    </button>
+    <div id="dropdown" class="hidden absolute right-0 font-bold mt-5 w-72 bg-gray-100 shadow-lg py-2 px-3 my-6 z-10">
+      <!-- Dropdown content goes here -->
+      <a href="./index.html" class="block text-center my-2 py-2 pl-3 pr-4 text-white bg-[#57c0ac] rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500">Home</a>
+      <a href="./aboutus.html" class="block px-4 py-2 my-2 text-sm text-gray-800 hover:bg-[#57c0ac] hover:text-white text-center"> About Us</a>
+      <a href="./services.html" class="block px-4 py-2 my-2 text-sm text-gray-800 hover:bg-[#57c0ac] hover:text-white text-center">Our Services</a>
+      <a href="./contact.html" class="block px-4 py-2 my-2 text-sm text-gray-800 hover:bg-[#57c0ac] hover:text-white text-center">Contact Us</a>
+      <div class="flex items-center justify-center gap-6 ">
         
-        </button>
-        <!-- <button  class="text-gray-800 hover:text-gray-600 focus:outline-none focus:text-gray-600">
-          <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
-            <path
-              d="M4 6h16M4 12h16M4 18h16"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </button> -->
-        <div id="dropdown" class="hidden absolute right-0 font-bold mt-5 w-72 bg-gray-100 shadow-lg py-2 px-3 my-6 z-10">
-          <!-- Dropdown content goes here -->
-          <a href="./index.html" class="block text-center my-2 py-2 pl-3 pr-4 text-white bg-[#57c0ac] rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500">Home</a>
-          <a href="./aboutus.html" class="block px-4 py-2 my-2 text-sm text-gray-800 hover:bg-[#57c0ac] hover:text-white text-center"> About Us</a>
-          <a href="./services.html" class="block px-4 py-2 my-2 text-sm text-gray-800 hover:bg-[#57c0ac] hover:text-white text-center">Our Services</a>
-          <a href="./contact.html" class="block px-4 py-2 my-2 text-sm text-gray-800 hover:bg-[#57c0ac] hover:text-white text-center">Contact Us</a>
-          <div class="flex items-center justify-center gap-6 ">
-            
-            <button  id="open-popup-btn" class="bg-teal-500 p-4 rounded-lg px-6 text-white font-semibold hover:bg-sky-900" >Book Appointment</button>
-           
-            <div>
-                <div id="popup" class="popup w-80 mr-6 bg-white -mt-12 rounded-lg">
-                    <div class="popup-content ">
-                      <div class="flex gap-3  ">
-                                 
-                          <!-- <div class="">
-                            <img src="./Assets/appointment1.jpeg" alt="" width="400" height="200" class="object-fill">
-                            <img src="./Assets/logo.png" alt="" width="200" height="50" class="absolute left- ml- top-5 ">
-                          </div> -->
-                          <div>
-                            <div class="bg-white rounded-lg">
-                                <i id="close-popup-btn" class="fa-solid fa-x border-2 border-black p-1 rounded relative top-1 left-72" id="myModal"
-                               ></i>
-                                <h1 class="text-2xl font-bold text-gray-600 text-center  top-3 mt-2">Book an Appointment</h1>
-                                <h1 class="text-sm text-gray-400 mt-3">Please Enter Your Contact Details</h1>
-                                <form action="" id="myForm">
-                              <div class="grid grid-cols-1 gap-8 mt-5">
-                                
-                                    <input type="text" placeholder="Name" autocomplete="off" id="name" name="name" class="border-b-2 border-0 border-gray-200 rounded-lg">
-                                    <input type="email" id="email" name="email" name="email" placeholder="Email" autocomplete="off" class="border-b-2 border-0 border-gray-200 rounded-lg">
-                                    <input type="number" id="contact" name="contact" placeholder="Contact Number" autocomplete="off" class="border-b-2 border-0 border-gray-200 rounded-lg">
-                                  <button class="mt-4 border rounded-lg py-2 bg-blue-100  font-bold hover:bg-blue-700" 
-                                  type="submit" value="Submit">Submit</button>
-                                </div>
-                                
-                              
-                                </form>
-                                <!-- Thankyou modal -->
-                                <div id="thankYouModal" class="modal hidden fixed inset-0 flex items-center justify-center">
-                                    <div class="modal-overlay absolute inset-0 bg-gray-900 opacity-50"></div>
-                                  
-                                    <div class="modal-content bg-white w-64 p-6 rounded">
-                                      <h2 class="text-xl font-bold mb-2">Thank you!</h2>
-                                      <p>Your form has been submitted successfully.</p>
-                                    </div>
-                                  </div>
-                  
-                              </div>
-                          </div>
-                          
-                          
-                          </div>
-                          <!-- Modal content goes here -->
-                        </div>
-                      </div>
-            </div>
-      </div>
-      <script>
-        document.getElementById('hamburger').addEventListener('click', function() {
-  var dropdown = document.getElementById('dropdown');
-  dropdown.classList.toggle('hidden');
-});
-      </script>
-      
-      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-        <ul class="font-medium flex flex-col items-center
-         p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 
-         md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-          <li x-data="{dropdownOpen:false}">
-            <a href="index.html" class="block py-2 pl-3 pr-4 text-[#57c0ac] bg-[#ed1d24] rounded md:bg-transparent 
-            md:text-[#57c0ac] md:p-0 dark:text-[#57c0ac] md:dark:text-[#57c0ac] font-bold" aria-current="page"
-               id="menu-btn" >
-            Home 
-            <!-- <span><i class="fa-solid fa-chevron-down mx-2 text-black"></i> -->
-            </span></a>
-
-            
-          </li>
-          <li>
-            <a href="aboutus.html" class="block py-2 pl-3 pr-4 text-sky-900 rounded hover:bg-gray-100
-             md:hover:bg-transparent md:border-0 md:hover:text-[#57c0ac] font-bold md:p-0 dark:text-white 
-             md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
-             About Us
-              <!-- <span> <i class="fa-solid fa-chevron-down mx-2 text-black"></i></span> -->
-            </a>
-          </li>
-          <li>
-            <a href="services.html" class="block py-2 pl-3 pr-4 text-sky-900 rounded hover:bg-gray-100
-            md:hover:bg-transparent md:border-0 md:hover:text-[#57c0ac] font-bold md:p-0 dark:text-white 
-            md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
-            Our Services</a>
-          </li>
-          <li>
-            <a href="contact.html" class="block py-2 pl-3 pr-4 text-sky-900 rounded hover:bg-gray-100
-            md:hover:bg-transparent md:border-0 md:hover:text-[#57c0ac] font-bold md:p-0 dark:text-white 
-            md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
-            Contact Us </a>
-          </li>
-          <div class="flex items-center gap-6 ">
-            
-            <button  id="open-popup-btn" class="bg-teal-500 p-4 rounded-lg px-6 text-white font-semibold hover:bg-sky-900" >Book Appointment</button>
-           <div>
-            <div id="popup" class="popup">
-                <div class="popup-content">
-                  <div class="flex gap-3 ">
+        <button  id="open-popup-btn" class="bg-teal-500 p-4 rounded-lg px-6 text-white font-semibold hover:bg-sky-900" >Book Appointment</button>
+       
+        <div>
+            <div id="popup" class="popup w-80 mr-6 bg-white -mt-12 rounded-lg">
+                <div class="popup-content ">
+                  <div class="flex gap-3  ">
                              
-                      <div class="">
+                      <!-- <div class="">
                         <img src="./Assets/appointment1.jpeg" alt="" width="400" height="200" class="object-fill">
                         <img src="./Assets/logo.png" alt="" width="200" height="50" class="absolute left- ml- top-5 ">
-                      </div>
+                      </div> -->
                       <div>
-                        <div class=" p-10 py-20">
-                            <i id="close-popup-btn" class="fa-solid fa-x border-2 border-black p-1 rounded relative -top-16 left-60" id="myModal"
+                        <div class="bg-white rounded-lg">
+                            <i id="close-popup-btn" class="fa-solid fa-x border-2 border-black p-1 rounded relative top-1 left-72" id="myModal"
                            ></i>
-                            <h1 class="text-2xl font-bold text-gray-600 relative -top-10">Book an Appointment</h1>
+                            <h1 class="text-2xl font-bold text-gray-600 text-center  top-3 mt-2">Book an Appointment</h1>
                             <h1 class="text-sm text-gray-400 mt-3">Please Enter Your Contact Details</h1>
                             <form action="" id="myForm">
                           <div class="grid grid-cols-1 gap-8 mt-5">
@@ -217,70 +113,173 @@ width:"1px"
                       <!-- Modal content goes here -->
                     </div>
                   </div>
-              
-                </div>
-              </div>
-              
-              <div id="overlay" class="overlay"></div>
-              <script>
-                const formData = [];
-                
-                const form = document.querySelector('form');
-                
-                form.addEventListener('submit', (event) => {
-                    const data = {
-                         name : document.querySelector("#name").value.trim(),
-                  emailInput : document.querySelector('#email').value.trim(),
-                contact : document.querySelector('#contact').value.trim()
-                };
-                formData.push(data);
-                console.log(formData);
-                form.reset()
-                
-                  if (data.emailInput === '') {
-                    alert('Please enter your email address.');
-                    event.preventDefault();
-                  }
-                  if (data.name === '') {
-                    alert('Please enter your name');
-                    event.preventDefault();
-                  }
-                  const regex = /^[789]\d{9}$/;
-                  if (!regex.test(data.contactInput === "")) {
-                    alert('Please enter a valid 10-digit phone number that starts with a number from 6 to 9.');
-                    event.preventDefault();
-                  }
-                });
-                
-                form.addEventListener('submit', (event) => {
-                  event.preventDefault();
-                });
-                                    </script> 
-              <script>
-                  const openPopupBtn = document.getElementById('open-popup-btn');
-              const closePopupBtn = document.getElementById('close-popup-btn');
-              const popup = document.getElementById('popup');
-              const overlay = document.getElementById('overlay');
-              
-              openPopupBtn.addEventListener('click', () => {
-                popup.style.display = 'block';
-                overlay.style.display = 'block';
-              });
-              
-              closePopupBtn.addEventListener('click', () => {
-                popup.style.display = 'none';
-                overlay.style.display = 'none';
-              });
-              </script>
-     
-           </div>
-        </ul>
+                  
         </div>
-    </nav>
-      </div>
-   
+  </div>
+  <script>
+   document.getElementById('hamburger').addEventListener('click', function(event) {
+  event.stopPropagation();
+  var dropdown = document.getElementById('dropdown');
+  dropdown.classList.toggle('hidden');
+});
 
+document.addEventListener('click', function(event) {
+  var dropdown = document.getElementById('dropdown');
+  if (!dropdown.classList.contains('hidden')) {
+    dropdown.classList.add('hidden');
+  }
+});
+  </script>
   
+  
+    </ul>
+    </div>
+ </div>
+
+
+              <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+                <ul class="font-medium flex flex-col items-center
+                 p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 
+                 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                  <li x-data="{dropdownOpen:false}">
+                    <a href="index.html" class="block py-2 pl-3 pr-4 text-[#57c0ac] bg-[#ed1d24] rounded md:bg-transparent 
+                    md:text-[#57c0ac] md:p-0 dark:text-[#57c0ac] md:dark:text-[#57c0ac] font-bold" aria-current="page"
+                       id="menu-btn" >
+                    Home 
+                    <!-- <span><i class="fa-solid fa-chevron-down mx-2 text-black"></i> -->
+                    </span></a>
+        
+                    
+                  </li>
+                  <li>
+                    <a href="aboutus.html" class="block py-2 pl-3 pr-4 text-sky-900 rounded hover:bg-gray-100
+                     md:hover:bg-transparent md:border-0 md:hover:text-[#57c0ac] font-bold md:p-0 dark:text-white 
+                     md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                     About Us
+                      <!-- <span> <i class="fa-solid fa-chevron-down mx-2 text-black"></i></span> -->
+                    </a>
+                  </li>
+                  <li>
+                    <a href="services.html" class="block py-2 pl-3 pr-4 text-sky-900 rounded hover:bg-gray-100
+                    md:hover:bg-transparent md:border-0 md:hover:text-[#57c0ac] font-bold md:p-0 dark:text-white 
+                    md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                    Our Services</a>
+                  </li>
+                  <li>
+                    <a href="contact.html" class="block py-2 pl-3 pr-4 text-sky-900 rounded hover:bg-gray-100
+                    md:hover:bg-transparent md:border-0 md:hover:text-[#57c0ac] font-bold md:p-0 dark:text-white 
+                    md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                    Contact Us </a>
+                  </li>
+                  <div class="flex items-center gap-6 ">
+                    
+                    <button  id="open-popup-btns" class="bg-teal-500 p-4 rounded-lg px-6 text-white font-semibold hover:bg-sky-900" >Book Appointment</button>
+                   <div>
+                    <div id="popups" class="popup">
+                        <div class="popup-content">
+                          <div class="flex gap-3 ">
+                                     
+                              <div class="">
+                                <img src="./Assets/appointment1.jpeg" alt="" width="400" height="200" class="object-fill">
+                                <img src="./Assets/logo.png" alt="" width="200" height="50" class="absolute left- ml- top-5 ">
+                              </div>
+                              <div>
+                                <div class=" p-10 py-20">
+                                    <i id="close-popup-btns" class="fa-solid fa-x border-2 border-black p-1 rounded relative -top-16 left-60" id="myModal"
+                                   ></i>
+                                    <h1 class="text-2xl font-bold text-gray-600 relative -top-10">Book an Appointment</h1>
+                                    <h1 class="text-sm text-gray-400 mt-3">Please Enter Your Contact Details</h1>
+                                    <form action="" id="myForm">
+                                  <div class="grid grid-cols-1 gap-8 mt-5">
+                                    
+                                        <input type="text" placeholder="Name" autocomplete="off" id="name" name="name" class="border-b-2 border-0 border-gray-200 rounded-lg">
+                                        <input type="email" id="email" name="email" name="email" placeholder="Email" autocomplete="off" class="border-b-2 border-0 border-gray-200 rounded-lg">
+                                        <input type="number" id="contact" name="contact" placeholder="Contact Number" autocomplete="off" class="border-b-2 border-0 border-gray-200 rounded-lg">
+                                      <button class="mt-4 border rounded-lg py-2 bg-blue-100  font-bold hover:bg-blue-700" 
+                                      type="submit" value="Submit">Submit</button>
+                                    </div>
+                                    
+                                  
+                                    </form>
+                                    <!-- Thankyou modal -->
+                                    <div id="thankYouModal" class="modal hidden fixed inset-0 flex items-center justify-center">
+                                        <div class="modal-overlay absolute inset-0 bg-gray-900 opacity-50"></div>
+                                      
+                                        <div class="modal-content bg-white w-64 p-6 rounded">
+                                          <h2 class="text-xl font-bold mb-2">Thank you!</h2>
+                                          <p>Your form has been submitted successfully.</p>
+                                        </div>
+                                      </div>
+                      
+                                  </div>
+                              </div>
+                              
+                              
+                              </div>
+                              <!-- Modal content goes here -->
+                            </div>
+                          </div>
+                      
+                        </div>
+                      </div>
+                      
+                      <div id="overlays" class="overlay"></div>
+                      <script>
+                        const formData = [];
+                        
+                        const form = document.querySelector('form');
+                        
+                        form.addEventListener('submit', (event) => {
+                            const data = {
+                                 name : document.querySelector("#name").value.trim(),
+                          emailInput : document.querySelector('#email').value.trim(),
+                        contact : document.querySelector('#contact').value.trim()
+                        };
+                        formData.push(data);
+                        console.log(formData);
+                        form.reset()
+                        
+                          if (data.emailInput === '') {
+                            alert('Please enter your email address.');
+                            event.preventDefault();
+                          }
+                          if (data.name === '') {
+                            alert('Please enter your name');
+                            event.preventDefault();
+                          }
+                          const regex = /^[789]\d{9}$/;
+                          if (!regex.test(data.contactInput === "")) {
+                            alert('Please enter a valid 10-digit phone number that starts with a number from 6 to 9.');
+                            event.preventDefault();
+                          }
+                        });
+                        
+                        form.addEventListener('submit', (event) => {
+                          event.preventDefault();
+                        });
+                                            </script> 
+                      <script>
+                          const openPopupBtns = document.getElementById('open-popup-btns');
+                      const closePopupBtns = document.getElementById('close-popup-btns');
+                      const popups = document.getElementById('popups');
+                      const overlays = document.getElementById('overlays');
+                      
+                      openPopupBtns.addEventListener('click', () => {
+                        popups.style.display = 'block';
+                        overlays.style.display = 'block';
+                      });
+                      
+                      closePopupBtns.addEventListener('click', () => {
+                        popups.style.display = 'none';
+                        overlays.style.display = 'none';
+                      });
+                      </script>
+             
+                   </div>
+                </ul>
+                </div>
+            </nav>
+      </div>
     <!-- end of navbar -->
    
     <div class="bg-[url('https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/banner-bg.jpg')]
@@ -316,12 +315,12 @@ width:"1px"
         <!-- Services Cards -->
         <div class="md:px-20 px-5 pt-3 grid md:grid-cols-4 grid-cols-2 gap-8 mt-10 z-40">
             <!-- service 1 -->
-            <div class="md:flex items-center justify-center gap-5 shadow-lg  py-2 hover:-translate-y-1 hover:scale-110 bg-white px-6 rounded-lg drop-shadow-lg">
+            <div class="md:flex items-center justify-center gap-5 shadow-lg  py-2 hover:-translate-y-1 hover:scale-110 bg-white px-6 rounded-lg drop-shadow-lg" id="open-popup1">
                 <img src="	https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img1.png" width="50" class="mx-auto">
                 <h1 class="text-xl font-bold text-[#57c0ac]">Dermatology services</h1>
             </div>
             <!-- service 1 -->
-            <div class="md:flex items-center justify-center gap-5 shadow-lg  py-2 hover:-translate-y-1 hover:scale-110 bg-white px-6 rounded-lg drop-shadow-lg">
+            <div class="md:flex items-center justify-center gap-5 shadow-lg  py-2 hover:-translate-y-1 hover:scale-110 bg-white px-6 rounded-lg drop-shadow-lg" >
                 <img src="	https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img2.png" width="50" class="mx-auto">
                 <h1 class="text-xl font-bold text-[#57c0ac]">Emergancey care</h1>
             </div>
@@ -420,6 +419,43 @@ width:"1px"
     </div>
     <!-- end of Our Specialist -->
 
+    <!-- Popups -->
+    <!-- popup 1 -->
+    <div class="mx-10 md:mx-0">
+        <div id="popup1" class="popup rounded-lg drop-shadow-lg shadow-lg w-full md:w-96">
+            <div class="popup-content md:p-3 p-2 ">
+                <i id="close-popup1" class="fa-solid fa-x border-2 border-black p-1 rounded relative  left-80" id="myModal"
+                ></i>
+                <img src="	https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img1.png" width="70" 
+                class="mx-auto py-2 drop-shadow-lg ">
+                <h1 class="text-xl font-bold text-[#57c0ac] text-center">Dermatology services</h1>
+                <p class="mx-4 ml-8 py-2 md:text-base text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, suscipit? 
+                    Maiores dolorem, minima cupiditate veniam optio quod consequuntur, consectetur
+                     deserunt dicta architecto consequatur sapiente aperiam commodi necessitatibus.
+                      Vel, hic explicabo!</p>
+            </div>
+        
+        </div>
+        <div id="overlay1" class="overlay"></div>
+        <script>
+            const openPopup1 = document.getElementById('open-popup1');
+        const closePopup1 = document.getElementById('close-popup1');
+        const popup1 = document.getElementById('popup1');
+        const overlay1 = document.getElementById('overlay1');
+        
+        openPopup1.addEventListener('click', () => {
+          popup1.style.display = 'block';
+          overlay1.style.display = 'block';
+        });
+        
+        closePopup1.addEventListener('click', () => {
+          popup1.style.display = 'none';
+          overlay1.style.display = 'none';
+        });
+        </script>
+    </div>
+    <!-- Popups -->
+
     <!-- Feedback Cards -->
     <div>
         <div class="mb-10">
@@ -439,7 +475,7 @@ width:"1px"
                             <i class="fa-sharp fa-solid fa-star"></i>
                             <i class="fa-sharp fa-solid fa-star"></i>
                         </div>
-                        <h1 class="relative text-center -top-10 leading-relaxed">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        <h1 class="relative text-center -top-10 leading-relaxed text-sm md:text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                              Repellendus quisquam dolore maiores nemo doloribus dicta voluptatibus saepe
                               magni neque dolorem quia officiis eum temporibus, sed expedita qui ipsum. Illum, 
                               impedit.
@@ -456,7 +492,7 @@ width:"1px"
                             <i class="fa-sharp fa-solid fa-star"></i>
                             <i class="fa-sharp fa-solid fa-star"></i>
                         </div>
-                        <h1 class="relative text-center -top-10 leading-relaxed">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        <h1 class="relative text-center -top-10 leading-relaxed text-sm md:text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                              Repellendus quisquam dolore maiores nemo doloribus dicta voluptatibus saepe
                               magni neque dolorem quia officiis eum temporibus, sed expedita qui ipsum. Illum, 
                               impedit.
@@ -473,7 +509,7 @@ width:"1px"
                             <i class="fa-sharp fa-solid fa-star"></i>
                             <i class="fa-sharp fa-solid fa-star"></i>
                         </div>
-                        <h1 class="relative text-center -top-12 leading-relaxed">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        <h1 class="relative text-center -top-12 leading-relaxed text-sm md:text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                              Repellendus quisquam dolore maiores nemo doloribus dicta voluptatibus saepe
                               magni neque dolorem quia officiis eum temporibus, sed expedita qui ipsum. Illum, 
                               impedit.

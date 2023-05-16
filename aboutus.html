@@ -46,14 +46,95 @@ width:"1px"
     <div>
         <nav class="bg-white border-gray-200 dark:bg-gray-900 fixed w-full z-50">
             <div class=" mx-10 flex  items-center justify-between">
-              <a href="https://flowbite.com/" class="flex items-center">
-                  <img src="./Assets/logo.png" class="mr-3" alt="Flowbite Logo" width="250"/>
+              <a href="./index.html" class="flex items-center">
+                  <img src="./Assets/logo.png" class="mr-3" alt="Flowbite Logo" width="250" />
                   <!-- <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span> -->
               </a>
-              <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
-                <span class="sr-only">Open main menu</span>
-                <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
-              </button>
+             
+ <!-- hamburger -->
+ <div class="relative">
+    <button ><i id="hamburger" class="border-2 rounded-lg p-2 drop-shadow-lg text-gray-700 block lg:hidden text-2xl fas fa-bars float-right"></i>
+    
+    </button>
+    <div id="dropdown" class="hidden absolute right-0 font-bold mt-5 w-72 bg-gray-100 shadow-lg py-2 px-3 my-6 z-10">
+      <!-- Dropdown content goes here -->
+      <a href="./index.html" class="block text-center my-2 py-2 pl-3 pr-4 text-white bg-[#57c0ac] rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500">Home</a>
+      <a href="./aboutus.html" class="block px-4 py-2 my-2 text-sm text-gray-800 hover:bg-[#57c0ac] hover:text-white text-center"> About Us</a>
+      <a href="./services.html" class="block px-4 py-2 my-2 text-sm text-gray-800 hover:bg-[#57c0ac] hover:text-white text-center">Our Services</a>
+      <a href="./contact.html" class="block px-4 py-2 my-2 text-sm text-gray-800 hover:bg-[#57c0ac] hover:text-white text-center">Contact Us</a>
+      <div class="flex items-center justify-center gap-6 ">
+        
+        <button  id="open-popup-btn" class="bg-teal-500 p-4 rounded-lg px-6 text-white font-semibold hover:bg-sky-900" >Book Appointment</button>
+       
+        <div>
+            <div id="popup" class="popup w-80 mr-6 bg-white -mt-12 rounded-lg">
+                <div class="popup-content ">
+                  <div class="flex gap-3  ">
+                             
+                      <!-- <div class="">
+                        <img src="./Assets/appointment1.jpeg" alt="" width="400" height="200" class="object-fill">
+                        <img src="./Assets/logo.png" alt="" width="200" height="50" class="absolute left- ml- top-5 ">
+                      </div> -->
+                      <div>
+                        <div class="bg-white rounded-lg">
+                            <i id="close-popup-btn" class="fa-solid fa-x border-2 border-black p-1 rounded relative top-1 left-72" id="myModal"
+                           ></i>
+                            <h1 class="text-2xl font-bold text-gray-600 text-center  top-3 mt-2">Book an Appointment</h1>
+                            <h1 class="text-sm text-gray-400 mt-3">Please Enter Your Contact Details</h1>
+                            <form action="" id="myForm">
+                          <div class="grid grid-cols-1 gap-8 mt-5">
+                            
+                                <input type="text" placeholder="Name" autocomplete="off" id="name" name="name" class="border-b-2 border-0 border-gray-200 rounded-lg">
+                                <input type="email" id="email" name="email" name="email" placeholder="Email" autocomplete="off" class="border-b-2 border-0 border-gray-200 rounded-lg">
+                                <input type="number" id="contact" name="contact" placeholder="Contact Number" autocomplete="off" class="border-b-2 border-0 border-gray-200 rounded-lg">
+                              <button class="mt-4 border rounded-lg py-2 bg-blue-100  font-bold hover:bg-blue-700" 
+                              type="submit" value="Submit">Submit</button>
+                            </div>
+                            
+                          
+                            </form>
+                            <!-- Thankyou modal -->
+                            <div id="thankYouModal" class="modal hidden fixed inset-0 flex items-center justify-center">
+                                <div class="modal-overlay absolute inset-0 bg-gray-900 opacity-50"></div>
+                              
+                                <div class="modal-content bg-white w-64 p-6 rounded">
+                                  <h2 class="text-xl font-bold mb-2">Thank you!</h2>
+                                  <p>Your form has been submitted successfully.</p>
+                                </div>
+                              </div>
+              
+                          </div>
+                      </div>
+                      
+                      
+                      </div>
+                      <!-- Modal content goes here -->
+                    </div>
+                  </div>
+                  
+        </div>
+  </div>
+  <script>
+   document.getElementById('hamburger').addEventListener('click', function(event) {
+  event.stopPropagation();
+  var dropdown = document.getElementById('dropdown');
+  dropdown.classList.toggle('hidden');
+});
+
+document.addEventListener('click', function(event) {
+  var dropdown = document.getElementById('dropdown');
+  if (!dropdown.classList.contains('hidden')) {
+    dropdown.classList.add('hidden');
+  }
+});
+  </script>
+  
+  
+    </ul>
+    </div>
+ </div>
+
+
               <div class="hidden w-full md:block md:w-auto" id="navbar-default">
                 <ul class="font-medium flex flex-col items-center
                  p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 
@@ -90,9 +171,9 @@ width:"1px"
                   </li>
                   <div class="flex items-center gap-6 ">
                     
-                    <button  id="open-popup-btn" class="bg-teal-500 p-4 rounded-lg px-6 text-white font-semibold hover:bg-sky-900" >Book Appointment</button>
+                    <button  id="open-popup-btns" class="bg-teal-500 p-4 rounded-lg px-6 text-white font-semibold hover:bg-sky-900" >Book Appointment</button>
                    <div>
-                    <div id="popup" class="popup">
+                    <div id="popups" class="popup">
                         <div class="popup-content">
                           <div class="flex gap-3 ">
                                      
@@ -102,7 +183,7 @@ width:"1px"
                               </div>
                               <div>
                                 <div class=" p-10 py-20">
-                                    <i id="close-popup-btn" class="fa-solid fa-x border-2 border-black p-1 rounded relative -top-16 left-60" id="myModal"
+                                    <i id="close-popup-btns" class="fa-solid fa-x border-2 border-black p-1 rounded relative -top-16 left-60" id="myModal"
                                    ></i>
                                     <h1 class="text-2xl font-bold text-gray-600 relative -top-10">Book an Appointment</h1>
                                     <h1 class="text-sm text-gray-400 mt-3">Please Enter Your Contact Details</h1>
@@ -140,7 +221,7 @@ width:"1px"
                         </div>
                       </div>
                       
-                      <div id="overlay" class="overlay"></div>
+                      <div id="overlays" class="overlay"></div>
                       <script>
                         const formData = [];
                         
@@ -176,19 +257,19 @@ width:"1px"
                         });
                                             </script> 
                       <script>
-                          const openPopupBtn = document.getElementById('open-popup-btn');
-                      const closePopupBtn = document.getElementById('close-popup-btn');
-                      const popup = document.getElementById('popup');
-                      const overlay = document.getElementById('overlay');
+                          const openPopupBtns = document.getElementById('open-popup-btns');
+                      const closePopupBtns = document.getElementById('close-popup-btns');
+                      const popups = document.getElementById('popups');
+                      const overlays = document.getElementById('overlays');
                       
-                      openPopupBtn.addEventListener('click', () => {
-                        popup.style.display = 'block';
-                        overlay.style.display = 'block';
+                      openPopupBtns.addEventListener('click', () => {
+                        popups.style.display = 'block';
+                        overlays.style.display = 'block';
                       });
                       
-                      closePopupBtn.addEventListener('click', () => {
-                        popup.style.display = 'none';
-                        overlay.style.display = 'none';
+                      closePopupBtns.addEventListener('click', () => {
+                        popups.style.display = 'none';
+                        overlays.style.display = 'none';
                       });
                       </script>
              
@@ -199,11 +280,11 @@ width:"1px"
               </div>
     <!-- About us -->
     
-<div class="pt-40 overflow-hidden">
-    <h1 class="relative ml-60 left-96 text-4xl font-bold text-[#ec1d24]">About Us</h1>
-   <div class="flex px-10 gap-20 items-center -mt-20">
-    <img src="./Assets/about3.jpg" alt="" width="600">
-    <p class="text-lg"> <span class="font-semibold ">Vighanharta Urology and Gynecology Super Speciality Hospital</span>  is a world class Super specialty hospital in Pune.
+<div class="md:pt-40 overflow-hidden"> 
+    <h1 class="md:relative md:ml-60 md:left-96 absolute top-28 md:top-0 left-36 md:left-0 md:text-4xl text-2xl font-bold text-[#ec1d24]">About Us</h1>
+   <div class="lg:flex px-10 gap-20 items-center -mt-20">
+    <img src="./Assets/about3.jpg" alt=""  class="lg:w-2/5 w-80 mt-48 lg:mt-0">
+    <p class="md:text-lg text-sm md:text-base text-left"> <span class="font-semibold ">Vighanharta Urology and Gynecology Super Speciality Hospital</span>  is a world class Super specialty hospital in Pune.
 
         We provide comprehensive urology care which involves cutting edge technology with a human touch.
          We treat patients with kidney stones, for prostate enlargement, a leading healthcare hospital dedicated to
@@ -222,15 +303,15 @@ width:"1px"
 </div>
 
 <!-- our Department -->
-<div class="bg-[#57c0bb] pt-4">
-<h1 class="text-center text-3xl font-bold underline">Our Department</h1>
-<div class="px-20 py-10 grid grid-cols-3 justify-center gap-10">
+<div class="bg-[#57c0bb] pt-4 mt-4 md:mt-0">
+<h1 class="text-center md:text-3xl text-xl font-bold underline">Our Department</h1>
+<div class="md:px-20 px-4 py-10 grid md:grid-cols-3 justify-center gap-10">
     <div class="bg-white p-3 px-12 py-5 drop-shadow-lg shadow-lg rounded-lg ">
             <!-- <img src="./Assets/sym1.png" alt="" width="50" class="drop-shadow-lg " > -->
         <h1 class="text-center font-semibold text-xl">Department of Urology</h1>
-        <img src="./Assets/all1.png" alt="" class="mt-6 mx-auto">
+        <img src="./Assets/all1.png" alt="" class="mt-6 mx-auto w-28 lg:w-52">
         
-        <p>Our urologists specialize in the diagnosis and treatment of common urological conditions, 
+        <p class="text-sm md:text-base">Our urologists specialize in the diagnosis and treatment of common urological conditions, 
             including urinary tract infections, kidney stones, bladder problems, prostate issues,
              and urinary incontinence. We offer comprehensive evaluations, diagnostic tests, and personalized 
              treatment plans tailored to your specific needs.</p>
@@ -238,9 +319,9 @@ width:"1px"
     <div class="bg-white p-3 px-12 py-5 drop-shadow-lg shadow-lg rounded-lg ">
         <h1 class="text-center font-semibold text-xl">Urological (Genitourinary) Cancers</h1>
         <!-- <img src="./Assets/cancersym1.png" alt="" width="80" class="absolute top-12 left-40 "> -->
-        <img src="./Assets/all2.png" alt="" class="mt-6 mx-auto">
+        <img src="./Assets/all2.png" alt="" class="mt-6 mx-auto w-28 lg:w-52">
         
-        <p>Urological (genitourinary) cancers refer to the types of cancers that affect the organs
+        <p class="text-sm md:text-base">Urological (genitourinary) cancers refer to the types of cancers that affect the organs
              and structures of the genitourinary system. The genitourinary system includes the urinary
               tract (kidneys, bladder, ureters, and urethra) as well as the male reproductive system
                (prostate, testicles, and penis). Urological cancers can occur in any  organs.</p>
@@ -248,9 +329,9 @@ width:"1px"
        <div class="bg-white p-3 px-12 py-5 drop-shadow-lg shadow-lg rounded-lg ">
         <h1 class="text-center font-semibold text-xl">Department of Female Urology</h1>
         <!-- <img src="./Assets/sym3.png" alt="" width="80" class="absolute top-14 left-40 "> -->
-        <img src="./Assets/all2.png" alt="" class="mt-6 mx-auto">
+        <img src="./Assets/all3.png" alt="" class="mt-6 mx-auto w-28 lg:w-52">
         
-        <p>The Department of Female Urology is a specialized branch of urology that focuses on
+        <p class="text-sm md:text-base ">The Department of Female Urology is a specialized branch of urology that focuses on
             the diagnosis and treatment of urological conditions specific to female patients.
              It addresses a range of urological issues that primarily affect women, including conditions 
              related to the urinary tract, pelvic floor, and female reproductive system.</p>
@@ -261,12 +342,12 @@ width:"1px"
     <!-- About us -->
 
     <!-- Footer -->
-    <div class="bg-indigo-950 px-20 py-10 flex justify-between ">
+    <div class="bg-indigo-950 px-20 py-10 md:flex justify-between">
         <div>
             <h1 class="text-xl font-bold text-[#ec1d24] py-3">Vighnaharta</h1>
             <p class="text-white">Lorem ipsum dolor sit <br> amet incidid tempor incididu ut aliqua exercitation  <br> ullam 
                 lorem ipsum dolor sit amet.</p>
-                <div class="text-white flex gap-4 py-3 ">
+                <div class="text-white flex gap-4 py-3 hidden lg:block">
                     <i class="fa-brands fa-facebook-f bg-[#57c0ac] p-3 px-4 rounded-full " id="facebook-icon"></i>
                     <!-- <i class="fa-brands fa-twitter bg-[#57c0ac] p-3 rounded-full "></i> -->
                     <!-- <i class="fa-brands fa-linkedin-in bg-[#57c0ac] p-3 rounded-full "></i> -->
@@ -311,6 +392,7 @@ width:"1px"
             <a href="./contact.html">
                 <h2 class="text-white ">-  Contact Us</h2>
             </a>
+           
         </div>
         <div>
             <h1 class="text-lg font-semibold text-[#ec1d24] py-3">Our Services</h1>
@@ -321,12 +403,45 @@ width:"1px"
         </div>
         <div>
             <h1 class="text-lg font-semibold text-[#ec1d24] py-3">Working Days</h1>
-            <h2 class="text-white  flex gap-10"><span>Mon - Tue</span> <span class="">08:00 AM - 05:00PM</span></h2>
-            <h2 class="text-white  flex gap-10"><span>Wed - Thu</span> <span class="">09:00 AM - 06:00PM</span></h2>
-            <h2 class="text-white  flex gap-10"><span>Fri - Sat</span> <span class="pl-5">08:00 AM - 05:00PM</span></h2> 
-            <h2 class="text-white  flex gap-10"><span>Sunday</span> <span class="pl-6">Emergency Only</span></h2> 
+            <h2 class="text-white flex gap-10"><span>Mon - Tue</span> <span class="">08:00 AM - 05:00PM</span></h2>
+            <h2 class="text-white flex gap-10"><span>Wed - Thu</span> <span class="">09:00 AM - 06:00PM</span></h2>
+            <h2 class="text-white flex gap-10"><span>Fri - Sat</span> <span class="pl-5">08:00 AM - 05:00PM</span></h2> 
+            <h2 class="text-white flex gap-10"><span>Sunday</span> <span class="pl-6">Emergency Only</span></h2> 
         </div>
-        <div>
+        <div class="text-white flex gap-10 py-3  lg:hidden">
+            <i class="fa-brands fa-facebook-f bg-[#57c0ac] p-3 px-4 rounded-full " id="facebook-icons"></i>
+            <!-- <i class="fa-brands fa-twitter bg-[#57c0ac] p-3 rounded-full "></i> -->
+            <!-- <i class="fa-brands fa-linkedin-in bg-[#57c0ac] p-3 rounded-full "></i> -->
+            <i class="fa-brands fa-instagram bg-[#57c0ac] p-3 rounded-full " id="instagram-icons"></i>
+            <a href="#" id="whatsapp-icons">
+                <i class="fa-brands fa-whatsapp bg-[#57c0ac] p-3 rounded-full "></i>
+            </a>
+            <script>
+                // whatsapp icons
+                const whatsappIcons = document.getElementById("whatsapp-icons");
+                const phoneNumbers = "7709641657"; // Replace with the desired phone number
+              
+                whatsappIcons.addEventListener("click", function() {
+                    const url = `https://wa.me/${phoneNumber}`;
+        window.location.href = url;
+        
+                });
+        // instagramicon
+                const instagramIcons = document.getElementById('instagram-icons');
+        
+        instagramIcons.addEventListener('click', () => {
+        window.location.href = 'https://www.instagram.com/vighnahartahospitalpune/';
+        });
+        
+        // facebook icons
+        const facebookIcons = document.getElementById('facebook-icons');
+        
+        facebookIcons.addEventListener('click', () => {
+        window.location.href = 'https://www.facebook.com/vighnahartahospitalpune';
+        });
+              </script>
+        </div>
+        <div class="-ml-8 md:-ml-0 mt-4">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.989182286093!2d73.9471580748591!3d18.529390982565904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c3cc4c69112d%3A0xe908cbfa926a46fd!2sVighnaharta%20Urology%20and%20Gynecology%20Superspeciality%20Hospital!5e0!3m2!1sen!2sin!4v1683538215549!5m2!1sen!2sin" 
             width="250" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
