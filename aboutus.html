@@ -47,7 +47,8 @@ width:"1px"
         <nav class="bg-white border-gray-200 dark:bg-gray-900 fixed w-full z-50">
             <div class=" mx-10 flex  items-center justify-between">
               <a href="./index.html" class="flex items-center">
-                  <img src="./Assets/logo.png" class="mr-3" alt="Flowbite Logo" width="250" />
+                  <img src="./Assets/logo.png" class="mr-3 hidden lg:block" alt="Flowbite Logo" width="250" />
+                  <img src="./Assets/logo.png" class="mr-3 block lg:hidden" alt="Flowbite Logo" width="200" />
                   <!-- <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span> -->
               </a>
              
@@ -64,55 +65,9 @@ width:"1px"
       <a href="./contact.html" class="block px-4 py-2 my-2 text-sm text-gray-800 hover:bg-[#57c0ac] hover:text-white text-center">Contact Us</a>
       <div class="flex items-center justify-center gap-6 ">
         
-        <button  id="open-popup-btn" class="bg-teal-500 p-4 rounded-lg px-6 text-white font-semibold hover:bg-sky-900" >Book Appointment</button>
-       
-        <div>
-            <div id="popup" class="popup w-80 mr-6 bg-white -mt-12 rounded-lg">
-                <div class="popup-content ">
-                  <div class="flex gap-3  ">
-                             
-                      <!-- <div class="">
-                        <img src="./Assets/appointment1.jpeg" alt="" width="400" height="200" class="object-fill">
-                        <img src="./Assets/logo.png" alt="" width="200" height="50" class="absolute left- ml- top-5 ">
-                      </div> -->
-                      <div>
-                        <div class="bg-white rounded-lg">
-                            <i id="close-popup-btn" class="fa-solid fa-x border-2 border-black p-1 rounded relative top-1 left-72" id="myModal"
-                           ></i>
-                            <h1 class="text-2xl font-bold text-gray-600 text-center  top-3 mt-2">Book an Appointment</h1>
-                            <h1 class="text-sm text-gray-400 mt-3">Please Enter Your Contact Details</h1>
-                            <form action="" id="myForm">
-                          <div class="grid grid-cols-1 gap-8 mt-5">
-                            
-                                <input type="text" placeholder="Name" autocomplete="off" id="name" name="name" class="border-b-2 border-0 border-gray-200 rounded-lg">
-                                <input type="email" id="email" name="email" name="email" placeholder="Email" autocomplete="off" class="border-b-2 border-0 border-gray-200 rounded-lg">
-                                <input type="number" id="contact" name="contact" placeholder="Contact Number" autocomplete="off" class="border-b-2 border-0 border-gray-200 rounded-lg">
-                              <button class="mt-4 border rounded-lg py-2 bg-blue-100  font-bold hover:bg-blue-700" 
-                              type="submit" value="Submit">Submit</button>
-                            </div>
-                            
-                          
-                            </form>
-                            <!-- Thankyou modal -->
-                            <div id="thankYouModal" class="modal hidden fixed inset-0 flex items-center justify-center">
-                                <div class="modal-overlay absolute inset-0 bg-gray-900 opacity-50"></div>
-                              
-                                <div class="modal-content bg-white w-64 p-6 rounded">
-                                  <h2 class="text-xl font-bold mb-2">Thank you!</h2>
-                                  <p>Your form has been submitted successfully.</p>
-                                </div>
-                              </div>
-              
-                          </div>
-                      </div>
-                      
-                      
-                      </div>
-                      <!-- Modal content goes here -->
-                    </div>
-                  </div>
-                  
-        </div>
+        <a href="./contact.html" class="bg-teal-500 p-4 rounded-lg px-6 text-white font-semibold hover:bg-sky-900">
+            <button  id="open-popup"  >Book Appointment</button>
+        </a>
   </div>
   <script>
    document.getElementById('hamburger').addEventListener('click', function(event) {
@@ -128,7 +83,22 @@ document.addEventListener('click', function(event) {
   }
 });
   </script>
-  
+         <!-- <script>
+            const openPopup = document.getElementById('open-popup');
+        const closePopup = document.getElementById('close-popup');
+        const pop = document.getElementById('pop');
+        const over = document.getElementById('over');
+        
+        openPopup.addEventListener('click', () => {
+          pop.style.display = 'block';
+          over.style.display = 'block';
+        });
+        
+        closePopupBtn.addEventListener('click', () => {
+          popup.style.display = 'none';
+          overlay.style.display = 'none';
+        });
+        </script> -->
   
     </ul>
     </div>

@@ -48,7 +48,8 @@ width:"1px"
         <nav class="bg-white border-gray-200 dark:bg-gray-900 fixed w-full z-50">
             <div class=" mx-10 flex  items-center justify-between">
               <a href="./index.html" class="flex items-center">
-                  <img src="./Assets/logo.png" class="mr-3" alt="Flowbite Logo" width="250" />
+                  <img src="./Assets/logo.png" class="mr-3 hidden lg:block" alt="Flowbite Logo" width="250" />
+                  <img src="./Assets/logo.png" class="mr-3 block lg:hidden" alt="Flowbite Logo" width="200" />
                   <!-- <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span> -->
               </a>
              
@@ -65,55 +66,9 @@ width:"1px"
       <a href="./contact.html" class="block px-4 py-2 my-2 text-sm text-gray-800 hover:bg-[#57c0ac] hover:text-white text-center">Contact Us</a>
       <div class="flex items-center justify-center gap-6 ">
         
-        <button  id="open-popup-btn" class="bg-teal-500 p-4 rounded-lg px-6 text-white font-semibold hover:bg-sky-900" >Book Appointment</button>
-       
-        <div>
-            <div id="popup" class="popup w-80 mr-6 bg-white -mt-12 rounded-lg">
-                <div class="popup-content ">
-                  <div class="flex gap-3  ">
-                             
-                      <!-- <div class="">
-                        <img src="./Assets/appointment1.jpeg" alt="" width="400" height="200" class="object-fill">
-                        <img src="./Assets/logo.png" alt="" width="200" height="50" class="absolute left- ml- top-5 ">
-                      </div> -->
-                      <div>
-                        <div class="bg-white rounded-lg">
-                            <i id="close-popup-btn" class="fa-solid fa-x border-2 border-black p-1 rounded relative top-1 left-72" id="myModal"
-                           ></i>
-                            <h1 class="text-2xl font-bold text-gray-600 text-center  top-3 mt-2">Book an Appointment</h1>
-                            <h1 class="text-sm text-gray-400 mt-3">Please Enter Your Contact Details</h1>
-                            <form action="" id="myForm">
-                          <div class="grid grid-cols-1 gap-8 mt-5">
-                            
-                                <input type="text" placeholder="Name" autocomplete="off" id="name" name="name" class="border-b-2 border-0 border-gray-200 rounded-lg">
-                                <input type="email" id="email" name="email" name="email" placeholder="Email" autocomplete="off" class="border-b-2 border-0 border-gray-200 rounded-lg">
-                                <input type="number" id="contact" name="contact" placeholder="Contact Number" autocomplete="off" class="border-b-2 border-0 border-gray-200 rounded-lg">
-                              <button class="mt-4 border rounded-lg py-2 bg-blue-100  font-bold hover:bg-blue-700" 
-                              type="submit" value="Submit">Submit</button>
-                            </div>
-                            
-                          
-                            </form>
-                            <!-- Thankyou modal -->
-                            <div id="thankYouModal" class="modal hidden fixed inset-0 flex items-center justify-center">
-                                <div class="modal-overlay absolute inset-0 bg-gray-900 opacity-50"></div>
-                              
-                                <div class="modal-content bg-white w-64 p-6 rounded">
-                                  <h2 class="text-xl font-bold mb-2">Thank you!</h2>
-                                  <p>Your form has been submitted successfully.</p>
-                                </div>
-                              </div>
-              
-                          </div>
-                      </div>
-                      
-                      
-                      </div>
-                      <!-- Modal content goes here -->
-                    </div>
-                  </div>
-                  
-        </div>
+        <a href="./contact.html" class="bg-teal-500 p-4 rounded-lg px-6 text-white font-semibold hover:bg-sky-900">
+            <button  id="open-popup"  >Book Appointment</button>
+        </a>
   </div>
   <script>
    document.getElementById('hamburger').addEventListener('click', function(event) {
@@ -129,7 +84,22 @@ document.addEventListener('click', function(event) {
   }
 });
   </script>
-  
+         <!-- <script>
+            const openPopup = document.getElementById('open-popup');
+        const closePopup = document.getElementById('close-popup');
+        const pop = document.getElementById('pop');
+        const over = document.getElementById('over');
+        
+        openPopup.addEventListener('click', () => {
+          pop.style.display = 'block';
+          over.style.display = 'block';
+        });
+        
+        closePopupBtn.addEventListener('click', () => {
+          popup.style.display = 'none';
+          overlay.style.display = 'none';
+        });
+        </script> -->
   
     </ul>
     </div>
@@ -281,8 +251,8 @@ document.addEventListener('click', function(event) {
               </div>
     <!-- About us -->
     
-<div class="pt-40 overflow-hidden">
-    <h1 class="absolute  ml-80 left-80 text-4xl font-bold text-[#ec1d24]">Our Services</h1>
+<div class="md:pt-40 pt-28 overflow-hidden">
+    <h1 class="absolute  md:ml-80 md:left-80 ml-32 md:text-4xl text-2xl font-bold text-[#ec1d24]">Our Services</h1>
    <div class="flex px-10 gap-20 items-center -mt-20">
 
    </div>
@@ -291,106 +261,105 @@ document.addEventListener('click', function(event) {
 </div>
 
     <!-- Services Cards -->
-    <div class="px-20 pt-8 pb-8 grid md:grid-cols-4   gap-8 mt-10 z-40 overflow-hidden">
+    <div class="md:px-20 px-5 pt-3 grid md:grid-cols-4 grid-cols-2 gap-8 mt-10 z-40 py-3">
         <!-- service 1 -->
-        <div class="flex items-center justify-center gap-5 shadow-lg  py-2 hover:-translate-y-1 hover:scale-110 bg-white px-6 rounded-lg drop-shadow-lg" id="open-popup1">
-            <img src="	https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img1.png" width="50">
+        <div class="md:flex items-center justify-center gap-5 shadow-lg  py-2 hover:-translate-y-1 hover:scale-110 bg-white px-6 rounded-lg drop-shadow-lg" id="open-popup1">
+            <img src="	https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img1.png" width="50" class="mx-auto">
             <h1 class="text-xl font-bold text-[#57c0ac]">Dermatology services</h1>
         </div>
-        <!-- service 2 -->
-        <div class="flex items-center justify-center gap-5 shadow-lg  py-2 hover:-translate-y-1 hover:scale-110 bg-white px-6 rounded-lg drop-shadow-lg" id="open-popup2">
-            <img src="	https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img2.png" width="50">
-            <h1 class="text-xl font-bold text-[#57c0ac]">Emergancey care</h1>
+        <!-- service 1 -->
+        <div class="md:flex items-center justify-center gap-5 shadow-lg  py-2 hover:-translate-y-1 hover:scale-110 bg-white px-6 rounded-lg drop-shadow-lg" id="open-popup2" >
+            <img src="	https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img2.png" width="50" class="mx-auto">
+            <h1 class="text-xl font-bold text-[#57c0ac]">Emergency care</h1>
         </div>
-        <!-- service 3 -->
-        <div class="flex items-center justify-center gap-5 shadow-lg  py-5 hover:-translate-y-1 hover:scale-110 bg-white px-6 rounded-lg drop-shadow-lg" id="open-popup3">
-            <img src="https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img3.png" width="50">
+        <!-- service 2 -->
+        <div class="md:flex items-center justify-center gap-5 shadow-lg  py-5 hover:-translate-y-1 hover:scale-110 bg-white px-6 rounded-lg drop-shadow-lg" id="open-popup3">
+            <img src="https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img3.png" width="50" class="mx-auto">
             <h1 class="text-xl font-bold text-[#57c0ac]">Dental care services</h1>
         </div>
-        <!-- service 4 -->
-        <div class="flex items-center justify-center gap-5 shadow-lg  py-5 hover:-translate-y-1 hover:scale-110 bg-white px-6 rounded-lg drop-shadow-lg" id="open-popup4">
-            <img src="https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img4.png" width="50">
+        <!-- service 3 -->
+        <div class="md:flex items-center justify-center gap-5 shadow-lg  py-5 hover:-translate-y-1 hover:scale-110 bg-white px-6 rounded-lg drop-shadow-lg" id="open-popup4">
+            <img src="https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img4.png" width="50" class="mx-auto">
             <h1 class="text-xl font-bold text-[#57c0ac]">Diagnostic imaging</h1>
         </div>
-        <!-- service 5 -->
-        <div class="flex items-center justify-center gap-5 shadow-lg  py-5 hover:-translate-y-1 hover:scale-110 bg-white px-6 rounded-lg drop-shadow-lg" id="open-popup5">
-            <img src="https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img5.png" width="50">
+        <!-- service 4 -->
+        <div class="md:flex items-center justify-center gap-5 shadow-lg  py-5 hover:-translate-y-1 hover:scale-110 bg-white px-6 rounded-lg drop-shadow-lg" id="open-popup5">
+            <img src="https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img5.png" width="50" class="mx-auto">
             <h1 class="text-xl font-bold text-[#57c0ac]">Neurology services</h1>
         </div>
-        <!-- service 6 -->
-        <div class="flex items-center justify-center gap-5 shadow-lg  py-5 hover:-translate-y-1 hover:scale-110 bg-white px-6 rounded-lg drop-shadow-lg" id="open-popup6">
-            <img src="https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img6.png" width="50">
+        <!-- service 5 -->
+        <div class="md:flex items-center justify-center gap-5 shadow-lg  py-5 hover:-translate-y-1 hover:scale-110 bg-white px-6 rounded-lg drop-shadow-lg" id="open-popup6">
+            <img src="https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img6.png" width="50" class="mx-auto">
             <h1 class="text-xl font-bold text-[#57c0ac]">Mental health care </h1>
         </div>
-        <!-- service 7 -->
-        <div class="flex items-center justify-center gap-5 shadow-lg  py-5 hover:-translate-y-1 hover:scale-110 bg-white px-6 rounded-lg drop-shadow-lg" id="open-popup7">
-            <img src="https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img7.png" width="50">
+        <!-- service 6 -->
+        <div class="md:flex items-center justify-center gap-5 shadow-lg  py-5 hover:-translate-y-1 hover:scale-110 bg-white px-6 rounded-lg drop-shadow-lg" id="open-popup7">
+            <img src="https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img7.png" width="50" class="mx-auto">
             <h1 class="text-xl font-bold text-[#57c0ac]">Hospice care services</h1>
         </div>
-        <!-- service 8-->
-        <div class="flex items-center justify-center gap-5 shadow-lg  py-5 hover:-translate-y-1 hover:scale-110 bg-white px-6 rounded-lg drop-shadow-lg" id="open-popup8">
-            <img src="https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img8.png" width="50">
+        <!-- service 7-->
+        <div class="md:flex items-center justify-center gap-5 shadow-lg  py-5 hover:-translate-y-1 hover:scale-110 bg-white px-6 rounded-lg drop-shadow-lg" id="open-popup8">
+            <img src="https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img8.png" width="50" class="mx-auto">
             <h1 class="text-xl font-bold text-[#57c0ac]">General surgery services </h1>
         </div>
-        <!-- service 9 -->
-        <div class="flex items-center justify-center gap-5 shadow-lg  py-5 hover:-translate-y-1 hover:scale-110 bg-white px-6 rounded-lg drop-shadow-lg" id="open-popup9">
-            <img src="	https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img1.png" width="50">
-            <h1 class="text-xl font-bold text-[#57c0ac]">Gastroenterology services</h1>
+        <!-- service 8 -->
+        <div class="md:flex items-center justify-center gap-5 shadow-lg  py-5 hover:-translate-y-1 hover:scale-110 bg-white px-6 rounded-lg drop-shadow-lg" id="open-popup9">
+            <img src="	https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img1.png" width="50" class="mx-auto">
+            <h1 class="text-xl font-bold text-[#57c0ac]">Gastroen terology services</h1>
         </div>
-        <!-- service 10 -->
-        <div class="flex items-center justify-center gap-5 shadow-lg  py-5 hover:-translate-y-1 hover:scale-110 bg-white px-6 rounded-lg drop-shadow-lg" id="open-popup10">
-            <img src="https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img4.png" width="50">
+        <!-- service 9 -->
+        <div class="md:flex items-center justify-center gap-5 shadow-lg  py-5 hover:-translate-y-1 hover:scale-110 bg-white px-6 rounded-lg drop-shadow-lg" id="open-popup10">
+            <img src="	https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img1.png" width="50">
             <h1 class="text-xl font-bold text-[#57c0ac]">Laboratory services</h1>
         </div>
-        <!-- service 11 -->
-        <div class="flex items-center justify-center gap-5 shadow-lg  py-5 hover:-translate-y-1 hover:scale-110 bg-white px-6 rounded-lg drop-shadow-lg" id="open-popup11">
-            <img src="	https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img1.png" width="50">
+        <!-- service 10 -->
+        <div class="md:flex items-center justify-center gap-5 shadow-lg  py-5 hover:-translate-y-1 hover:scale-110 bg-white px-6 rounded-lg drop-shadow-lg" id="open-popup11">
+            <img src="	https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img1.png" width="50" class="mx-auto">
             <h1 class="text-xl font-bold text-[#57c0ac]">Nursing services</h1>
         </div>
-        <!-- service 12 -->
-        <div class="flex items-center justify-center gap-5 shadow-lg  py-5 hover:-translate-y-1 hover:scale-110 bg-white px-6 rounded-lg drop-shadow-lg" id="open-popup12">
-            <img src="	https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img1.png" width="50">
+        <!-- service 11 -->
+        <div class="md:flex items-center justify-center gap-5 shadow-lg  py-5 hover:-translate-y-1 hover:scale-110 bg-white px-6 rounded-lg drop-shadow-lg" id="open-popup12">
+            <img src="	https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img1.png" width="50" class="mx-auto">
             <h1 class="text-xl font-bold text-[#57c0ac]">Oncology services</h1>
         </div>
+        <!-- service 12 -->
+        <div class="md:flex items-center justify-center gap-5 shadow-lg  py-5 hover:-translate-y-1 hover:scale-110 bg-white px-6 rounded-lg drop-shadow-lg" id="open-popup13">
+            <img src="	https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img1.png" width="50" class="mx-auto">
+            <h1 class="text-xl font-bold text-[#57c0ac]">Ophthal mology services</h1>
+        </div>
         <!-- service 13 -->
-        <div class="flex items-center justify-center gap-5 shadow-lg  py-5 hover:-translate-y-1 hover:scale-110 bg-white px-6 rounded-lg drop-shadow-lg" id="open-popup13">
-            <img src="	https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img1.png" width="50">
-            <h1 class="text-xl font-bold text-[#57c0ac]">Ophthalmology services</h1>
+        <div class="md:flex items-center justify-center gap-5 shadow-lg  py-5 hover:-translate-y-1 hover:scale-110 bg-white px-6 rounded-lg drop-shadow-lg" id="open-popup14">
+            <img src="	https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img1.png" width="50" class="mx-auto">
+            <h1 class="text-xl font-bold text-[#57c0ac]">Orthopa edics services</h1>
         </div>
         <!-- service 14 -->
-        <div class="flex items-center justify-center gap-5 shadow-lg  py-5 hover:-translate-y-1 hover:scale-110 bg-white px-6 rounded-lg drop-shadow-lg" id="open-popup14">
-            <img src="	https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img1.png" width="50">
-            <h1 class="text-xl font-bold text-[#57c0ac]">Orthopaedics services</h1>
-        </div>
-        <!-- service 15 -->
-        <div class="flex items-center justify-center gap-5 shadow-lg  py-5 hover:-translate-y-1 hover:scale-110 bg-white px-6 rounded-lg drop-shadow-lg" id="open-popup15">
-            <img src="	https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img1.png" width="50">
+        <div class="md:flex items-center justify-center gap-5 shadow-lg  py-5 hover:-translate-y-1 hover:scale-110 bg-white px-6 rounded-lg drop-shadow-lg" id="open-popup15">
+            <img src="	https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img1.png" width="50" class="mx-auto">
             <h1 class="text-xl font-bold text-[#57c0ac]">Outpatient services</h1>
         </div>
-        <!-- service 16 -->
-        <div class="flex items-center justify-center gap-5 shadow-lg  py-5 hover:-translate-y-1 hover:scale-110 bg-white px-6 rounded-lg drop-shadow-lg" id="open-popup16">
-            <img src="	https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img1.png" width="50">
+        <!-- service 15 -->
+        <div class="md:flex items-center justify-center gap-5 shadow-lg  py-5 hover:-translate-y-1 hover:scale-110 bg-white px-6 rounded-lg drop-shadow-lg" id="open-popup16">
+            <img src="	https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img1.png" width="50" class="mx-auto">
             <h1 class="text-xl font-bold text-[#57c0ac]">Paediatrics services</h1>
         </div>
         <!-- service 17 -->
-        <div class="flex items-center justify-center gap-5 shadow-lg  py-5 hover:-translate-y-1 hover:scale-110 bg-white px-6 rounded-lg drop-shadow-lg" id="open-popup17">
-            <img src="	https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img1.png" width="50">
+        <div class="md:flex items-center justify-center gap-5 shadow-lg  py-5 hover:-translate-y-1 hover:scale-110 bg-white px-6 rounded-lg drop-shadow-lg" id="open-popup17">
+            <img src="	https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img1.png" width="50" class="mx-auto">
             <h1 class="text-xl font-bold text-[#57c0ac]">Psychiatry services</h1>
         </div>
         <!-- service 18 -->
-        <div class="flex items-center justify-center gap-5 shadow-lg  py-5 hover:-translate-y-1 hover:scale-110 bg-white px-6 rounded-lg drop-shadow-lg" id="open-popup18">
-            <img src="	https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img1.png" width="50">
+        <div class="md:flex items-center justify-center gap-5 shadow-lg  py-5 hover:-translate-y-1 hover:scale-110 bg-white px-6 rounded-lg drop-shadow-lg" id="open-popup18">
+            <img src="	https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img1.png" width="50" class="mx-auto">
             <h1 class="text-xl font-bold text-[#57c0ac]">Psychology services</h1>
         </div>
-        <!-- service 19 -->
-        <div class="flex items-center justify-center gap-5 shadow-lg  py-5 hover:-translate-y-1 hover:scale-110 bg-white px-6 rounded-lg drop-shadow-lg" id="open-popup19">
-            <i class="fa-solid fa-prescription-bottle text-blue-400 bg-sky-50 p-3 rounded-full text-xl px-5"></i>
+        <!-- service 20 -->
+        <div class="md:flex items-center justify-center gap-5 shadow-lg  py-5 hover:-translate-y-1 hover:scale-110 bg-white px-6 rounded-lg drop-shadow-lg" id="open-popup19">
+            <img src="	https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img1.png" width="50" class="mx-auto">
             <h1 class="text-xl font-bold text-[#57c0ac]">Pharmacy services</h1>
         </div>
-        <!-- service 20 -->
-        <div class="flex items-center justify-center gap-5 shadow-lg  py-5 hover:-translate-y-1 hover:scale-110 bg-white px-6 rounded-lg drop-shadow-lg" id="open-popup20">
-            <!-- <img src="	https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img1.png" width="50"> -->
-            <i class="fa-sharp fa-solid fa-x-ray text-red-400 bg-sky-50 p-3 rounded-full text-xl px-4 "></i>
+        <!-- service 21 -->
+        <div class="md:flex items-center justify-center gap-5 shadow-lg  py-5 hover:-translate-y-1 hover:scale-110 bg-white px-6 rounded-lg drop-shadow-lg" id="open-popup20">
+            <img src="	https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img1.png" width="50" class="mx-auto">
             <h1 class="text-xl font-bold text-[#57c0ac]">X-ray & radiology</h1>
         </div>
     </div>
@@ -1118,12 +1087,12 @@ document.addEventListener('click', function(event) {
 <!-- popup20 -->
 
     <!-- Footer -->
-    <div class="bg-indigo-950 px-20 py-10 flex justify-between overflow-hidden">
+    <div class="bg-indigo-950 px-20 py-10 md:flex justify-between">
         <div>
             <h1 class="text-xl font-bold text-[#ec1d24] py-3">Vighnaharta</h1>
             <p class="text-white">Lorem ipsum dolor sit <br> amet incidid tempor incididu ut aliqua exercitation  <br> ullam 
                 lorem ipsum dolor sit amet.</p>
-                <div class="text-white flex gap-4 py-3 ">
+                <div class="text-white flex gap-4 py-3 hidden lg:block">
                     <i class="fa-brands fa-facebook-f bg-[#57c0ac] p-3 px-4 rounded-full " id="facebook-icon"></i>
                     <!-- <i class="fa-brands fa-twitter bg-[#57c0ac] p-3 rounded-full "></i> -->
                     <!-- <i class="fa-brands fa-linkedin-in bg-[#57c0ac] p-3 rounded-full "></i> -->
@@ -1168,6 +1137,7 @@ document.addEventListener('click', function(event) {
             <a href="./contact.html">
                 <h2 class="text-white ">-  Contact Us</h2>
             </a>
+           
         </div>
         <div>
             <h1 class="text-lg font-semibold text-[#ec1d24] py-3">Our Services</h1>
@@ -1178,16 +1148,50 @@ document.addEventListener('click', function(event) {
         </div>
         <div>
             <h1 class="text-lg font-semibold text-[#ec1d24] py-3">Working Days</h1>
-            <h2 class="text-white  flex gap-10"><span>Mon - Tue</span> <span class="">08:00 AM - 05:00PM</span></h2>
-            <h2 class="text-white  flex gap-10"><span>Wed - Thu</span> <span class="">09:00 AM - 06:00PM</span></h2>
-            <h2 class="text-white  flex gap-10"><span>Fri - Sat</span> <span class="pl-5">08:00 AM - 05:00PM</span></h2> 
-            <h2 class="text-white  flex gap-10"><span>Sunday</span> <span class="pl-6">Emergency Only</span></h2> 
+            <h2 class="text-white flex gap-10"><span>Mon - Tue</span> <span class="">08:00 AM - 05:00PM</span></h2>
+            <h2 class="text-white flex gap-10"><span>Wed - Thu</span> <span class="">09:00 AM - 06:00PM</span></h2>
+            <h2 class="text-white flex gap-10"><span>Fri - Sat</span> <span class="pl-5">08:00 AM - 05:00PM</span></h2> 
+            <h2 class="text-white flex gap-10"><span>Sunday</span> <span class="pl-6">Emergency Only</span></h2> 
         </div>
-        <div>
+        <div class="text-white flex gap-10 py-3  lg:hidden">
+            <i class="fa-brands fa-facebook-f bg-[#57c0ac] p-3 px-4 rounded-full " id="facebook-icons"></i>
+            <!-- <i class="fa-brands fa-twitter bg-[#57c0ac] p-3 rounded-full "></i> -->
+            <!-- <i class="fa-brands fa-linkedin-in bg-[#57c0ac] p-3 rounded-full "></i> -->
+            <i class="fa-brands fa-instagram bg-[#57c0ac] p-3 rounded-full " id="instagram-icons"></i>
+            <a href="#" id="whatsapp-icons">
+                <i class="fa-brands fa-whatsapp bg-[#57c0ac] p-3 rounded-full "></i>
+            </a>
+            <script>
+                // whatsapp icons
+                const whatsappIcons = document.getElementById("whatsapp-icons");
+                const phoneNumbers = "7709641657"; // Replace with the desired phone number
+              
+                whatsappIcons.addEventListener("click", function() {
+                    const url = `https://wa.me/${phoneNumber}`;
+        window.location.href = url;
+        
+                });
+        // instagramicon
+                const instagramIcons = document.getElementById('instagram-icons');
+        
+        instagramIcons.addEventListener('click', () => {
+        window.location.href = 'https://www.instagram.com/vighnahartahospitalpune/';
+        });
+        
+        // facebook icons
+        const facebookIcons = document.getElementById('facebook-icons');
+        
+        facebookIcons.addEventListener('click', () => {
+        window.location.href = 'https://www.facebook.com/vighnahartahospitalpune';
+        });
+              </script>
+        </div>
+        <div class="-ml-8 md:-ml-0 mt-4">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.989182286093!2d73.9471580748591!3d18.529390982565904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c3cc4c69112d%3A0xe908cbfa926a46fd!2sVighnaharta%20Urology%20and%20Gynecology%20Superspeciality%20Hospital!5e0!3m2!1sen!2sin!4v1683538215549!5m2!1sen!2sin" 
             width="250" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
-        </div>
+        </div>3
+         
     <!-- Footer -->
      <!-- <button >Open Popup</button> -->
       
