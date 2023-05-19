@@ -16,12 +16,15 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 200%;
-  height: 200%;
+  right:20;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.5); /* semi-transparent background */
   filter: blur(5px); /* blur effect */
   z-index: 9999;
   display: none;
+  
 }
 
 .popup {
@@ -30,7 +33,8 @@
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #fff;
-  /* padding: 20px; */
+  padding: 20px;
+  overflow: hidden;
   /* border-radius: 5px; */
   z-index: 10000;
   display: none;
@@ -109,7 +113,7 @@ document.addEventListener('click', function(event) {
 
               <div class="hidden w-full md:block md:w-auto" id="navbar-default">
                 <ul class="font-medium flex flex-col items-center
-                 p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 
+                 p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:gap-8
                  md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                   <li x-data="{dropdownOpen:false}">
                     <a href="index.html" class="block py-2 pl-3 pr-4 text-[#57c0ac] bg-[#ed1d24] rounded md:bg-transparent 
@@ -193,7 +197,7 @@ document.addEventListener('click', function(event) {
                         </div>
                       </div>
                       
-                      <div id="overlays" class="overlay"></div>
+                      <div id="overlays" class="overlay w-full "></div>
                       <script>
                         const formData = [];
                         
@@ -261,16 +265,119 @@ document.addEventListener('click', function(event) {
     </div>
     <button class="text-white font-semibold relative  -top-9 left-5" >Our Doctor At Vighnahatra Hospital</button>
     
-<h1 class="md:text-7xl text-4xl  text-white  font-extrabold relative -top-5">Hospital Services <br class="">That You Can Trust</h1>
+<h1 class="md:text-7xl text-4xl  text-white  font-extrabold relative -top-5">Urology and Gynecology <br> Services that You Can Trust</h1>
 <!-- <h1 class="md:text-7xl bolck md:hidden text-white  font-extrabold relative -top-5">Hospital Services That You Can Trust</h1> -->
 <h3 class="text-white  mt-3 relative -top-5">Our team of dedicated healthcare professionals is committed to 
     providing you with the highest quality
      medical treatment. Your health is our top priority - trust our dedicated team to provide exceptional care.</h3>
     <!-- <button class="mt-8  px-9 py-3 rounded text-white font-semibold bg-blue-950 relative -top-5  hover:bg-blue-500">
         Viwe Our Services</button> -->
+        <div class="flex items-center gap-6 ">
+                    
+            <button  id="open-popup-btnss" class="hover:bg-sky-500 p-4 rounded-lg px-6 text-white font-semibold bg-sky-900" >Book Appointment</button>
+           <div>
+            <div id="popupss" class="popup">
+                <div class="popup-content">
+                  <div class="flex gap-3 ">
+                             
+                      <div class="">
+                        <img src="./Assets/appointment1.jpeg" alt="" width="400" height="200" class="object-fill">
+                        <img src="./Assets/logo.png" alt="" width="200" height="50" class="absolute left- ml- top-5 ">
+                      </div>
+                      <div>
+                        <div class=" p-10 py-20">
+                            <i id="close-popup-btnss" class="fa-solid fa-x border-2 border-black p-1 rounded relative -top-16 left-60" id="myModal"
+                           ></i>
+                            <h1 class="text-2xl font-bold text-gray-600 relative -top-10">Book an Appointment</h1>
+                            <h1 class="text-sm text-gray-400 mt-3">Please Enter Your Contact Details</h1>
+                            <form action="" id="myForm">
+                          <div class="grid grid-cols-1 gap-8 mt-5">
+                            
+                                <input type="text" placeholder="Name" autocomplete="off" id="name" name="name" class="border-b-2 border-0 border-gray-200 rounded-lg">
+                                <input type="email" id="email" name="email" name="email" placeholder="Email" autocomplete="off" class="border-b-2 border-0 border-gray-200 rounded-lg">
+                                <input type="number" id="contact" name="contact" placeholder="Contact Number" autocomplete="off" class="border-b-2 border-0 border-gray-200 rounded-lg">
+                              <button class="mt-4 border rounded-lg py-2 bg-blue-100  font-bold hover:bg-blue-700" 
+                              type="submit" value="Submit">Submit</button>
+                            </div>
+                            
+                          
+                            </form>
+                            <!-- Thankyou modal -->
+                            <div id="thankYouModal" class="modal hidden fixed inset-0 flex items-center justify-center">
+                                <div class="modal-overlay absolute inset-0 bg-gray-900 opacity-50"></div>
+                              
+                                <div class="modal-content bg-white w-64 p-6 rounded">
+                                  <h2 class="text-xl font-bold mb-2">Thank you!</h2>
+                                  <p>Your form has been submitted successfully.</p>
+                                </div>
+                              </div>
+              
+                          </div>
+                      </div>
+                      
+                      
+                      </div>
+                      <!-- Modal content goes here -->
+                    </div>
+                  </div>
+              
+                </div>
+              </div> 
+              <div id="overlayss" class="overlay w-full "></div>
+                      <script>
+                        const formDatas = [];
+                        
+                        const forms = document.querySelector('form');
+                        
+                        form.addEventListener('submit', (event) => {
+                            const data = {
+                                 name : document.querySelector("#name").value.trim(),
+                          emailInput : document.querySelector('#email').value.trim(),
+                        contact : document.querySelector('#contact').value.trim()
+                        };
+                        formData.push(data);
+                        console.log(formData);
+                        form.reset()
+                        
+                          if (data.emailInput === '') {
+                            alert('Please enter your email address.');
+                            event.preventDefault();
+                          }
+                          if (data.name === '') {
+                            alert('Please enter your name');
+                            event.preventDefault();
+                          }
+                          const regex = /^[789]\d{9}$/;
+                          if (!regex.test(data.contactInput === "")) {
+                            alert('Please enter a valid 10-digit phone number that starts with a number from 6 to 9.');
+                            event.preventDefault();
+                          }
+                        });
+                        
+                        form.addEventListener('submit', (event) => {
+                          event.preventDefault();
+                        });
+                                            </script> 
+                      <script>
+                          const openPopupBtnss = document.getElementById('open-popup-btnss');
+                      const closePopupBtnss = document.getElementById('close-popup-btnss');
+                      const popupss = document.getElementById('popupss');
+                      const overlayss = document.getElementById('overlayss');
+                      
+                      openPopupBtnss.addEventListener('click', () => {
+                        popupss.style.display = 'block';
+                        overlayss.style.display = 'block';
+                      });
+                      
+                      closePopupBtnss.addEventListener('click', () => {
+                        popupss.style.display = 'none';
+                        overlayss.style.display = 'none';
+                      });
+                      </script>
+              
 </div>
 <div class="px-10 pt-3 md:mt-5">
-    <img src="./Assets/docterlogo-01.png" width="1200">
+    <img src="./Assets/docter2logo.png" width="1400">
     <!-- <img src="./Assets/Untitled.png" width=""> -->
 </div>
     </div>
@@ -394,15 +501,12 @@ document.addEventListener('click', function(event) {
     <div class="mx-10 md:mx-0">
         <div id="popup1" class="popup rounded-lg drop-shadow-lg shadow-lg w-full md:w-96">
             <div class="popup-content md:p-3 p-2 ">
-                <i id="close-popup1" class="fa-solid fa-x border-2 border-black p-1 rounded relative  left-80" id="myModal"
+                <i id="close-popup1" class="fa-solid fa-x border-2 border-black p-1 rounded relative  left-72" id="myModal"
                 ></i>
                 <img src="	https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img1.png" width="70" 
                 class="mx-auto py-2 drop-shadow-lg ">
                 <h1 class="text-xl font-bold text-[#57c0ac] text-center">Dermatology services</h1>
-                <p class="mx-4 ml-8 py-2 md:text-base text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, suscipit? 
-                    Maiores dolorem, minima cupiditate veniam optio quod consequuntur, consectetur
-                     deserunt dicta architecto consequatur sapiente aperiam commodi necessitatibus.
-                      Vel, hic explicabo!</p>
+                <p class="mx-4 ml-8 py-2 md:text-base text-sm text-center">We are dedicated to providing exceptional dermatology services to help you achieve healthy and radiant skin. Our team of experienced dermatologists and skincare specialists is committed to delivering personalized care and effective treatments tailored to your unique needs.</p>
             </div>
         
         </div>
@@ -428,15 +532,12 @@ document.addEventListener('click', function(event) {
 <div>
     <div id="popup2" class="popup rounded-lg drop-shadow-lg shadow-lg w-96">
         <div class="popup-content p-3 ">
-            <i id="close-popup2" class="fa-solid fa-x border-2 border-black p-1 rounded relative  left-80" id="myModal"
+            <i id="close-popup2" class="fa-solid fa-x border-2 border-black p-1 rounded relative  left-72" id="myModal"
             ></i>
             <img src="https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img2.png" width="70" 
             class="mx-auto py-2 drop-shadow-lg ">
             <h1 class="text-xl font-bold text-[#57c0ac] text-center">Emergancey care</h1>
-            <p class="mx-4 ml-8 py-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, suscipit? 
-                Maiores dolorem, minima cupiditate veniam optio quod consequuntur, consectetur
-                 deserunt dicta architecto consequatur sapiente aperiam commodi necessitatibus.
-                  Vel, hic explicabo!</p>
+            <p class="mx-4 ml-8 py-2 text-center">Our dedicated team of emergency medical professionals is committed to delivering high-quality care in critical situations. With our state-of-the-art facility and advanced technology, we are equipped to handle a wide range of medical emergencies with efficiency and compassion.</p>
         </div>
     
     </div>
@@ -464,15 +565,13 @@ document.addEventListener('click', function(event) {
 <div>
     <div id="popup3" class="popup rounded-lg drop-shadow-lg shadow-lg w-96">
         <div class="popup-content p-3 ">
-            <i id="close-popup3" class="fa-solid fa-x border-2 border-black p-1 rounded relative  left-80" id="myModal"
+            <i id="close-popup3" class="fa-solid fa-x border-2 border-black p-1 rounded relative  left-72" id="myModal"
             ></i>
             <img src="https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img3.png" width="70" 
             class="mx-auto py-2 drop-shadow-lg ">
             <h1 class="text-xl font-bold text-[#57c0ac] text-center">Dental care services</h1>
-            <p class="mx-4 ml-8 py-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, suscipit? 
-                Maiores dolorem, minima cupiditate veniam optio quod consequuntur, consectetur
-                 deserunt dicta architecto consequatur sapiente aperiam commodi necessitatibus.
-                  Vel, hic explicabo!</p>
+            <p class="mx-4 ml-8 py-2 text-center">We are committed to providing exceptional dental care services to help you achieve optimal oral health and a beautiful smile. Our team of experienced dentists and dental hygienists is dedicated to delivering personalized care and comprehensive treatments tailored to your individual needs</p>
+            
         </div>
     
     </div>
@@ -500,15 +599,12 @@ document.addEventListener('click', function(event) {
 <div>
     <div id="popup4" class="popup rounded-lg drop-shadow-lg shadow-lg w-96">
         <div class="popup-content p-3 ">
-            <i id="close-popup4" class="fa-solid fa-x border-2 border-black p-1 rounded relative  left-80" id="myModal"
+            <i id="close-popup4" class="fa-solid fa-x border-2 border-black p-1 rounded relative  left-72" id="myModal"
             ></i>
             <img src="https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img4.png" width="70" 
             class="mx-auto py-2 drop-shadow-lg ">
-            <h1 class="text-xl font-bold text-[#57c0ac] text-center">Diagnostic imagin</h1>
-            <p class="mx-4 ml-8 py-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, suscipit? 
-                Maiores dolorem, minima cupiditate veniam optio quod consequuntur, consectetur
-                 deserunt dicta architecto consequatur sapiente aperiam commodi necessitatibus.
-                  Vel, hic explicabo!</p>
+            <h1 class="text-xl font-bold text-[#57c0ac] text-center">Diagnostic imaging</h1>
+            <p class="mx-4 ml-8 py-2 text-center">We offer advanced diagnostic imaging services to aid in the accurate diagnosis and treatment of various medical conditions. Our state-of-the-art imaging technology and skilled radiologists ensure that you receive high-quality imaging services in a safe and comfortable environment. </p>
         </div>
     
     </div>
@@ -536,15 +632,12 @@ document.addEventListener('click', function(event) {
 <div>
     <div id="popup5" class="popup rounded-lg drop-shadow-lg shadow-lg w-96">
         <div class="popup-content p-3 ">
-            <i id="close-popup5" class="fa-solid fa-x border-2 border-black p-1 rounded relative  left-80" id="myModal"
+            <i id="close-popup5" class="fa-solid fa-x border-2 border-black p-1 rounded relative  left-72" id="myModal"
             ></i>
             <img src="https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img5.png" width="70" 
             class="mx-auto py-2 drop-shadow-lg ">
             <h1 class="text-xl font-bold text-[#57c0ac] text-center">Neurology services</h1>
-            <p class="mx-4 ml-8 py-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, suscipit? 
-                Maiores dolorem, minima cupiditate veniam optio quod consequuntur, consectetur
-                 deserunt dicta architecto consequatur sapiente aperiam commodi necessitatibus.
-                  Vel, hic explicabo!</p>
+            <p class="mx-4 ml-8 py-2 text-center"> Our dedicated team of neurologists is committed to providing exceptional neurology services to diagnose, treat, and manage a wide range of neurological conditions. With advanced diagnostic tools and a patient-centered approach, we strive to improve the quality of life for individuals experiencing neurological disorders.</p>
         </div>
     
     </div>
@@ -572,15 +665,12 @@ document.addEventListener('click', function(event) {
 <div>
     <div id="popup6" class="popup rounded-lg drop-shadow-lg shadow-lg w-96">
         <div class="popup-content p-3 ">
-            <i id="close-popup6" class="fa-solid fa-x border-2 border-black p-1 rounded relative  left-80" id="myModal"
+            <i id="close-popup6" class="fa-solid fa-x border-2 border-black p-1 rounded relative left-72" id="myModal"
             ></i>
             <img src="https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img6.png" width="70" 
             class="mx-auto py-2 drop-shadow-lg ">
             <h1 class="text-xl font-bold text-[#57c0ac] text-center">Mental health care </h1>
-            <p class="mx-4 ml-8 py-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, suscipit? 
-                Maiores dolorem, minima cupiditate veniam optio quod consequuntur, consectetur
-                 deserunt dicta architecto consequatur sapiente aperiam commodi necessitatibus.
-                  Vel, hic explicabo!</p>
+            <p class="mx-4 ml-8 py-2 text-center">We understand the importance of mental health and its impact on overall well-being. Our dedicated team of mental health professionals is committed to providing comprehensive and compassionate care to support individuals facing mental health challenges.</p>
         </div>
     
     </div>
@@ -608,15 +698,12 @@ document.addEventListener('click', function(event) {
 <div>
     <div id="popup7" class="popup rounded-lg drop-shadow-lg shadow-lg w-96">
         <div class="popup-content p-3 ">
-            <i id="close-popup7" class="fa-solid fa-x border-2 border-black p-1 rounded relative  left-80" id="myModal"
+            <i id="close-popup7" class="fa-solid fa-x border-2 border-black p-1 rounded relative  left-72" id="myModal"
             ></i>
             <img src="https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img7.png" width="70" 
             class="mx-auto py-2 drop-shadow-lg ">
             <h1 class="text-xl font-bold text-[#57c0ac] text-center">Hospice care services</h1>
-            <p class="mx-4 ml-8 py-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, suscipit? 
-                Maiores dolorem, minima cupiditate veniam optio quod consequuntur, consectetur
-                 deserunt dicta architecto consequatur sapiente aperiam commodi necessitatibus.
-                  Vel, hic explicabo!</p>
+            <p class="mx-4 ml-8 py-2 text-center">We are dedicated to providing compassionate and comprehensive hospice care services to patients and their families during the end-of-life journey. Our interdisciplinary team of healthcare professionals is committed to ensuring comfort, dignity, and emotional support for patients with life-limiting illnesses.</p>
         </div>
     
     </div>
@@ -644,15 +731,12 @@ document.addEventListener('click', function(event) {
 <div>
     <div id="popup8" class="popup rounded-lg drop-shadow-lg shadow-lg w-96">
         <div class="popup-content p-3 ">
-            <i id="close-popup8" class="fa-solid fa-x border-2 border-black p-1 rounded relative  left-80" id="myModal"
+            <i id="close-popup8" class="fa-solid fa-x border-2 border-black p-1 rounded relative  left-72" id="myModal"
             ></i>
             <img src="https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img8.png" width="70" 
             class="mx-auto py-2 drop-shadow-lg ">
             <h1 class="text-xl font-bold text-[#57c0ac] text-center">General surgery services</h1>
-            <p class="mx-4 ml-8 py-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, suscipit? 
-                Maiores dolorem, minima cupiditate veniam optio quod consequuntur, consectetur
-                 deserunt dicta architecto consequatur sapiente aperiam commodi necessitatibus.
-                  Vel, hic explicabo!</p>
+            <p class="mx-4 ml-8 py-2 text-center">We offer a comprehensive range of general surgery services to address a wide variety of medical conditions. Our team of experienced and skilled general surgeons is dedicated to providing high-quality surgical care using the latest techniques and technology. Whether you require a routine procedure or a complex surgery, we are committed to delivering safe and effective treatments tailored to your individual needs.</p>
         </div>
     
     </div>
@@ -680,15 +764,12 @@ document.addEventListener('click', function(event) {
 <div>
     <div id="popup9" class="popup rounded-lg drop-shadow-lg shadow-lg w-96">
         <div class="popup-content p-3 ">
-            <i id="close-popup9" class="fa-solid fa-x border-2 border-black p-1 rounded relative  left-80" id="myModal"
+            <i id="close-popup9" class="fa-solid fa-x border-2 border-black p-1 rounded relative  left-72" id="myModal"
             ></i>
             <img src="https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img1.png" width="70" 
             class="mx-auto py-2 drop-shadow-lg ">
             <h1 class="text-xl font-bold text-[#57c0ac] text-center">Gastroenterology services</h1>
-            <p class="text-center py-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, suscipit? 
-                Maiores dolorem, minima cupiditate veniam optio quod consequuntur, consectetur
-                 deserunt dicta architecto consequatur sapiente aperiam commodi necessitatibus.
-                  Vel, hic explicabo!</p>
+            <p class="text-center py-2 text-center">Our gastroenterology department is committed to providing exceptional care for patients with gastrointestinal conditions. Our team of highly skilled gastroenterologists, specialized nurses, and support staff work together to deliver comprehensive diagnostic, therapeutic, and preventive services. </p>
         </div>
     
     </div>
@@ -716,15 +797,12 @@ document.addEventListener('click', function(event) {
 <div>
     <div id="popup10" class="popup rounded-lg drop-shadow-lg shadow-lg w-96">
         <div class="popup-content p-3 ">
-            <i id="close-popup10" class="fa-solid fa-x border-2 border-black p-1 rounded relative  left-80" id="myModal"
+            <i id="close-popup10" class="fa-solid fa-x border-2 border-black p-1 rounded relative  left-72" id="myModal"
             ></i>
             <img src="https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img4.png" width="70" 
             class="mx-auto py-2 drop-shadow-lg ">
             <h1 class="text-xl font-bold text-[#57c0ac] text-center">Laboratory services</h1>
-            <p class="text-center py-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, suscipit? 
-                Maiores dolorem, minima cupiditate veniam optio quod consequuntur, consectetur
-                 deserunt dicta architecto consequatur sapiente aperiam commodi necessitatibus.
-                  Vel, hic explicabo!</p>
+            <p class="text-center py-2 text-center">Our state-of-the-art laboratory plays a crucial role in patient care by providing accurate and timely diagnostic services. Our dedicated team of highly trained laboratory professionals, including pathologists, medical technologists, and technicians, work diligently to deliver reliable results and contribute to the overall healthcare experience of our patients.</p>
         </div>
     
     </div>
@@ -752,15 +830,12 @@ document.addEventListener('click', function(event) {
 <div>
     <div id="popup11" class="popup rounded-lg drop-shadow-lg shadow-lg w-96">
         <div class="popup-content p-3 ">
-            <i id="close-popup11" class="fa-solid fa-x border-2 border-black p-1 rounded relative  left-80" id="myModal"
+            <i id="close-popup11" class="fa-solid fa-x border-2 border-black p-1 rounded relative left-72" id="myModal"
             ></i>
             <img src="https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img4.png" width="70" 
             class="mx-auto py-2 drop-shadow-lg ">
             <h1 class="text-xl font-bold text-[#57c0ac] text-center">Nursing services</h1>
-            <p class="text-center py-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, suscipit? 
-                Maiores dolorem, minima cupiditate veniam optio quod consequuntur, consectetur
-                 deserunt dicta architecto consequatur sapiente aperiam commodi necessitatibus.
-                  Vel, hic explicabo!</p>
+            <p class="text-center py-2 text-center">Our nursing team plays a vital role in providing compassionate and high-quality patient care. Our dedicated nurses are committed to delivering excellent healthcare services and ensuring the well-being of our patients. With their expertise, compassion, and commitment, they form an essential part of our healthcare team.</p>
         </div>
     
     </div>
@@ -788,15 +863,12 @@ document.addEventListener('click', function(event) {
 <div>
     <div id="popup12" class="popup rounded-lg drop-shadow-lg shadow-lg w-96">
         <div class="popup-content p-3 ">
-            <i id="close-popup12" class="fa-solid fa-x border-2 border-black p-1 rounded relative  left-80" id="myModal"
+            <i id="close-popup12" class="fa-solid fa-x border-2 border-black p-1 rounded relative  left-72" id="myModal"
             ></i>
             <img src="https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img4.png" width="70" 
             class="mx-auto py-2 drop-shadow-lg ">
             <h1 class="text-xl font-bold text-[#57c0ac] text-center">Oncology services</h1>
-            <p class="text-center py-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, suscipit? 
-                Maiores dolorem, minima cupiditate veniam optio quod consequuntur, consectetur
-                 deserunt dicta architecto consequatur sapiente aperiam commodi necessitatibus.
-                  Vel, hic explicabo!</p>
+            <p class="text-center py-2 text-center">Our dedicated team of oncologists and multidisciplinary specialists is committed to providing exceptional oncology services to patients fighting cancer. We understand the physical and emotional challenges that come with a cancer diagnosis, and we are here to support you every step of the way. Our comprehensive approach to cancer care combines cutting-edge treatments, advanced technology, and personalized support to deliver the best possible outcomes.</p>
         </div>
     
     </div>
@@ -824,15 +896,12 @@ document.addEventListener('click', function(event) {
 <div>
     <div id="popup13" class="popup rounded-lg drop-shadow-lg shadow-lg w-96">
         <div class="popup-content p-3 ">
-            <i id="close-popup13" class="fa-solid fa-x border-2 border-black p-1 rounded relative  left-80" id="myModal"
+            <i id="close-popup13" class="fa-solid fa-x border-2 border-black p-1 rounded relative  left-72" id="myModal"
             ></i>
             <img src="https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img4.png" width="70" 
             class="mx-auto py-2 drop-shadow-lg ">
             <h1 class="text-xl font-bold text-[#57c0ac] text-center">Ophthalmology services</h1>
-            <p class="text-center py-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, suscipit? 
-                Maiores dolorem, minima cupiditate veniam optio quod consequuntur, consectetur
-                 deserunt dicta architecto consequatur sapiente aperiam commodi necessitatibus.
-                  Vel, hic explicabo!</p>
+            <p class="text-center py-2 text-center">Our ophthalmology department is dedicated to providing comprehensive eye care services to patients of all ages. Our team of experienced ophthalmologists and eye care professionals is committed to preserving and improving vision health. We offer a wide range of ophthalmology services, from routine eye exams to advanced surgical procedures, ensuring that all your eye care needs are met under one roof.</p>
         </div>
     
     </div>
@@ -860,15 +929,12 @@ document.addEventListener('click', function(event) {
 <div>
     <div id="popup14" class="popup rounded-lg drop-shadow-lg shadow-lg w-96">
         <div class="popup-content p-3 ">
-            <i id="close-popup14" class="fa-solid fa-x border-2 border-black p-1 rounded relative  left-80" id="myModal"
+            <i id="close-popup14" class="fa-solid fa-x border-2 border-black p-1 rounded relative  left-72" id="myModal"
             ></i>
             <img src="https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img4.png" width="70" 
             class="mx-auto py-2 drop-shadow-lg ">
             <h1 class="text-xl font-bold text-[#57c0ac] text-center">Orthopaedics services</h1>
-            <p class="text-center py-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, suscipit? 
-                Maiores dolorem, minima cupiditate veniam optio quod consequuntur, consectetur
-                 deserunt dicta architecto consequatur sapiente aperiam commodi necessitatibus.
-                  Vel, hic explicabo!</p>
+            <p class="text-center py-2 text-center">Our Orthopaedic department is dedicated to providing exceptional musculoskeletal care to patients of all ages. Our team of skilled orthopaedic surgeons, physiotherapists, and support staff is committed to delivering comprehensive and personalized treatment plans for a wide range of orthopaedic conditions. </p>
         </div>
     
     </div>
@@ -896,15 +962,12 @@ document.addEventListener('click', function(event) {
 <div>
     <div id="popup15" class="popup rounded-lg drop-shadow-lg shadow-lg w-96">
         <div class="popup-content p-3 ">
-            <i id="close-popup15" class="fa-solid fa-x border-2 border-black p-1 rounded relative  left-80" id="myModal"
+            <i id="close-popup15" class="fa-solid fa-x border-2 border-black p-1 rounded relative  left-72" id="myModal"
             ></i>
             <img src="https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img4.png" width="70" 
             class="mx-auto py-2 drop-shadow-lg ">
             <h1 class="text-xl font-bold text-[#57c0ac] text-center">Outpatient services</h1>
-            <p class="text-center py-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, suscipit? 
-                Maiores dolorem, minima cupiditate veniam optio quod consequuntur, consectetur
-                 deserunt dicta architecto consequatur sapiente aperiam commodi necessitatibus.
-                  Vel, hic explicabo!</p>
+            <p class="text-center py-2 text-center">We understand that not all medical conditions require inpatient care. That's why we offer a comprehensive range of outpatient services, allowing patients to receive the care they need while maintaining the comfort of their own homes. Our dedicated team of healthcare professionals is committed to providing high-quality outpatient services in a convenient and patient-centered environment.</p>
         </div>
 
     </div>
@@ -932,15 +995,12 @@ document.addEventListener('click', function(event) {
 <div>
     <div id="popup16" class="popup rounded-lg drop-shadow-lg shadow-lg w-96">
         <div class="popup-content p-3 ">
-            <i id="close-popup16" class="fa-solid fa-x border-2 border-black p-1 rounded relative  left-80" id="myModal"
+            <i id="close-popup16" class="fa-solid fa-x border-2 border-black p-1 rounded relative left-72" id="myModal"
             ></i>
             <img src="https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img4.png" width="70" 
             class="mx-auto py-2 drop-shadow-lg ">
             <h1 class="text-xl font-bold text-[#57c0ac] text-center">Paediatrics services</h1>
-            <p class="text-center py-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, suscipit? 
-                Maiores dolorem, minima cupiditate veniam optio quod consequuntur, consectetur
-                 deserunt dicta architecto consequatur sapiente aperiam commodi necessitatibus.
-                  Vel, hic explicabo!</p>
+            <p class="text-center py-2 text-center"> We are dedicated to providing comprehensive and compassionate pediatric care for infants, children, and adolescents. Our team of experienced pediatricians and healthcare professionals understands the unique healthcare needs of children and strives to deliver the highest quality of care to promote their health and well-being.</p>
         </div>
 
     </div>
@@ -968,15 +1028,12 @@ document.addEventListener('click', function(event) {
 <div>
     <div id="popup17" class="popup rounded-lg drop-shadow-lg shadow-lg w-96">
         <div class="popup-content p-3 ">
-            <i id="close-popup17" class="fa-solid fa-x border-2 border-black p-1 rounded relative  left-80" id="myModal"
+            <i id="close-popup17" class="fa-solid fa-x border-2 border-black p-1 rounded relative  left-72" id="myModal"
             ></i>
             <img src="https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img4.png" width="70" 
             class="mx-auto py-2 drop-shadow-lg ">
             <h1 class="text-xl font-bold text-[#57c0ac] text-center">Psychiatry services</h1>
-            <p class="text-center py-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, suscipit? 
-                Maiores dolorem, minima cupiditate veniam optio quod consequuntur, consectetur
-                 deserunt dicta architecto consequatur sapiente aperiam commodi necessitatibus.
-                  Vel, hic explicabo!</p>
+            <p class="text-center py-2 text-center">Our psychiatry department is committed to providing comprehensive mental health care services to individuals of all ages. We understand the impact of mental health on overall well-being and strive to deliver compassionate and personalized care to our patients. Our team of experienced psychiatrists, psychologists, and mental health professionals is dedicated to helping individuals overcome mental health challenges. </p>
         </div>
 
     </div>
@@ -1004,15 +1061,12 @@ document.addEventListener('click', function(event) {
 <div>
     <div id="popup18" class="popup rounded-lg drop-shadow-lg shadow-lg w-96">
         <div class="popup-content p-3 ">
-            <i id="close-popup18" class="fa-solid fa-x border-2 border-black p-1 rounded relative  left-80" id="myModal"
+            <i id="close-popup18" class="fa-solid fa-x border-2 border-black p-1 rounded relative  left-72" id="myModal"
             ></i>
             <img src="https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img4.png" width="70" 
             class="mx-auto py-2 drop-shadow-lg ">
             <h1 class="text-xl font-bold text-[#57c0ac] text-center">Psychology services</h1>
-            <p class="text-center py-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, suscipit? 
-                Maiores dolorem, minima cupiditate veniam optio quod consequuntur, consectetur
-                 deserunt dicta architecto consequatur sapiente aperiam commodi necessitatibus.
-                  Vel, hic explicabo!</p>
+            <p class="text-center py-2 text-center">Our psychology department is dedicated to providing comprehensive mental health services to individuals seeking support and guidance. Our team of experienced psychologists and mental health professionals is committed to helping individuals overcome challenges, improve their mental well-being, and enhance their overall quality of life. </p>
         </div>
 
     </div>
@@ -1040,15 +1094,12 @@ document.addEventListener('click', function(event) {
 <div>
     <div id="popup19" class="popup rounded-lg drop-shadow-lg shadow-lg w-96">
         <div class="popup-content p-3 ">
-            <i id="close-popup19" class="fa-solid fa-x border-2 border-black p-1 rounded relative  left-80" id="myModal"
+            <i id="close-popup19" class="fa-solid fa-x border-2 border-black p-1 rounded relative  left-72" id="myModal"
             ></i>
             <img src="https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img4.png" width="70" 
             class="mx-auto py-2 drop-shadow-lg ">
             <h1 class="text-xl font-bold text-[#57c0ac] text-center">Pharmacy services</h1>
-            <p class="text-center py-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, suscipit? 
-                Maiores dolorem, minima cupiditate veniam optio quod consequuntur, consectetur
-                 deserunt dicta architecto consequatur sapiente aperiam commodi necessitatibus.
-                  Vel, hic explicabo!</p>
+            <p class="text-center py-2 text-center">Our pharmacy plays a crucial role in providing safe and effective medication management for our patients. Our dedicated team of pharmacists and pharmacy technicians is committed to ensuring that patients receive the highest quality of pharmaceutical care. We strive to optimize medication therapy, promote patient safety, and improve health outcomes.</p>
         </div>
 
     </div>
@@ -1073,19 +1124,16 @@ document.addEventListener('click', function(event) {
 <!-- popup19 -->
 
 <!-- popup20 -->
-<div>
+<div>   
     <div id="popup20" class="popup rounded-lg drop-shadow-lg shadow-lg w-96">
         <div class="popup-content p-3 ">
-            <i id="close-popup20" class="fa-solid fa-x border-2 border-black p-1 rounded relative  left-80" id="myModal"
+            <i id="close-popup20" class="fa-solid fa-x border-2 border-black p-1 rounded relative  left-72" id="myModal"
             ></i>
             <img src="https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/img4.png" width="70" 
             class="mx-auto py-2 drop-shadow-lg ">
             <h1 class="text-xl font-bold text-[#57c0ac] text-center">
                 X-ray & radiology</h1>
-            <p class="text-center py-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, suscipit? 
-                Maiores dolorem, minima cupiditate veniam optio quod consequuntur, consectetur
-                 deserunt dicta architecto consequatur sapiente aperiam commodi necessitatibus.
-                  Vel, hic explicabo!</p>
+            <p class="text-center py-2 text-center"> We offer advanced X-ray and radiology services to provide accurate and detailed imaging for diagnostic purposes. Our state-of-the-art imaging technology and experienced radiologists ensure that you receive high-quality imaging services in a safe and comfortable environment. We are committed to delivering timely and accurate results to aid in the diagnosis and treatment of various medical conditions.</p>
         </div>
 
     </div>
@@ -1113,7 +1161,7 @@ document.addEventListener('click', function(event) {
     <div>
         <div class="mb-10">
             <h1 class="text-center text-2xl font-bold mt-7 text-blue-900">
-                About the Hospital
+                About the Patient Feedback
             </h1>
             <div class="py-20 md:mx-20 mx:7 mt-10 bg-gray-200 swiper mySwiper">
                 <div class="md:flex justify-center gap-10 md:mx-10 mx-5 swiper-wrapper">
@@ -1286,7 +1334,7 @@ document.addEventListener('click', function(event) {
      border rounded-full bg-[#57c0ac] text-white md:text-5xl p-3  md:px-5  px-4 "></i>
     <div>
         <h1 class="text-xl font-bold text-[#ec1d24] text-center md:text-left">Hospital Address</h1>
-        <p class="font-semibold mt-2 ">Anandtara WhiteField,Keshav <br> Nagar,Pune 412307</p>
+        <p class="font-semibold mt-2 text-center md:text-left text-sm md:text-base">Anandtara WhiteField,Keshav <br> Nagar,Pune 412307</p>
     </div>
   </div>
   <div class="md:flex items-center border bg-white px-8 py-7 rounded-lg drop-shadow-lg gap-5 mb-3 md:mb-0">
@@ -1294,11 +1342,11 @@ document.addEventListener('click', function(event) {
     border rounded-full bg-[#57c0ac] md:text-4xl p-4 md:px-5 "  id="email-icon"></i>
     <div>
         <h1 class="text-xl font-bold text-[#ec1d24] text-center md:text-left">Email Us</h1>
-        <p class="font-semibold mt-2" ><span id="email-icon"> contact@vighnahartahospital.in</span> <br> <span id="email-icon">
+        <p class="font-semibold mt-2 text-sm md:text-base text-center md:text-left" ><span id="email-icon"> contact@vighnahartahospital.in</span> <br> <span id="email-icon">
             contact1@vighnahartahospital.in
         </span> </p>
     </div>
-    <script>
+    <!-- <script>
  document.getElementById('email-icon').addEventListener('click', function() {
   var email = 'contact@vighnahartahospital.in';
   var subject = 'Hello';
@@ -1307,29 +1355,29 @@ document.addEventListener('click', function(event) {
   var mailtoLink = 'mailto:' + email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
   window.location.href = mailtoLink;
 });
-      </script>
+      </script> -->
   </div>
   <div class="md:flex items-center border bg-white px-8 py-7 md:w-96 rounded-lg drop-shadow-lg gap-8 justify-start">
     <i class="fa-solid fa-phone text-white mx-24 md:mx-0
     border rounded-full bg-[#57c0ac] md:text-4xl p-4 md:px-5 " id="call-icon"></i>
     <div>
         <h1 class="text-xl font-bold text-[#ec1d24] text-center md:text-left">Contact Us </h1>
-        <p class="font-semibold mt-2 text-center md:text-left">(+91) 8208612746<br> (+91) 7709641657</p>
+        <p class="font-semibold mt-2 text-center md:text-left text-sm md:text-base text-center md:text-left">(+91) 8208612746<br> (+91) 7709641657</p>
     </div>
-    <script>
+    <!-- <script>
         document.getElementById('call-icon').addEventListener('click', function() {
   window.location.href = '(+91) 8208612746';
 });
-    </script>
+    </script> -->
   </div>
 </div>
     </div>
     <!-- Footer -->
 <div class="bg-indigo-950 px-20 py-10 md:flex justify-between">
 <div>
-    <h1 class="text-xl font-bold text-[#ec1d24] py-3">Vighnaharta</h1>
-    <p class="text-white">Lorem ipsum dolor sit <br> amet incidid tempor incididu ut aliqua exercitation  <br> ullam 
-        lorem ipsum dolor sit amet.</p>
+    <img src="./Assets/VIGHNAHARTA Hospital Logo (white)-01 (1).png" alt="" class="w-44 my-4 ">
+    <!-- <h1 class="text-xl font-bold text-[#ec1d24] py-3">Vighnaharta</h1> -->
+    <p class="text-white text-sm md:text-base">Vighanharta Urology and Gynecology <br> Super Speciality Hospital is a world class <br> Super specialty hospital in Pune.</p>
         <div class="text-white flex gap-4 py-3 hidden lg:block">
             <i class="fa-brands fa-facebook-f bg-[#57c0ac] p-3 px-4 mx-4 rounded-full " id="facebook-icon"></i>
             <!-- <i class="fa-brands fa-twitter bg-[#57c0ac] p-3 rounded-full "></i> -->
@@ -1367,29 +1415,22 @@ facebookIcon.addEventListener('click', () => {
 <div>
     <h1 class="text-lg font-semibold text-[#ec1d24] py-3">Links</h1>
     <a href="./aboutus.html">
-        <h2 class="text-white ">-  About Us</h2>
+        <h2 class="text-white text-sm md:text-base">-  About Us</h2>
     </a>
     <a href="#services">
-        <h2 class="text-white ">-  Our Services</h2>
+        <h2 class="text-white text-sm md:text-base">-  Our Services</h2>
     </a>
     <a href="./contact.html">
-        <h2 class="text-white ">-  Contact Us</h2>
+        <h2 class="text-white text-sm md:text-base">-  Contact Us</h2>
     </a>
    
 </div>
 <div>
-    <h1 class="text-lg font-semibold text-[#ec1d24] py-3">Our Services</h1>
-    <h2 class="text-white ">-  Dental</h2>
-    <h2 class="text-white ">-  Oncology</h2>
-    <h2 class="text-white ">-  Neurology</h2> 
-    <h2 class="text-white ">-  Dermatology</h2> 
-</div>
-<div>
     <h1 class="text-lg font-semibold text-[#ec1d24] py-3">Working Days</h1>
-    <h2 class="text-white flex gap-10"><span>Mon - Tue</span> <span class="">08:00 AM - 05:00PM</span></h2>
-    <h2 class="text-white flex gap-10"><span>Wed - Thu</span> <span class="">09:00 AM - 06:00PM</span></h2>
-    <h2 class="text-white flex gap-10"><span>Fri - Sat</span> <span class="pl-5">08:00 AM - 05:00PM</span></h2> 
-    <h2 class="text-white flex gap-10"><span>Sunday</span> <span class="pl-6">Emergency Only</span></h2> 
+    <h2 class="text-white flex gap-10 text-sm md:text-base"><span>Mon - Tue</span> <span class="">08:00 AM - 05:00PM</span></h2>
+    <h2 class="text-white flex gap-10 text-sm md:text-base"><span>Wed - Thu</span> <span class="">09:00 AM - 06:00PM</span></h2>
+    <h2 class="text-white flex gap-10 text-sm md:text-base"><span>Fri - Sat</span> <span class="pl-3 md:pl-5">08:00 AM - 05:00PM</span></h2> 
+    <h2 class="text-white flex gap-10 text-sm md:text-base"><span>Sunday</span> <span class="pl-1 md:pl-6">Emergency Only</span></h2> 
 </div>
 <div class="text-white flex gap-10 py-3  lg:hidden">
     <i class="fa-brands fa-facebook-f bg-[#57c0ac] p-3 px-4 rounded-full " id="facebook-icons"></i>
@@ -1424,10 +1465,21 @@ window.location.href = 'https://www.facebook.com/vighnahartahospitalpune';
 });
       </script>
 </div>
-<div class="-ml-8 md:-ml-0 mt-4">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.989182286093!2d73.9471580748591!3d18.529390982565904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c3cc4c69112d%3A0xe908cbfa926a46fd!2sVighnaharta%20Urology%20and%20Gynecology%20Superspeciality%20Hospital!5e0!3m2!1sen!2sin!4v1683538215549!5m2!1sen!2sin" 
-    width="250" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<div>
+    <h1 class="text-white font-semibold  text-center"> Vighnaharta Clinic</h1>
+    <div class="-ml-8 md:-ml-0 mt-4">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.989182286093!2d73.9471580748591!3d18.529390982565904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c3cc4c69112d%3A0xe908cbfa926a46fd!2sVighnaharta%20Urology%20and%20Gynecology%20Superspeciality%20Hospital!5e0!3m2!1sen!2sin!4v1683538215549!5m2!1sen!2sin" 
+        width="250" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
 </div>
+<div>
+    <h1 class="text-white font-semibold  text-center">Vighnaharta Hospital</h1>
+    <div class="-ml-8 md:-ml-0 mt-4">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3783.193180454652!2d73.9277529!3d18.5201704!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1f267d13617%3A0x6190834d548b63b1!2sAxis%20Bank%20Branch!5e0!3m2!1sen!2sin!4v1684478411604!5m2!1sen!2sin"
+        width="250" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</div>
+
 </div>
     <!-- Footer -->
 </div>

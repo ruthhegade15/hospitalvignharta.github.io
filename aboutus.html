@@ -60,7 +60,7 @@ width:"1px"
     <div id="dropdown" class="hidden absolute right-0 font-bold mt-5 w-72 bg-gray-100 shadow-lg py-2 px-3 my-6 z-10">
       <!-- Dropdown content goes here -->
       <a href="./index.html" class="block text-center my-2 py-2 pl-3 pr-4 text-white bg-[#57c0ac] rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500">Home</a>
-      <a href="./aboutus.html" class="block px-4 py-2 my-2 text-sm text-gray-800 hover:bg-[#57c0ac] hover:text-white text-center"> About Us</a>
+      <a href="./aboutus.html" onclick="redirectToPage('aboutus.html')" class="block px-4 py-2 my-2 text-sm text-gray-800 hover:bg-[#57c0ac] hover:text-white text-center"> About Us</a>
       <a href="./services.html" class="block px-4 py-2 my-2 text-sm text-gray-800 hover:bg-[#57c0ac] hover:text-white text-center">Our Services</a>
       <a href="./contact.html" class="block px-4 py-2 my-2 text-sm text-gray-800 hover:bg-[#57c0ac] hover:text-white text-center">Contact Us</a>
       <div class="flex items-center justify-center gap-6 ">
@@ -68,6 +68,12 @@ width:"1px"
         <a href="./contact.html" class="bg-teal-500 p-4 rounded-lg px-6 text-white font-semibold hover:bg-sky-900">
             <button  id="open-popup"  >Book Appointment</button>
         </a>
+
+        <script>
+            function redirectToPage(page) {              
+}
+        </script>
+
   </div>
   <script>
    document.getElementById('hamburger').addEventListener('click', function(event) {
@@ -107,7 +113,7 @@ document.addEventListener('click', function(event) {
 
               <div class="hidden w-full md:block md:w-auto" id="navbar-default">
                 <ul class="font-medium flex flex-col items-center
-                 p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 
+                 p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:gap-8
                  md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                   <li x-data="{dropdownOpen:false}">
                     <a href="index.html" class="block py-2 pl-3 pr-4 text-[#57c0ac] bg-[#ed1d24] rounded md:bg-transparent 
@@ -256,13 +262,13 @@ document.addEventListener('click', function(event) {
     <img src="./Assets/about3.jpg" alt=""  class="lg:w-2/5 w-80 mt-48 lg:mt-0">
     <p class="md:text-lg text-sm md:text-base text-left"> <span class="font-semibold ">Vighanharta Urology and Gynecology Super Speciality Hospital</span>  is a world class Super specialty hospital in Pune.
 
-        We provide comprehensive urology care which involves cutting edge technology with a human touch.
+        We provide comprehensive urologist clinic which involves cutting edge technology.
          We treat patients with kidney stones, for prostate enlargement, a leading healthcare hospital dedicated to
           providing specialized care for urological and gynaecological conditions. We strive to offer exceptional
            medical services, state-of-the-art facilities, and compassionate care to patients from all 
            walks of life. <br> <br>
-           Our hospital is staffed by a team of highly skilled and experienced urologists, gynaecologists,
-           nurses, and support staff who are committed to delivering personalized treatment plans tailored 
+           Our hospital is staffed by a team of highly skilled and experienced best urologists, gynaecologists,
+           nurses and support staff who are committed to delivering personalized treatment plans tailored 
            to meet the unique needs of each patient. We understand the sensitive nature of urological and 
            gynaecological health concerns and provide a comfortable and respectful environment where patients 
            can receive the highest standard of care.
@@ -271,151 +277,263 @@ document.addEventListener('click', function(event) {
 
            
 </div>
+<!-- our medical -->
+<div class="md:flex md:px-20 md:py-10 px-5 py-4 bg-gray-100 justify-between">
+  <div>
+    <img src="https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/about.png" alt="" class="block md:hidden">
+  </div>
+  <div class="col-lg-6 col-md-12">
+    <div class="hospital-about-content md:mt-0 mt-5">
+    <span class=" text-xl font-semibold text-[#57c0bb] "> Our Medical</span>
+    <h3 class="mt-5 md:text-4xl text-xl font-bold text-blue-900">We Are Setting The Standards  <br>In Research &amp; Clinical Care</h3>
+    <p class="text-sm text-gray-500 py-3">There are many variations of passages of Lorem Ipsum available but the majority have suffered <br> alteration in some form by injected humour or randomised words which don't look even,</p>
+    <h4 class="text-xl font-bold text-blue-900 mt-4">Vighnaharta Special Features:</h4>
+    <div class="row justify-content-center">
+    <div class="grid md:grid-cols-2 gap-6 mt-4">
+    <h1 class="flex gap-3 items-center">
+      <i class="fa-regular fa-circle-check text-bold md:text-xl text-[#57c0bb]" ></i>
+      <span class="md:text-lg md:font-semibold text-sm text-sky-900"> Adult Trauma Center </span>
+   </h1>
+    <h1 class="flex gap-3 items-center">
+       <i class="fa-regular fa-circle-check text-bold md:text-xl text-[#57c0bb]"></i>
+    <span class="md:text-lg md:font-semibold text-sm text-sky-900">  Birthing And Lactation Classes </span></h1>
+    <h1 class="flex gap-3 items-center">
+       <i class="fa-regular fa-circle-check text-bold md:text-xl text-[#57c0bb]"></i>
+    <span class="md:text-lg md:font-semibold  text-sm text-sky-900"> Dental And Oral Surgery</span>  </h1>
+    <h1 class="flex gap-3 items-center">
+       <i class="fa-regular fa-circle-check text-bold md:text-xl text-[#57c0bb]"></i>
+    <span class="md:text-lg md:font-semibold text-sm text-sky-900">  Children's Trauma Center </span></h1>
+    <h1 class="flex gap-3 items-center">
+       <i class="fa-regular fa-circle-check text-bold md:text-xl text-[#57c0bb]"></i>
+    <span class="md:text-lg md:font-semibold text-sm text-sky-900">Heart And Vascular Institute  </span> </h1>
+    <h1 class="flex gap-3 items-center">
+       <i class="fa-regular fa-circle-check text-bold md:text-xl text-[#57c0bb]"></i>
+    <span class="md:text-lg md:font-semibold text-sm text-sky-900"> Plastic Surgery  </span></h1>
+    
+  </div>
+    </div>
+    <!-- <div class="about-btn mt-7 drop-shadow-lg w-36 py-3 px-7 rounded-lg bg-[#57c0bb]">
+    <a href="https://themes.hibootstrap.com/rola-hospital/about-us/" class="default-btn font-semibold ">
+    Learn More </a> </div> -->
+    </div>
+    </div>
+  <div>
+    <img src="	https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/about.png" alt="" class="md:block hidden">
+  </div>
+  
+</div>
 
-<!-- our Department -->
-<div class="bg-[#57c0bb] pt-4 mt-4 md:mt-0">
-<h1 class="text-center md:text-3xl text-xl font-bold underline">Our Department</h1>
-<div class="md:px-20 px-4 py-10 grid md:grid-cols-3 justify-center gap-10">
-    <div class="bg-white p-3 px-12 py-5 drop-shadow-lg shadow-lg rounded-lg ">
-            <!-- <img src="./Assets/sym1.png" alt="" width="50" class="drop-shadow-lg " > -->
-        <h1 class="text-center font-semibold text-xl">Department of Urology</h1>
-        <img src="./Assets/all1.png" alt="" class="mt-6 mx-auto w-28 lg:w-52">
-        
-        <p class="text-sm md:text-base">Our urologists specialize in the diagnosis and treatment of common urological conditions, 
-            including urinary tract infections, kidney stones, bladder problems, prostate issues,
-             and urinary incontinence. We offer comprehensive evaluations, diagnostic tests, and personalized 
-             treatment plans tailored to your specific needs.</p>
+<!-- our medical -->
+
+<!-- our skills -->
+<div class="my-5 md:flex md:px-20 md:py-10 justify-between gap-40"> 
+  <div>
+    <img src="https://themes.hibootstrap.com/rola-hospital/wp-content/uploads/2022/08/skill.png" alt="" class="">
+  </div>
+  <div class="hospital-skills-content">
+    <span class="sub-title text-xl font-semibold text-[#57c0bb] ">Stories &amp; Skills</span>
+    <h3 class="mt-5 md:text-4xl text-xl font-bold text-blue-900">We will Connect You To <br> World Class Specialists</h3>
+    <p class="text-sm text-gray-500 py-3">Be sure there isn't anything embarrassing hidden in the middle of text. All the Lorsume nerators on the Internet tend to repeat predefined chunks necessary making the first true.
+    </p>
+    <div class="skills">
+    <!-- our skills 1 -->
+    <div class="skill-header">
+      <h3 class="skill-title text-lg font-bold text-blue-900 mt-4">Medical Private</h3>
+      <div class="skill-percentage flex items-center justify-between"> 
+        <!-- our skills -->
+  <div class="w-3/4 drop-shadow-lg shadow-lg  rounded-lg border py-1 px-2">
+    <div id="slider-progress1" class="h-1 bg-blue-900 rounded-lg"></div>
+    <script>function autoSlider(percentage) {
+      const sliderProgress = document.getElementById('slider-progress1');
+      let progress = 0;
+      const step = percentage / 100; // Calculate the step value based on the given percentage
+      const interval = setInterval(() => {
+        progress += step;
+        sliderProgress.style.width = `${progress}%`;
+        if (progress >= percentage) {
+          clearInterval(interval);
+        }
+      }, 10); // Adjust the interval time (in milliseconds) as needed
+    }
+    
+    // Call the autoSlider function with the desired percentage
+    autoSlider(80);</script>
+    
+  </div>
+        <h1>80%</h1>
+      </div>
+      </div>
+  <!-- our skills 2 -->
+    <div class="skill-header">
+    <h3 class="skill-title text-lg font-bold text-blue-900 mt-4">Patients Served</h3>
+    <div class="skill-percentage flex items-center justify-between"> 
+      <!-- our skills -->
+<div class="w-3/4 drop-shadow-lg shadow-lg  rounded-lg border py-1 px-2">
+  <div id="slider-progress2" class="h-1 bg-blue-900 rounded-lg"></div>
+  <script>function autoSlider(percentage) {
+    const sliderProgress = document.getElementById('slider-progress2');
+    let progress = 0;
+    const step = percentage / 100; // Calculate the step value based on the given percentage
+    const interval = setInterval(() => {
+      progress += step;
+      sliderProgress.style.width = `${progress}%`;
+      if (progress >= percentage) {
+        clearInterval(interval);
+      }
+    }, 10); // Adjust the interval time (in milliseconds) as needed
+  }
+  
+  // Call the autoSlider function with the desired percentage
+  autoSlider(90);</script>
+  
+</div>
+      <h1>90%</h1>
     </div>
-    <div class="bg-white p-3 px-12 py-5 drop-shadow-lg shadow-lg rounded-lg ">
-        <h1 class="text-center font-semibold text-xl">Urological (Genitourinary) Cancers</h1>
-        <!-- <img src="./Assets/cancersym1.png" alt="" width="80" class="absolute top-12 left-40 "> -->
-        <img src="./Assets/all2.png" alt="" class="mt-6 mx-auto w-28 lg:w-52">
-        
-        <p class="text-sm md:text-base">Urological (genitourinary) cancers refer to the types of cancers that affect the organs
-             and structures of the genitourinary system. The genitourinary system includes the urinary
-              tract (kidneys, bladder, ureters, and urethra) as well as the male reproductive system
-               (prostate, testicles, and penis). Urological cancers can occur in any  organs.</p>
     </div>
-       <div class="bg-white p-3 px-12 py-5 drop-shadow-lg shadow-lg rounded-lg ">
-        <h1 class="text-center font-semibold text-xl">Department of Female Urology</h1>
-        <!-- <img src="./Assets/sym3.png" alt="" width="80" class="absolute top-14 left-40 "> -->
-        <img src="./Assets/all3.png" alt="" class="mt-6 mx-auto w-28 lg:w-52">
-        
-        <p class="text-sm md:text-base ">The Department of Female Urology is a specialized branch of urology that focuses on
-            the diagnosis and treatment of urological conditions specific to female patients.
-             It addresses a range of urological issues that primarily affect women, including conditions 
-             related to the urinary tract, pelvic floor, and female reproductive system.</p>
+  <!-- our skills 3 -->
+    <div class="skill-header">
+    <h3 class="skill-title text-lg font-bold text-blue-900 mt-4">Satisfied Patients</h3>
+    <div class="skill-percentage flex items-center justify-between"> 
+      <!-- our skills -->
+<div class="w-3/4 drop-shadow-lg shadow-lg  rounded-lg border py-1 px-2">
+  <div id="slider-progress3" class="h-1 bg-blue-900 rounded-lg"></div>
+  <script>function autoSlider(percentage) {
+    const sliderProgress = document.getElementById('slider-progress3');
+    let progress = 0;
+    const step = percentage / 100; // Calculate the step value based on the given percentage
+    const interval = setInterval(() => {
+      progress += step;
+      sliderProgress.style.width = `${progress}%`;
+      if (progress >= percentage) {
+        clearInterval(interval);
+      }
+    }, 10); // Adjust the interval time (in milliseconds) as needed
+  }
+  
+  // Call the autoSlider function with the desired percentage
+  autoSlider(85);</script>
+  
+</div>
+      <h1>85%</h1>
+    </div>
+    </div>
+    </div>
     </div>
 </div>
-</div>
-<!-- our Department -->
+
+
+
     <!-- About us -->
 
     <!-- Footer -->
     <div class="bg-indigo-950 px-20 py-10 md:flex justify-between">
-        <div>
-            <h1 class="text-xl font-bold text-[#ec1d24] py-3">Vighnaharta</h1>
-            <p class="text-white">Lorem ipsum dolor sit <br> amet incidid tempor incididu ut aliqua exercitation  <br> ullam 
-                lorem ipsum dolor sit amet.</p>
-                <div class="text-white flex gap-4 py-3 hidden lg:block">
-                    <i class="fa-brands fa-facebook-f bg-[#57c0ac] p-3 px-4 rounded-full " id="facebook-icon"></i>
-                    <!-- <i class="fa-brands fa-twitter bg-[#57c0ac] p-3 rounded-full "></i> -->
-                    <!-- <i class="fa-brands fa-linkedin-in bg-[#57c0ac] p-3 rounded-full "></i> -->
-                    <i class="fa-brands fa-instagram bg-[#57c0ac] p-3 rounded-full " id="instagram-icon"></i>
-                    <a href="#" id="whatsapp-icon">
-                        <i class="fa-brands fa-whatsapp bg-[#57c0ac] p-3 rounded-full "></i>
-                    </a>
-                    <script>
-                        // whatsapp icons
-                        const whatsappIcon = document.getElementById("whatsapp-icon");
-                        const phoneNumber = "7709641657"; // Replace with the desired phone number
-                      
-                        whatsappIcon.addEventListener("click", function() {
-                            const url = `https://wa.me/${phoneNumber}`;
-          window.location.href = url;
-        
-                        });
-        // instagramicon
-                        const instagramIcon = document.getElementById('instagram-icon');
-        
-        instagramIcon.addEventListener('click', () => {
-          window.location.href = 'https://www.instagram.com/vighnahartahospitalpune/';
-        });
-        
-        // facebook icons
-        const facebookIcon = document.getElementById('facebook-icon');
-        
-        facebookIcon.addEventListener('click', () => {
-          window.location.href = 'https://www.facebook.com/vighnahartahospitalpune';
-        });
-                      </script>
-                </div>
-        </div>
-        <div>
-            <h1 class="text-lg font-semibold text-[#ec1d24] py-3">Links</h1>
-            <a href="./aboutus.html">
-                <h2 class="text-white ">-  About Us</h2>
-            </a>
-            <a href="#services">
-                <h2 class="text-white ">-  Our Services</h2>
-            </a>
-            <a href="./contact.html">
-                <h2 class="text-white ">-  Contact Us</h2>
-            </a>
-           
-        </div>
-        <div>
-            <h1 class="text-lg font-semibold text-[#ec1d24] py-3">Our Services</h1>
-            <h2 class="text-white ">-  Dental</h2>
-            <h2 class="text-white ">-  Oncology</h2>
-            <h2 class="text-white ">-  Neurology</h2> 
-            <h2 class="text-white ">-  Dermatology</h2> 
-        </div>
-        <div>
-            <h1 class="text-lg font-semibold text-[#ec1d24] py-3">Working Days</h1>
-            <h2 class="text-white flex gap-10"><span>Mon - Tue</span> <span class="">08:00 AM - 05:00PM</span></h2>
-            <h2 class="text-white flex gap-10"><span>Wed - Thu</span> <span class="">09:00 AM - 06:00PM</span></h2>
-            <h2 class="text-white flex gap-10"><span>Fri - Sat</span> <span class="pl-5">08:00 AM - 05:00PM</span></h2> 
-            <h2 class="text-white flex gap-10"><span>Sunday</span> <span class="pl-6">Emergency Only</span></h2> 
-        </div>
-        <div class="text-white flex gap-10 py-3  lg:hidden">
-            <i class="fa-brands fa-facebook-f bg-[#57c0ac] p-3 px-4 rounded-full " id="facebook-icons"></i>
+<div>
+    <img src="./Assets/VIGHNAHARTA Hospital Logo (white)-01 (1).png" alt="" class="w-44 mx-5 my-4 ">
+    <!-- <h1 class="text-xl font-bold text-[#ec1d24] py-3">Vighnaharta</h1> -->
+    <p class="text-white text-sm md:text-base">Vighanharta Urology and Gynecology <br> Super Speciality Hospital is a world class <br> Super specialty hospital in Pune.</p>
+        <div class="text-white flex gap-4 py-3 hidden lg:block">
+            <i class="fa-brands fa-facebook-f bg-[#57c0ac] p-3 px-4 mx-4 rounded-full " id="facebook-icon"></i>
             <!-- <i class="fa-brands fa-twitter bg-[#57c0ac] p-3 rounded-full "></i> -->
             <!-- <i class="fa-brands fa-linkedin-in bg-[#57c0ac] p-3 rounded-full "></i> -->
-            <i class="fa-brands fa-instagram bg-[#57c0ac] p-3 rounded-full " id="instagram-icons"></i>
-            <a href="#" id="whatsapp-icons">
-                <i class="fa-brands fa-whatsapp bg-[#57c0ac] p-3 rounded-full "></i>
+            <i class="fa-brands fa-instagram bg-[#57c0ac] p-3 mx-4 rounded-full " id="instagram-icon"></i>
+            <a href="#" id="whatsapp-icon">
+                <i class="fa-brands fa-whatsapp bg-[#57c0ac] p-3 mx-4 rounded-full "></i>
             </a>
             <script>
                 // whatsapp icons
-                const whatsappIcons = document.getElementById("whatsapp-icons");
-                const phoneNumbers = "7709641657"; // Replace with the desired phone number
+                const whatsappIcon = document.getElementById("whatsapp-icon");
+                const phoneNumber = "7709641657"; // Replace with the desired phone number
               
-                whatsappIcons.addEventListener("click", function() {
+                whatsappIcon.addEventListener("click", function() {
                     const url = `https://wa.me/${phoneNumber}`;
-        window.location.href = url;
-        
+  window.location.href = url;
+
                 });
-        // instagramicon
-                const instagramIcons = document.getElementById('instagram-icons');
-        
-        instagramIcons.addEventListener('click', () => {
-        window.location.href = 'https://www.instagram.com/vighnahartahospitalpune/';
-        });
-        
-        // facebook icons
-        const facebookIcons = document.getElementById('facebook-icons');
-        
-        facebookIcons.addEventListener('click', () => {
-        window.location.href = 'https://www.facebook.com/vighnahartahospitalpune';
-        });
+// instagramicon
+                const instagramIcon = document.getElementById('instagram-icon');
+
+instagramIcon.addEventListener('click', () => {
+  window.location.href = 'https://www.instagram.com/vighnahartahospitalpune/';
+});
+
+// facebook icons
+const facebookIcon = document.getElementById('facebook-icon');
+
+facebookIcon.addEventListener('click', () => {
+  window.location.href = 'https://www.facebook.com/vighnahartahospitalpune';
+});
               </script>
         </div>
-        <div class="-ml-8 md:-ml-0 mt-4">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.989182286093!2d73.9471580748591!3d18.529390982565904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c3cc4c69112d%3A0xe908cbfa926a46fd!2sVighnaharta%20Urology%20and%20Gynecology%20Superspeciality%20Hospital!5e0!3m2!1sen!2sin!4v1683538215549!5m2!1sen!2sin" 
-            width="250" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-        </div>
+</div>
+<div>
+    <h1 class="text-lg font-semibold text-[#ec1d24] py-3">Links</h1>
+    <a href="./aboutus.html">
+        <h2 class="text-white text-sm md:text-base">-  About Us</h2>
+    </a>
+    <a href="#services">
+        <h2 class="text-white text-sm md:text-base">-  Our Services</h2>
+    </a>
+    <a href="./contact.html">
+        <h2 class="text-white text-sm md:text-base">-  Contact Us</h2>
+    </a>
+   
+</div>
+<div>
+    <h1 class="text-lg font-semibold text-[#ec1d24] py-3">Working Days</h1>
+    <h2 class="text-white flex gap-10 text-sm md:text-base"><span>Mon - Tue</span> <span class="">08:00 AM - 05:00PM</span></h2>
+    <h2 class="text-white flex gap-10 text-sm md:text-base"><span>Wed - Thu</span> <span class="">09:00 AM - 06:00PM</span></h2>
+    <h2 class="text-white flex gap-10 text-sm md:text-base"><span>Fri - Sat</span> <span class="pl-3 md:pl-5">08:00 AM - 05:00PM</span></h2> 
+    <h2 class="text-white flex gap-10 text-sm md:text-base"><span>Sunday</span> <span class="pl-1 md:pl-6">Emergency Only</span></h2> 
+</div>
+<div class="text-white flex gap-10 py-3  lg:hidden">
+    <i class="fa-brands fa-facebook-f bg-[#57c0ac] p-3 px-4 rounded-full " id="facebook-icons"></i>
+    <!-- <i class="fa-brands fa-twitter bg-[#57c0ac] p-3 rounded-full "></i> -->
+    <!-- <i class="fa-brands fa-linkedin-in bg-[#57c0ac] p-3 rounded-full "></i> -->
+    <i class="fa-brands fa-instagram bg-[#57c0ac] p-3 rounded-full " id="instagram-icons"></i>
+    <a href="#" id="whatsapp-icons">
+        <i class="fa-brands fa-whatsapp bg-[#57c0ac] p-3 rounded-full "></i>
+    </a>
+    <script>
+        // whatsapp icons
+        const whatsappIcons = document.getElementById("whatsapp-icons");
+        const phoneNumbers = "7709641657"; // Replace with the desired phone number
+      
+        whatsappIcons.addEventListener("click", function() {
+            const url = `https://wa.me/${phoneNumber}`;
+window.location.href = url;
+
+        });
+// instagramicon
+        const instagramIcons = document.getElementById('instagram-icons');
+
+instagramIcons.addEventListener('click', () => {
+window.location.href = 'https://www.instagram.com/vighnahartahospitalpune/';
+});
+
+// facebook icons
+const facebookIcons = document.getElementById('facebook-icons');
+
+facebookIcons.addEventListener('click', () => {
+window.location.href = 'https://www.facebook.com/vighnahartahospitalpune';
+});
+      </script>
+</div>
+<div>
+    <h1 class="text-white font-semibold  text-center"> Vighnaharta Clinic</h1>
+    <div class="-ml-8 md:-ml-0 mt-4">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.989182286093!2d73.9471580748591!3d18.529390982565904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c3cc4c69112d%3A0xe908cbfa926a46fd!2sVighnaharta%20Urology%20and%20Gynecology%20Superspeciality%20Hospital!5e0!3m2!1sen!2sin!4v1683538215549!5m2!1sen!2sin" 
+        width="250" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</div>
+<div>
+    <h1 class="text-white font-semibold  text-center">Vighnaharta Hospital</h1>
+    <div class="-ml-8 md:-ml-0 mt-4">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3783.193180454652!2d73.9277529!3d18.5201704!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1f267d13617%3A0x6190834d548b63b1!2sAxis%20Bank%20Branch!5e0!3m2!1sen!2sin!4v1684478411604!5m2!1sen!2sin"
+        width="250" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</div>
+
+</div>
     <!-- Footer -->
      <!-- <button >Open Popup</button> -->
      
