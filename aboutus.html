@@ -44,223 +44,222 @@ width:"1px"
 <body>
    
     <div>
-        <nav class="bg-white border-gray-200 dark:bg-gray-900 fixed w-full z-50">
-            <div class=" mx-10 flex  items-center justify-between">
-              <a href="./index.html" class="flex items-center">
-                  <img src="./Assets/logo.png" class="mr-3 hidden lg:block" alt="Flowbite Logo" width="250" />
-                  <img src="./Assets/logo.png" class="mr-3 block lg:hidden" alt="Flowbite Logo" width="200" />
-                  <!-- <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span> -->
-              </a>
-             
- <!-- hamburger -->
- <div class="relative">
-    <button ><i id="hamburger" class="border-2 rounded-lg p-2 drop-shadow-lg text-gray-700 block lg:hidden text-2xl fas fa-bars float-right"></i>
+      <nav class="bg-white border-gray-200 dark:bg-gray-900 fixed w-full z-50">
+        <div class=" mx-10 flex  items-center justify-between">
+          <a href="./index.html" class="flex items-center">
+              <img src="./Assets/logo.png" class="mr-3 hidden lg:block" alt="Flowbite Logo" width="250" />
+              <img src="./Assets/logo.png" class="mr-3 block lg:hidden" alt="Flowbite Logo" width="200" />
+              <!-- <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span> -->
+          </a>
+         
+<!-- hamburger -->
+<div class="relative">
+<button ><i id="hamburger" class="border-2 rounded-lg p-2 drop-shadow-lg text-gray-700 block lg:hidden text-2xl fas fa-bars float-right"></i>
+
+</button>
+<div id="dropdown" class="hidden absolute right-0 font-bold mt-5 w-72 bg-gray-100 shadow-lg py-2 px-3 my-6 z-10">
+  <!-- Dropdown content goes here -->
+  <a href="./index.html" class="block text-center my-2 py-2 pl-3 pr-4 text-white bg-[#57c0ac] rounded lg:bg-transparent lg:text-blue-700 lg:p-0 dark:text-white lg:dark:text-blue-500">Home</a>
+  <a href="./aboutus.html" class="block px-4 py-2 my-2 text-sm text-gray-800 hover:bg-[#57c0ac] hover:text-white text-center"> About Us</a>
+  <a href="./services.html" class="block px-4 py-2 my-2 text-sm text-gray-800 hover:bg-[#57c0ac] hover:text-white text-center">Our Services</a>
+  <a href="./contact.html" class="block px-4 py-2 my-2 text-sm text-gray-800 hover:bg-[#57c0ac] hover:text-white text-center">Contact Us</a>
+  <div class="flex items-center justify-center gap-6 ">
     
-    </button>
-    <div id="dropdown" class="hidden absolute right-0 font-bold mt-5 w-72 bg-gray-100 shadow-lg py-2 px-3 my-6 z-10">
-      <!-- Dropdown content goes here -->
-      <a href="./index.html" class="block text-center my-2 py-2 pl-3 pr-4 text-white bg-[#57c0ac] rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500">Home</a>
-      <a href="./aboutus.html" onclick="redirectToPage('aboutus.html')" class="block px-4 py-2 my-2 text-sm text-gray-800 hover:bg-[#57c0ac] hover:text-white text-center"> About Us</a>
-      <a href="./services.html" class="block px-4 py-2 my-2 text-sm text-gray-800 hover:bg-[#57c0ac] hover:text-white text-center">Our Services</a>
-      <a href="./contact.html" class="block px-4 py-2 my-2 text-sm text-gray-800 hover:bg-[#57c0ac] hover:text-white text-center">Contact Us</a>
-      <div class="flex items-center justify-center gap-6 ">
-        
-        <a href="./contact.html" class="bg-teal-500 p-4 rounded-lg px-6 text-white font-semibold hover:bg-sky-900">
-            <button  id="open-popup"  >Book Appointment</button>
-        </a>
-
-        <script>
-            function redirectToPage(page) {              
-}
-        </script>
-
-  </div>
-  <script>
-   document.getElementById('hamburger').addEventListener('click', function(event) {
-  event.stopPropagation();
-  var dropdown = document.getElementById('dropdown');
-  dropdown.classList.toggle('hidden');
+    <a href="./contact.html" class="bg-teal-500 p-4 rounded-lg px-6 text-white font-semibold hover:bg-sky-900">
+        <button  id="open-popup"  >Book Appointment</button>
+    </a>
+</div>
+<script>
+document.getElementById('hamburger').addEventListener('click', function(event) {
+event.stopPropagation();
+var dropdown = document.getElementById('dropdown');
+dropdown.classList.toggle('hidden');
 });
 
 document.addEventListener('click', function(event) {
-  var dropdown = document.getElementById('dropdown');
-  if (!dropdown.classList.contains('hidden')) {
-    dropdown.classList.add('hidden');
-  }
+var dropdown = document.getElementById('dropdown');
+if (!dropdown.classList.contains('hidden')) {
+dropdown.classList.add('hidden');
+}
 });
-  </script>
-         <!-- <script>
-            const openPopup = document.getElementById('open-popup');
-        const closePopup = document.getElementById('close-popup');
-        const pop = document.getElementById('pop');
-        const over = document.getElementById('over');
-        
-        openPopup.addEventListener('click', () => {
-          pop.style.display = 'block';
-          over.style.display = 'block';
-        });
-        
-        closePopupBtn.addEventListener('click', () => {
-          popup.style.display = 'none';
-          overlay.style.display = 'none';
-        });
-        </script> -->
-  
-    </ul>
-    </div>
- </div>
+</script>
+     <!-- <script>
+        const openPopup = document.getElementById('open-popup');
+    const closePopup = document.getElementById('close-popup');
+    const pop = document.getElementById('pop');
+    const over = document.getElementById('over');
+    
+    openPopup.addEventListener('click', () => {
+      pop.style.display = 'block';
+      over.style.display = 'block';
+    });
+    
+    closePopupBtn.addEventListener('click', () => {
+      popup.style.display = 'none';
+      overlay.style.display = 'none';
+    });
+    </script> -->
+
+</ul>
+</div>
+</div>
 
 
-              <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-                <ul class="font-medium flex flex-col items-center
-                 p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:gap-8
-                 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                  <li x-data="{dropdownOpen:false}">
-                    <a href="index.html" class="block py-2 pl-3 pr-4 text-[#57c0ac] bg-[#ed1d24] rounded md:bg-transparent 
-                    md:text-[#57c0ac] md:p-0 dark:text-[#57c0ac] md:dark:text-[#57c0ac] font-bold" aria-current="page"
-                       id="menu-btn" >
-                    Home 
-                    <!-- <span><i class="fa-solid fa-chevron-down mx-2 text-black"></i> -->
-                    </span></a>
-        
-                    
-                  </li>
-                  <li>
-                    <a href="aboutus.html" class="block py-2 pl-3 pr-4 text-sky-900 rounded hover:bg-gray-100
-                     md:hover:bg-transparent md:border-0 md:hover:text-[#57c0ac] font-bold md:p-0 dark:text-white 
-                     md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
-                     About Us
-                      <!-- <span> <i class="fa-solid fa-chevron-down mx-2 text-black"></i></span> -->
-                    </a>
-                  </li>
-                  <li>
-                    <a href="services.html" class="block py-2 pl-3 pr-4 text-sky-900 rounded hover:bg-gray-100
-                    md:hover:bg-transparent md:border-0 md:hover:text-[#57c0ac] font-bold md:p-0 dark:text-white 
-                    md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
-                    Our Services</a>
-                  </li>
-                  <li>
-                    <a href="contact.html" class="block py-2 pl-3 pr-4 text-sky-900 rounded hover:bg-gray-100
-                    md:hover:bg-transparent md:border-0 md:hover:text-[#57c0ac] font-bold md:p-0 dark:text-white 
-                    md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
-                    Contact Us </a>
-                  </li>
-                  <div class="flex items-center gap-6 ">
-                    
-                    <button  id="open-popup-btns" class="bg-teal-500 p-4 rounded-lg px-6 text-white font-semibold hover:bg-sky-900" >Book Appointment</button>
-                   <div>
-                    <div id="popups" class="popup">
-                        <div class="popup-content">
-                          <div class="flex gap-3 ">
-                                     
-                              <div class="">
-                                <img src="./Assets/appointment1.jpeg" alt="" width="400" height="200" class="object-fill">
-                                <img src="./Assets/logo.png" alt="" width="200" height="50" class="absolute left- ml- top-5 ">
-                              </div>
-                              <div>
-                                <div class=" p-10 py-20">
-                                    <i id="close-popup-btns" class="fa-solid fa-x border-2 border-black p-1 rounded relative -top-16 left-60" id="myModal"
-                                   ></i>
-                                    <h1 class="text-2xl font-bold text-gray-600 relative -top-10">Book an Appointment</h1>
-                                    <h1 class="text-sm text-gray-400 mt-3">Please Enter Your Contact Details</h1>
-                                    <form action="" id="myForm">
-                                  <div class="grid grid-cols-1 gap-8 mt-5">
-                                    
-                                        <input type="text" placeholder="Name" autocomplete="off" id="name" name="name" class="border-b-2 border-0 border-gray-200 rounded-lg">
-                                        <input type="email" id="email" name="email" name="email" placeholder="Email" autocomplete="off" class="border-b-2 border-0 border-gray-200 rounded-lg">
-                                        <input type="number" id="contact" name="contact" placeholder="Contact Number" autocomplete="off" class="border-b-2 border-0 border-gray-200 rounded-lg">
-                                      <button class="mt-4 border rounded-lg py-2 bg-blue-100  font-bold hover:bg-blue-700" 
-                                      type="submit" value="Submit">Submit</button>
-                                    </div>
-                                    
-                                  
-                                    </form>
-                                    <!-- Thankyou modal -->
-                                    <div id="thankYouModal" class="modal hidden fixed inset-0 flex items-center justify-center">
-                                        <div class="modal-overlay absolute inset-0 bg-gray-900 opacity-50"></div>
-                                      
-                                        <div class="modal-content bg-white w-64 p-6 rounded">
-                                          <h2 class="text-xl font-bold mb-2">Thank you!</h2>
-                                          <p>Your form has been submitted successfully.</p>
-                                        </div>
-                                      </div>
-                      
-                                  </div>
-                              </div>
-                              
-                              
-                              </div>
-                              <!-- Modal content goes here -->
-                            </div>
+          <div class="hidden w-full lg:block lg:w-auto" id="navbar-default">
+            <ul class="font-medium flex flex-col items-center
+             p-4 lg:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 lg:flex-row lg:gap-8
+             lg:mt-0 lg:border-0 lg:bg-white dark:bg-gray-800 lg:dark:bg-gray-900 dark:border-gray-700">
+              <li x-data="{dropdownOpen:false}">
+                <a href="index.html" class="block py-2 pl-3 pr-4 text-[#57c0ac] bg-[#ed1d24] rounded lg:bg-transparent 
+                lg:text-[#57c0ac] lg:p-0 dark:text-[#57c0ac] lg:dark:text-[#57c0ac] font-bold" aria-current="page"
+                   id="menu-btn" >
+                Home 
+                <!-- <span><i class="fa-solid fa-chevron-down mx-2 text-black"></i> -->
+                </span></a>
+    
+                
+              </li>
+              <li>
+                <a href="aboutus.html" class="block py-2 pl-3 pr-4 text-sky-900 rounded hover:bg-gray-100
+                 lg:hover:bg-transparent lg:border-0 lg:hover:text-[#57c0ac] font-bold lg:p-0 dark:text-white 
+                 lg:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent">
+                 About Us
+                  <!-- <span> <i class="fa-solid fa-chevron-down mx-2 text-black"></i></span> -->
+                </a>
+              </li>
+              <li>
+                <a href="services.html" class="block py-2 pl-3 pr-4 text-sky-900 rounded hover:bg-gray-100
+                lg:hover:bg-transparent lg:border-0 lg:hover:text-[#57c0ac] font-bold lg:p-0 dark:text-white 
+                lg:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent">
+                Our Services</a>
+              </li>
+              <li>
+                <a href="contact.html" class="block py-2 pl-3 pr-4 text-sky-900 rounded hover:bg-gray-100
+                lg:hover:bg-transparent lg:border-0 lg:hover:text-[#57c0ac] font-bold lg:p-0 dark:text-white 
+                lg:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent">
+                Contact Us </a>
+              </li>
+              <div class="flex items-center gap-6 ">
+                
+                <button  id="open-popup-btns" class="bg-teal-500 p-4 rounded-lg px-6 text-white font-semibold hover:bg-sky-900" >Book Appointment</button>
+               <div>
+                <div id="popups" class="popup">
+                    <div class="popup-content">
+                      <div class="flex gap-3 ">
+                                 
+                          <div class="">
+                            <img src="./Assets/appointment1.jpeg" alt="" width="400" height="200" class="object-fill">
+                            <img src="./Assets/logo.png" alt="" width="200" height="50" class="absolute left- ml- top-5 ">
                           </div>
-                      
+                          <div>
+                            <div class=" p-10 py-20">
+                                <i id="close-popup-btns" class="fa-solid fa-x border-2 border-black p-1 rounded relative -top-16 left-60" id="myModal"
+                               ></i>
+                                <h1 class="text-2xl font-bold text-gray-600 relative -top-10">Book an Appointment</h1>
+                                <h1 class="text-sm text-gray-400 mt-3">Please Enter Your Contact Details</h1>
+                                <form action="" id="myForm">
+                              <div class="grid grid-cols-1 gap-8 mt-5">
+                                
+                                    <input type="text" placeholder="Name" autocomplete="off" id="name" name="name" class="border-b-2 border-0 border-gray-200 rounded-lg">
+                                    <input type="email" id="email" name="email" name="email" placeholder="Email" autocomplete="off" class="border-b-2 border-0 border-gray-200 rounded-lg">
+                                    <input type="number" id="contact" name="contact" placeholder="Contact Number" autocomplete="off" class="border-b-2 border-0 border-gray-200 rounded-lg">
+                                  <button class="mt-4 border rounded-lg py-2 bg-blue-100  font-bold hover:bg-blue-700" 
+                                  type="submit" value="Submit">Submit</button>
+                                </div>
+                                
+                              
+                                </form>
+                                <!-- Thankyou modal -->
+                                <div id="thankYouModal" class="modal hidden fixed inset-0 flex items-center justify-center">
+                                    <div class="modal-overlay absolute inset-0 bg-gray-900 opacity-50"></div>
+                                  
+                                    <div class="modal-content bg-white w-64 p-6 rounded">
+                                      <h2 class="text-xl font-bold mb-2">Thank you!</h2>
+                                      <p>Your form has been submitted successfully.</p>
+                                    </div>
+                                  </div>
+                  
+                              </div>
+                          </div>
+                          
+                          
+                          </div>
+                          <!-- Modal content goes here -->
                         </div>
                       </div>
-                      
-                      <div id="overlays" class="overlay"></div>
-                      <script>
-                        const formData = [];
-                        
-                        const form = document.querySelector('form');
-                        
-                        form.addEventListener('submit', (event) => {
-                            const data = {
-                                 name : document.querySelector("#name").value.trim(),
-                          emailInput : document.querySelector('#email').value.trim(),
-                        contact : document.querySelector('#contact').value.trim()
-                        };
-                        formData.push(data);
-                        console.log(formData);
-                        form.reset()
-                        
-                          if (data.emailInput === '') {
-                            alert('Please enter your email address.');
-                            event.preventDefault();
-                          }
-                          if (data.name === '') {
-                            alert('Please enter your name');
-                            event.preventDefault();
-                          }
-                          const regex = /^[789]\d{9}$/;
-                          if (!regex.test(data.contactInput === "")) {
-                            alert('Please enter a valid 10-digit phone number that starts with a number from 6 to 9.');
-                            event.preventDefault();
-                          }
-                        });
-                        
-                        form.addEventListener('submit', (event) => {
-                          event.preventDefault();
-                        });
-                                            </script> 
-                      <script>
-                          const openPopupBtns = document.getElementById('open-popup-btns');
-                      const closePopupBtns = document.getElementById('close-popup-btns');
-                      const popups = document.getElementById('popups');
-                      const overlays = document.getElementById('overlays');
-                      
-                      openPopupBtns.addEventListener('click', () => {
-                        popups.style.display = 'block';
-                        overlays.style.display = 'block';
-                      });
-                      
-                      closePopupBtns.addEventListener('click', () => {
-                        popups.style.display = 'none';
-                        overlays.style.display = 'none';
-                      });
-                      </script>
-             
-                   </div>
-                </ul>
-                </div>
-            </nav>
+                  
+                    </div>
+                  </div>
+                  
+                  <div id="overlays" class="overlay w-full "></div>
+                  <script>
+                    const forlgata = [];
+                    
+                    const form = document.querySelector('form');
+                    
+                    form.addEventListener('submit', (event) => {
+                        const data = {
+                             name : document.querySelector("#name").value.trim(),
+                      emailInput : document.querySelector('#email').value.trim(),
+                    contact : document.querySelector('#contact').value.trim()
+                    };
+                    forlgata.push(data);
+                    console.log(forlgata);
+                    form.reset()
+                    
+                      if (data.emailInput === '') {
+                        alert('Please enter your email address.');
+                        event.preventDefault();
+                      }
+                      if (data.name === '') {
+                        alert('Please enter your name');
+                        event.preventDefault();
+                      }
+                      const regex = /^[789]\d{9}$/;
+                      if (!regex.test(data.contactInput === "")) {
+                        alert('Please enter a valid 10-digit phone number that starts with a number from 6 to 9.');
+                        event.preventDefault();
+                      }
+                    });
+                    
+                    form.addEventListener('submit', (event) => {
+                      event.preventDefault();
+                    });
+                                        </script> 
+                  <script>
+                      const openPopupBtns = document.getElementById('open-popup-btns');
+                  const closePopupBtns = document.getElementById('close-popup-btns');
+                  const popups = document.getElementById('popups');
+                  const overlays = document.getElementById('overlays');
+                  
+                  openPopupBtns.addEventListener('click', () => {
+                    popups.style.display = 'block';
+                    overlays.style.display = 'block';
+                  });
+                  
+                  closePopupBtns.addEventListener('click', () => {
+                    popups.style.display = 'none';
+                    overlays.style.display = 'none';
+                  });
+                  </script>
+         
+               </div>
+            </ul>
+            </div>
+        </nav>
               </div>
     <!-- About us -->
     
-<div class="md:pt-40 overflow-hidden"> 
-    <h1 class="md:relative md:ml-60 md:left-96 absolute top-28 md:-top-8 left-36 md:left-0 md:text-4xl text-2xl font-bold text-[#ec1d24]">About Us</h1>
-   <div class="lg:flex md:px-20 px-10 gap-20 items-center -mt-20">
-    <img src="./Assets/desing 2.png" alt=""  class="lg:w-2/5 w-80 mt-48 py-10 lg:mt-0">
-    <p class="md:text-lg text-sm md:text-base text-left"> <span class="font-semibold ">Vighanharta Urology and Gynecology Super Speciality Hospital</span>  is a world class Super specialty 
+<div class="lg:pt-40 overflow-hidden"> 
+    <h1 class=" lg:relative  lg:ml-80 lg:left-96 absolute top-28  md:-top-8 left-36 md:left-0 md:text-4xl text-2xl font-bold text-[#ec1d24]">About Us</h1>
+    <!-- <h1 class="hidden md:block  font-bold text-[#ec1d24]">About Us</h1> -->
+   <div class="lg:flex lg:px-20 px-10 gap-20 items-center -mt-20">
+   
+      <img src="./Assets/desing 2.png" alt=""  class="lg:w-2/5 w-80 mt-48 py-10 lg:mt-0">
+      
+   
+    <span class="hidden md:block lg:hidden md:text-4xl text-2xl font-bold text-[#ec1d24]">About Us</span>
+    <p class="md:text-lg text-sm md:text-base text-left md:pt-16 lg:pt-24">  <span class="font-semibold ">Vighanharta Urology and Gynecology Super Speciality Hospital</span>  is a world class Super specialty 
       hospital in <span class="italic">Keshav Nagar</span> , Pune.
 
         We provide comprehensive <span class="italic text-black font-semibold">urologist clinic near your location </span> which involves cutting edge technology.
@@ -387,7 +386,7 @@ document.addEventListener('click', function(event) {
     <h1 class="py-2 md:text-2xl text-lg font-semibold text-[#57c0bb]">Our Team</h1>
     <h1 class="md:text-3xl text-xl font-semibold py-2 text-sky-900">Meet Our Experience Doctors</h1>
   </div>
-  <div class="md:flex justify-center gap-20 my-5 md:mx-0 mx-10">
+  <div class="lg:flex justify-center gap-20 my-5 lg:mx-0 md:mx-20 mx-10">
     <!-- card1 -->
     <div class=" rounded-2xl  md:flex items-center drop-shadow-lg shadow-lg bg-white">
       <div>
@@ -404,7 +403,7 @@ document.addEventListener('click', function(event) {
       </div>
     </div>
     <!-- card1 -->
-    <div class="  rounded-2xl  md:flex items-center drop-shadow-lg shadow-lg bg-white mt-10 md:mt-0">
+    <div class="  rounded-2xl  md:flex items-center drop-shadow-lg shadow-lg bg-white mt-10 lg:mt-0">
       <div>
         <img src="./Assets/WhatsApp Image 2023-05-20 at 9.33.59 PM.jpeg" alt="" class="md:w-72 md:h-80 md:rounded-l-2xl ">
       </div>
@@ -427,116 +426,233 @@ document.addEventListener('click', function(event) {
 
     <!-- About us -->
 
-    <!-- Footer -->
-    <div class="bg-indigo-950 px-20 py-10 md:flex justify-between">
-      <div>
-          <img src="./Assets/VIGHNAHARTA Hospital Logo (white)-01 (1).png" alt="" class="w-44 my-4 ">
-          <!-- <h1 class="text-xl font-bold text-[#ec1d24] py-3">Vighnaharta</h1> -->
-          <p class="text-white text-sm md:text-base">Vighanharta Urology and Gynecology <br> Super Speciality Hospital is a world class <br> Super specialty hospital in Pune.</p>
-              <div class="text-white flex gap-4 py-3 hidden lg:block">
-                  <i class="fa-brands fa-facebook-f bg-[#57c0ac] p-3 px-4 mx-4 rounded-full " id="facebook-icon"></i>
-                  <!-- <i class="fa-brands fa-twitter bg-[#57c0ac] p-3 rounded-full "></i> -->
-                  <!-- <i class="fa-brands fa-linkedin-in bg-[#57c0ac] p-3 rounded-full "></i> -->
-                  <i class="fa-brands fa-instagram bg-[#57c0ac] p-3 mx-4 rounded-full " id="instagram-icon"></i>
-                  <a href="#" id="whatsapp-icon">
-                      <i class="fa-brands fa-whatsapp bg-[#57c0ac] p-3 mx-4 rounded-full "></i>
-                  </a>
-                  <script>
-                      // whatsapp icons
-                      const whatsappIcon = document.getElementById("whatsapp-icon");
-                      const phoneNumber = "7709641657"; // Replace with the desired phone number
-                    
-                      whatsappIcon.addEventListener("click", function() {
-                          const url = `https://wa.me/${phoneNumber}`;
-        window.location.href = url;
-      
-                      });
-      // instagramicon
-                      const instagramIcon = document.getElementById('instagram-icon');
-      
-      instagramIcon.addEventListener('click', () => {
-        window.location.href = 'https://www.instagram.com/vighnahartahospitalpune/';
-      });
-      
-      // facebook icons
-      const facebookIcon = document.getElementById('facebook-icon');
-      
-      facebookIcon.addEventListener('click', () => {
-        window.location.href = 'https://www.facebook.com/vighnahartahospitalpune';
-      });
-                    </script>
-              </div>
+      <!-- Footer -->
+<div class="bg-indigo-950 px-20 py-10 lg:flex justify-between md:hidden lg:block ">
+  <div>
+      <img src="./Assets/VIGHNAHARTA Hospital Logo (white)-01 (1).png" alt="" class="w-44 my-4 ">
+      <!-- <h1 class="text-xl font-bold text-[#ec1d24] py-3">Vighnaharta</h1> -->
+      <p class="text-white text-sm lg:text-base">Vighanharta Urology and Gynecology <br> Super Speciality Hospital is a world class <br> Super specialty hospital in Pune.</p>
+          <div class="text-white flex gap-4 py-3 hidden lg:block">
+              <i class="fa-brands fa-facebook-f bg-[#57c0ac] p-3 px-4 mx-4 rounded-full " id="facebook-icon"></i>
+              <!-- <i class="fa-brands fa-twitter bg-[#57c0ac] p-3 rounded-full "></i> -->
+              <!-- <i class="fa-brands fa-linkedin-in bg-[#57c0ac] p-3 rounded-full "></i> -->
+              <i class="fa-brands fa-instagram bg-[#57c0ac] p-3 mx-4 rounded-full " id="instagram-icon"></i>
+              <a href="#" id="whatsapp-icon">
+                  <i class="fa-brands fa-whatsapp bg-[#57c0ac] p-3 mx-4 rounded-full "></i>
+              </a>
+              <script>
+                  // whatsapp icons
+                  const whatsappIcon = document.getElementById("whatsapp-icon");
+                  const phoneNumber = "7709641657"; // Replace with the desired phone number
+                
+                  whatsappIcon.addEventListener("click", function() {
+                      const url = `https://wa.me/${phoneNumber}`;
+    window.location.href = url;
+  
+                  });
+  // instagramicon
+                  const instagramIcon = document.getElementById('instagram-icon');
+  
+  instagramIcon.addEventListener('click', () => {
+    window.location.href = 'https://www.instagram.com/vighnahartahospitalpune/';
+  });
+  
+  // facebook icons
+  const facebookIcon = document.getElementById('facebook-icon');
+  
+  facebookIcon.addEventListener('click', () => {
+    window.location.href = 'https://www.facebook.com/vighnahartahospitalpune';
+  });
+                </script>
+          </div>
+  </div>
+  <div>
+      <h1 class="text-lg font-semibold text-[#ec1d24] py-3">Links</h1>
+      <a href="./aboutus.html">
+          <h2 class="text-white text-sm lg:text-base">-  About Us</h2>
+      </a>
+      <a href="#services">
+          <h2 class="text-white text-sm lg:text-base">-  Our Services</h2>
+      </a>
+      <a href="./contact.html">
+          <h2 class="text-white text-sm lg:text-base">-  Contact Us</h2>
+      </a>
+     
+  </div>
+  <div>
+      <h1 class="text-lg font-semibold text-[#ec1d24] py-3">Working Days</h1>
+      <h2 class="text-white flex gap-10 text-sm lg:text-base"><span>Mon - Tue</span> <span class="">08:00 AM - 05:00PM</span></h2>
+      <h2 class="text-white flex gap-10 text-sm lg:text-base"><span>Wed - Thu</span> <span class="">09:00 AM - 06:00PM</span></h2>
+      <h2 class="text-white flex gap-10 text-sm lg:text-base"><span>Fri - Sat</span> <span class="pl-3 lg:pl-5">08:00 AM - 05:00PM</span></h2> 
+      <h2 class="text-white flex gap-10 text-sm lg:text-base"><span>Sunday</span> <span class="pl-1 lg:pl-6">Emergency Only</span></h2> 
+  </div>
+  <div class="text-white flex gap-10 py-3  lg:hidden">
+      <i class="fa-brands fa-facebook-f bg-[#57c0ac] p-3 px-4 rounded-full " id="facebook-iconsss"></i>
+      <!-- <i class="fa-brands fa-twitter bg-[#57c0ac] p-3 rounded-full "></i> -->
+      <!-- <i class="fa-brands fa-linkedin-in bg-[#57c0ac] p-3 rounded-full "></i> -->
+      <i class="fa-brands fa-instagram bg-[#57c0ac] p-3 rounded-full " id="instagram-iconsss"></i>
+      <a href="#" id="whatsapp-iconsss">
+          <i class="fa-brands fa-whatsapp bg-[#57c0ac] p-3 rounded-full "></i>
+      </a>
+      <script>
+          // whatsapp icons
+          const whatsappIconsss = document.getElementById("whatsapp-iconsss");
+          const phoneNumbersss = "7709641657"; // Replace with the desired phone number
+        
+          whatsappIconsss.addEventListener("click", function() {
+              const url = `https://wa.me/${phoneNumber}`;
+  window.location.href = url;
+  
+          });
+  // instagramicon
+          const instagramIconsss = document.getElementById('instagram-iconsss');
+  
+  instagramIconsss.addEventListener('click', () => {
+  window.location.href = 'https://www.instagram.com/vighnahartahospitalpune/';
+  });
+  
+  // facebook icons
+  const facebookIconsss = document.getElementById('facebook-iconsss');
+  
+  facebookIconsss.addEventListener('click', () => {
+  window.location.href = 'https://www.facebook.com/vighnahartahospitalpune';
+  });
+        </script>
+  </div>
+  <div>
+      <h1 class="text-white font-semibold  "> Vighnaharta Hospital Keshav Nagar</h1>
+      <div class="-ml-8 lg:-ml-0 mt-4">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.989182286093!2d73.9471580748591!3d18.529390982565904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c3cc4c69112d%3A0xe908cbfa926a46fd!2sVighnaharta%20Urology%20and%20Gynecology%20Superspeciality%20Hospital!5e0!3m2!1sen!2sin!4v1683538215549!5m2!1sen!2sin" 
+          width="250" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
-      <div>
-          <h1 class="text-lg font-semibold text-[#ec1d24] py-3">Links</h1>
-          <a href="./aboutus.html">
-              <h2 class="text-white text-sm md:text-base">-  About Us</h2>
-          </a>
-          <a href="#services">
-              <h2 class="text-white text-sm md:text-base">-  Our Services</h2>
-          </a>
-          <a href="./contact.html">
-              <h2 class="text-white text-sm md:text-base">-  Contact Us</h2>
-          </a>
-         
+  </div>
+  <div>
+      <h1 class="text-white font-semibold  ">Vighnaharta Clinic Magarpatta</h1>
+      <div class="-ml-8 lg:-ml-0 mt-4">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3783.193180454652!2d73.9277529!3d18.5201704!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1f267d13617%3A0x6190834d548b63b1!2sAxis%20Bank%20Branch!5e0!3m2!1sen!2sin!4v1684478411604!5m2!1sen!2sin"
+          width="250" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
-      <div>
-          <h1 class="text-lg font-semibold text-[#ec1d24] py-3">Working Days</h1>
-          <h2 class="text-white flex gap-10 text-sm md:text-base"><span>Mon - Tue</span> <span class="">08:00 AM - 05:00PM</span></h2>
-          <h2 class="text-white flex gap-10 text-sm md:text-base"><span>Wed - Thu</span> <span class="">09:00 AM - 06:00PM</span></h2>
-          <h2 class="text-white flex gap-10 text-sm md:text-base"><span>Fri - Sat</span> <span class="pl-3 md:pl-5">08:00 AM - 05:00PM</span></h2> 
-          <h2 class="text-white flex gap-10 text-sm md:text-base"><span>Sunday</span> <span class="pl-1 md:pl-6">Emergency Only</span></h2> 
-      </div>
-      <div class="text-white flex gap-10 py-3  lg:hidden">
-          <i class="fa-brands fa-facebook-f bg-[#57c0ac] p-3 px-4 rounded-full " id="facebook-icons"></i>
-          <!-- <i class="fa-brands fa-twitter bg-[#57c0ac] p-3 rounded-full "></i> -->
-          <!-- <i class="fa-brands fa-linkedin-in bg-[#57c0ac] p-3 rounded-full "></i> -->
-          <i class="fa-brands fa-instagram bg-[#57c0ac] p-3 rounded-full " id="instagram-icons"></i>
-          <a href="#" id="whatsapp-icons">
-              <i class="fa-brands fa-whatsapp bg-[#57c0ac] p-3 rounded-full "></i>
-          </a>
-          <script>
-              // whatsapp icons
-              const whatsappIcons = document.getElementById("whatsapp-icons");
-              const phoneNumbers = "7709641657"; // Replace with the desired phone number
-            
-              whatsappIcons.addEventListener("click", function() {
-                  const url = `https://wa.me/${phoneNumber}`;
-      window.location.href = url;
-      
+  </div>
+  
+  </div>
+      <!-- Footer -->
+      <!-- footer for tab view -->
+      <div class="bg-indigo-950 px-20 py-10 lg:flex justify-between hidden md:block lg:hidden">
+          
+          <div class="flex justify-between">
+              <div>
+                  <img src="./Assets/VIGHNAHARTA Hospital Logo (white)-01 (1).png" alt="" class="w-44 my-4 ">
+                  <!-- <h1 class="text-xl font-bold text-[#ec1d24] py-3">Vighnaharta</h1> -->
+                  <p class="text-white text-sm lg:text-base">Vighanharta Urology and Gynecology <br> Super Speciality Hospital is a world class <br> Super specialty hospital in Pune.</p>
+                      <div class="text-white flex gap-4 py-3 hidden lg:block">
+                          <i class="fa-brands fa-facebook-f bg-[#57c0ac] p-3 px-4 mx-4 rounded-full " id="facebook-iconss"></i>
+                          <!-- <i class="fa-brands fa-twitter bg-[#57c0ac] p-3 rounded-full "></i> -->
+                          <!-- <i class="fa-brands fa-linkedin-in bg-[#57c0ac] p-3 rounded-full "></i> -->
+                          <i class="fa-brands fa-instagram bg-[#57c0ac] p-3 mx-4 rounded-full " id="instagram-iconss"></i>
+                          <a href="#" id="whatsapp-iconss">
+                              <i class="fa-brands fa-whatsapp bg-[#57c0ac] p-3 mx-4 rounded-full "></i>
+                          </a>
+                          <script>
+                              // whatsapp icons
+                              const whatsappIconss = document.getElementById("whatsapp-iconss");
+                              const phoneNumberss = "7709641657"; // Replace with the desired phone number
+                            
+                              whatsappIconss.addEventListener("click", function() {
+                                  const url = `https://wa.me/${phoneNumber}`;
+                window.location.href = url;
+              
+                              });
+              // instagramicon
+                              const instagramIconss = document.getElementById('instagram-iconss');
+              
+              instagramIconss.addEventListener('click', () => {
+                window.location.href = 'https://www.instagram.com/vighnahartahospitalpune/';
               });
-      // instagramicon
-              const instagramIcons = document.getElementById('instagram-icons');
-      
-      instagramIcons.addEventListener('click', () => {
-      window.location.href = 'https://www.instagram.com/vighnahartahospitalpune/';
-      });
-      
-      // facebook icons
-      const facebookIcons = document.getElementById('facebook-icons');
-      
-      facebookIcons.addEventListener('click', () => {
-      window.location.href = 'https://www.facebook.com/vighnahartahospitalpune';
-      });
-            </script>
-      </div>
-      <div>
-          <h1 class="text-white font-semibold  "> Vighnaharta Hospital Keshav Nagar</h1>
-          <div class="-ml-8 md:-ml-0 mt-4">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.989182286093!2d73.9471580748591!3d18.529390982565904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c3cc4c69112d%3A0xe908cbfa926a46fd!2sVighnaharta%20Urology%20and%20Gynecology%20Superspeciality%20Hospital!5e0!3m2!1sen!2sin!4v1683538215549!5m2!1sen!2sin" 
-              width="250" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              
+              // facebook icons
+              const facebookIconss = document.getElementById('facebook-iconss');
+              
+              facebookIconss.addEventListener('click', () => {
+                window.location.href = 'https://www.facebook.com/vighnahartahospitalpune';
+              });
+                            </script>
+                      </div>
+                      <div class="text-white flex gap-10 py-3  lg:hidden">
+                          <i class="fa-brands fa-facebook-f bg-[#57c0ac] p-3 px-4 rounded-full " id="facebook-icons"></i>
+                          <!-- <i class="fa-brands fa-twitter bg-[#57c0ac] p-3 rounded-full "></i> -->
+                          <!-- <i class="fa-brands fa-linkedin-in bg-[#57c0ac] p-3 rounded-full "></i> -->
+                          <i class="fa-brands fa-instagram bg-[#57c0ac] p-3 rounded-full " id="instagram-icons"></i>
+                          <a href="#" id="whatsapp-icons">
+                              <i class="fa-brands fa-whatsapp bg-[#57c0ac] p-3 rounded-full "></i>
+                          </a>
+                          <script>
+                              // whatsapp icons
+                              const whatsappIcons = document.getElementById("whatsapp-icons");
+                              const phoneNumbers = "7709641657"; // Replace with the desired phone number
+                            
+                              whatsappIcons.addEventListener("click", function() {
+                                  const url = `https://wa.me/${phoneNumber}`;
+                      window.location.href = url;
+                      
+                              });
+                      // instagramicon
+                              const instagramIcons = document.getElementById('instagram-icons');
+                      
+                      instagramIcons.addEventListener('click', () => {
+                      window.location.href = 'https://www.instagram.com/vighnahartahospitalpune/';
+                      });
+                      
+                      // facebook icons
+                      const facebookIcons = document.getElementById('facebook-icons');
+                      
+                      facebookIcons.addEventListener('click', () => {
+                      window.location.href = 'https://www.facebook.com/vighnahartahospitalpune';
+                      });
+                            </script>
+                      </div>
+              </div>
+              <div>
+                  <h1 class="text-lg font-semibold text-[#ec1d24] py-3">Links</h1>
+                  <a href="./aboutus.html">
+                      <h2 class="text-white text-sm lg:text-base">-  About Us</h2>
+                  </a>
+                  <a href="#services">
+                      <h2 class="text-white text-sm lg:text-base">-  Our Services</h2>
+                  </a>
+                  <a href="./contact.html">
+                      <h2 class="text-white text-sm lg:text-base">-  Contact Us</h2>
+                  </a>
+                 
+              </div>
+              <div>
+                  <h1 class="text-lg font-semibold text-[#ec1d24] py-3">Working Days</h1>
+                  <h2 class="text-white flex gap-10 text-sm lg:text-base"><span>Mon - Tue</span> <span class="">08:00 AM - 05:00PM</span></h2>
+                  <h2 class="text-white flex gap-10 text-sm lg:text-base"><span>Wed - Thu</span> <span class="">09:00 AM - 06:00PM</span></h2>
+                  <h2 class="text-white flex gap-10 text-sm lg:text-base"><span>Fri - Sat</span> <span class="pl-3 lg:pl-5">08:00 AM - 05:00PM</span></h2> 
+                  <h2 class="text-white flex gap-10 text-sm lg:text-base"><span>Sunday</span> <span class="pl-1 lg:pl-6">Emergency Only</span></h2> 
+              </div>
+              
           </div>
-      </div>
-      <div>
-          <h1 class="text-white font-semibold  ">Vighnaharta Clinic Magarpatta</h1>
-          <div class="-ml-8 md:-ml-0 mt-4">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3783.193180454652!2d73.9277529!3d18.5201704!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1f267d13617%3A0x6190834d548b63b1!2sAxis%20Bank%20Branch!5e0!3m2!1sen!2sin!4v1684478411604!5m2!1sen!2sin"
-              width="250" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          
+          <div class="flex justify-between">
+              <div>
+                  <h1 class="text-white font-semibold  "> Vighnaharta Hospital Keshav Nagar</h1>
+                  <div class="-ml-8 lg:-ml-0 mt-4">
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.989182286093!2d73.9471580748591!3d18.529390982565904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c3cc4c69112d%3A0xe908cbfa926a46fd!2sVighnaharta%20Urology%20and%20Gynecology%20Superspeciality%20Hospital!5e0!3m2!1sen!2sin!4v1683538215549!5m2!1sen!2sin" 
+                      width="250" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                  </div>
+              </div>
+              <div>
+                  <h1 class="text-white font-semibold  ">Vighnaharta Clinic Magarpatta</h1>
+                  <div class="-ml-8 lg:-ml-0 mt-4">
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3783.193180454652!2d73.9277529!3d18.5201704!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1f267d13617%3A0x6190834d548b63b1!2sAxis%20Bank%20Branch!5e0!3m2!1sen!2sin!4v1684478411604!5m2!1sen!2sin"
+                      width="250" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                  </div>
+              </div>
           </div>
-      </div>
-      
-      </div>
-    <!-- Footer -->
+          
+          </div>
+        <!-- footer for tab view -->
      <!-- <button >Open Popup</button> -->
      
 
