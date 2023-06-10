@@ -8,11 +8,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vighnaharta Hostipal </title>
     <link rel="stylesheet" href="style2.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-
+    
 </head>
 <body>
    
@@ -86,6 +87,26 @@ document.addEventListener('click', function(event) {
                     md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
                     Our Services</a>
                   </li>
+                  <li>
+                    <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" 
+                    class="block py-2 pl-3 pr-4 text-sky-900 rounded hover:bg-gray-100 flex items-center
+                    lg:hover:bg-transparent lg:border-0 lg:hover:text-[#57c0ac] font-bold lg:p-0 dark:text-white 
+                    lg:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent">
+                    Our Department <svg class="w-5 h-5 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button>
+                    <!-- Dropdown menu -->
+                    <div id="dropdownNavbar" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                          <li>
+                            <a href="./urology.html" class="block px-4 py-2 hover:bg-[#57c0ac] font-semibold hover:text-white dark:hover:bg-gray-600 dark:hover:text-white">Urology</a>
+                          </li>
+                          <li>
+                            <a href="./gynaecology.html" class="block px-4 py-2 hover:bg-[#57c0ac] font-semibold hover:text-white dark:hover:bg-gray-600 dark:hover:text-white">Gynecology</a>
+                          </li>
+                          
+                        </ul>
+                        
+                    </div>
+                </li>
                   <li>
                     <a href="contact.html" class="block py-2 pl-3 pr-4 text-sky-900 rounded hover:bg-gray-100
                     md:hover:bg-transparent md:border-0 md:hover:text-[#57c0ac] font-bold md:p-0 dark:text-white 
@@ -209,6 +230,18 @@ document.addEventListener('click', function(event) {
        
     <!-- contact us -->
 
+    <!-- video cards -->
+    <!-- <div class="container mx-auto">
+      <div class="cards-wrapper flex overflow-x-auto">
+       
+      </div>
+    </div> -->
+    
+   
+
+    <!-- video cards -->
+
+
      <!-- Footer -->
 <div class="bg-indigo-950 px-20 py-10 xl:flex justify-between md:hidden xl:block lg:hidden ">
   <div>
@@ -256,6 +289,9 @@ document.addEventListener('click', function(event) {
       </a>
       <a href="#services">
           <h2 class="text-white text-sm lg:text-base">-  Our Services</h2>
+      </a>
+      <a href="./">
+          <h2 class="text-white text-sm lg:text-base">- Our Department</h2>
       </a>
       <a href="./contact.html">
           <h2 class="text-white text-sm lg:text-base">-  Contact Us</h2>
