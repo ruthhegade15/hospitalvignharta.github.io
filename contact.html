@@ -35,6 +35,26 @@
       <a href="./index.html" class="block text-center my-2 py-2 pl-3 pr-4 text-white bg-[#57c0ac] rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500">Home</a>
       <a href="./aboutus.html" class="block px-4 py-2 my-2 text-sm text-gray-800 hover:bg-[#57c0ac] hover:text-white text-center"> About Us</a>
       <a href="./services.html" class="block px-4 py-2 my-2 text-sm text-gray-800 hover:bg-[#57c0ac] hover:text-white text-center">Our Services</a>
+      <a href="#" id="dropdownBtn" class="block px-4 py- my- text-sm text-gray-800 hover:bg-[#57c0ac] hover:text-white text-center">Our Department 
+        <i class="fa-solid fa-chevron-down ml-3"></i>
+        <ul id="dropdownContent" class="bg-gray-200 py-2 hidden">
+          <li class="px-16 mx-10 my-2 rounded-lg text-sm py-2 bg-[#57c0ac] text-white"><a href="./urology.html">Urology</a> </li>
+          <li class="px-16 mx-10 my-2 rounded-lg text-sm py-2 bg-[#57c0ac] text-white"><a href="./gynaecology.html"> Gynecology</a></li>
+        </ul>
+        <script>
+    
+          var dropdownBtn = document.getElementById('dropdownBtn');
+      var dropdownContent = document.getElementById('dropdownContent');
+      
+      dropdownBtn.addEventListener('click', function() {
+        if (dropdownContent.style.display === 'none') {
+          dropdownContent.style.display = 'block';
+        } else {
+          dropdownContent.style.display = 'none';
+        }
+      });
+        </script>
+      </a>
       <a href="./contact.html" class="block px-4 py-2 my-2 text-sm text-gray-800 hover:bg-[#57c0ac] hover:text-white text-center">Contact Us</a>
       <div class="flex items-center justify-center gap-6 ">
        
