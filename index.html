@@ -7,9 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vighnaharta Hostipal </title>
     <link rel="stylesheet" href="style2.css">
+    <link rel="icon" href="Assets/logo10.png" type="image/x-icon">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css"  rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" href="Assets/logo10.png" type="image/x-icon">
     <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
@@ -73,13 +75,15 @@ width:"1px"
   <a href="./index.html" class="block text-center my-2 py-2 pl-3 pr-4 text-white bg-[#57c0ac] rounded lg:bg-transparent lg:text-blue-700 lg:p-0 dark:text-white lg:dark:text-blue-500">Home</a>
   <a href="./aboutus.html" class="block px-4 py-2 my-2 text-sm text-gray-800 hover:bg-[#57c0ac] hover:text-white text-center"> About Us</a>
   <a href="./services.html" class="block px-4 py-2 my-2 text-sm text-gray-800 hover:bg-[#57c0ac] hover:text-white text-center">Our Services</a>
-  <a href="#" id="dropdownBtn" class="block px-4 py- my- text-sm text-gray-800 hover:bg-[#57c0ac] hover:text-white text-center">Our Department 
+  <a href="./urology.html" class="block px-4 py-2 my-2 text-sm text-gray-800 hover:bg-[#57c0ac] hover:text-white text-center">Urology</a>
+  <a href="./gynaecology.html" class="block px-4 py-2 my-2 text-sm text-gray-800 hover:bg-[#57c0ac] hover:text-white text-center">Gynecology</a>
+  <!-- <a href="#" id="dropdownBtn" class="block px-4 py- my- text-sm text-gray-800 hover:bg-[#57c0ac] hover:text-white text-center">Our Department 
     <i class="fa-solid fa-chevron-down ml-3"></i>
     <ul id="dropdownContent" class="bg-gray-200 py-2 hidden">
       <li class="px-16 mx-10 my-2 rounded-lg text-sm py-2 bg-[#57c0ac] text-white"><a href="./urology.html">Urology</a> </li>
       <li class="px-16 mx-10 my-2 rounded-lg text-sm py-2 bg-[#57c0ac] text-white"><a href="./gynaecology.html"> Gynecology</a></li>
     </ul>
-  </a>
+  </a> -->
   <!--  -->
   <script>
     
@@ -115,22 +119,6 @@ dropdown.classList.add('hidden');
 }
 });
 </script>
-     <!-- <script>
-        const openPopup = document.getElementById('open-popup');
-    const closePopup = document.getElementById('close-popup');
-    const pop = document.getElementById('pop');
-    const over = document.getElementById('over');
-    
-    openPopup.addEventListener('click', () => {
-      pop.style.display = 'block';
-      over.style.display = 'block';
-    });
-    
-    closePopupBtn.addEventListener('click', () => {
-      popup.style.display = 'none';
-      overlay.style.display = 'none';
-    });
-    </script> -->
 
 </ul>
 </div>
@@ -166,34 +154,19 @@ dropdown.classList.add('hidden');
                 Our Services</a>
               </li>
              
-              
-              <!-- </li>
-              <div id="menuItems" class="hidden  right-96  bg-gray-100 text-black rounded-lg drop-shadow-lg shadow-lg flex  flex-col absolute top-20 py-2  px-2">
-                <a href="#urology" class="py-2 px-5 hover:bg-[#57c0ac] px-3 hover:rounded-lg hover:text-white">Urology</a>
-                <a href="#" class="py-2 px-5 hover:bg-[#57c0ac] px-3 hover:rounded-lg hover:text-white">Gynecology</a>
-            </div> -->
-        
-            <li>
-                <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" 
-                class="block py-2 pl-3 pr-4 text-sky-900 rounded hover:bg-gray-100 flex items-center
+              <li>
+                <a href="urology.html" class="block py-2 pl-3 pr-4 text-sky-900 rounded hover:bg-gray-100
                 lg:hover:bg-transparent lg:border-0 lg:hover:text-[#57c0ac] font-bold lg:p-0 dark:text-white 
                 lg:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent">
-                Our Department <svg class="w-5 h-5 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button>
-                <!-- Dropdown menu -->
-                <div id="dropdownNavbar" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
-                      <li>
-                        <a href="./urology.html" class="block px-4 py-2 hover:bg-[#57c0ac] font-semibold hover:text-white dark:hover:bg-gray-600 dark:hover:text-white">Urology</a>
-                      </li>
-                      <li>
-                        <a href="./gynaecology.html" class="block px-4 py-2 hover:bg-[#57c0ac] font-semibold hover:text-white dark:hover:bg-gray-600 dark:hover:text-white">Gynecology</a>
-                      </li>
-                      
-                    </ul>
-                    
-                </div>
-            </li>
-
+                Urology</a>
+              </li>
+             
+              <li>
+                <a href="gynaecology.html" class="block py-2 pl-3 pr-4 text-sky-900 rounded hover:bg-gray-100
+                lg:hover:bg-transparent lg:border-0 lg:hover:text-[#57c0ac] font-bold lg:p-0 dark:text-white 
+                lg:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent">
+                Gynaecology</a>
+              </li>
 
               <li>
                 <a href="contact.html" class="block py-2 pl-3 pr-4 text-sky-900 rounded hover:bg-gray-100
@@ -222,11 +195,11 @@ dropdown.classList.add('hidden');
                                 <form action="" id="myForm">
                               <div class="grid grid-cols-1 gap-8 mt-5">
                                 
-                                    <input type="text" placeholder="Name" autocomplete="off" id="name" name="name" class="border-b-2 border-0 border-gray-200 rounded-lg">
+                                    <input type="text" placeholder="Name *" autocomplete="off" id="name" name="name" class="border-b-2 border-0 border-gray-200 rounded-lg">
                                     <input type="email" id="email" name="email" name="email" placeholder="Email" autocomplete="off" class="border-b-2 border-0 border-gray-200 rounded-lg">
-                                    <input type="number" id="contact" name="contact" placeholder="Contact Number" autocomplete="off" class="border-b-2 border-0 border-gray-200 rounded-lg">
+                                    <input type="number" id="contact" name="contact" placeholder="Contact Number *" autocomplete="off" class="border-b-2 border-0 border-gray-200 rounded-lg">
                                   <button class="mt-4 border rounded-lg py-2 bg-blue-100  font-bold hover:bg-blue-700" 
-                                  type="submit" value="Submit">Submit</button>
+                                  type="submit" id="submitBtn" value="Submit">Submit</button>
                                 </div>
                                 
                               
@@ -255,39 +228,37 @@ dropdown.classList.add('hidden');
                   
                   <div id="overlays" class="overlay w-full "></div>
                   <script>
-                    const forlgata = [];
-                    
-                    const form = document.querySelector('form');
-                    
-                    form.addEventListener('submit', (event) => {
-                        const data = {
-                             name : document.querySelector("#name").value.trim(),
-                      emailInput : document.querySelector('#email').value.trim(),
-                    contact : document.querySelector('#contact').value.trim()
-                    };
-                    forlgata.push(data);
-                    console.log(forlgata);
-                    form.reset()
-                    
-                      if (data.emailInput === '') {
-                        alert('Please enter your email address.');
-                        event.preventDefault();
-                      }
-                      if (data.name === '') {
-                        alert('Please enter your name');
-                        event.preventDefault();
-                      }
-                      const regex = /^[789]\d{9}$/;
-                      if (!regex.test(data.contactInput === "")) {
-                        alert('Please enter a valid 10-digit phone number that starts with a number from 6 to 9.');
-                        event.preventDefault();
-                      }
-                    });
-                    
-                    form.addEventListener('submit', (event) => {
-                      event.preventDefault();
-                    });
-                                        </script> 
+                    document.getElementById("submitBtn").addEventListener("click", function(event) {
+                                  event.preventDefault(); // Prevent form submission
+      
+                                  var nameInput = document.getElementById("name");
+                                  var phoneInput = document.getElementById("email");
+                                  var phoneInput = document.getElementById("contact");
+                                  var name = nameInput.value.trim();
+                                  var phone = phoneInput.value.trim();
+      
+                              // Validate name
+                          if (name === "") {
+                          alert("Please enter your name.");
+                          nameInput.focus();
+                          return;
+                          }
+                          
+      
+                  // Validate phone number
+                   var phoneRegex = /^[6-9]\d{9}$/; // Matches a 10-digit phone number starting with 6, 7, 8, or 9
+                  if (!phoneRegex.test(phone)) {
+                  alert("Please enter a valid 10-digit phone number starting with 6, 7, 8, or 9.");
+                  phoneInput.focus();
+                  return;
+                  }
+      
+        // If all validations pass, you can proceed with form submission
+                  alert("Validation successful. Submitting form...");
+        // Your form submission code here
+                  document.getElementById("myForm").reset();
+      });
+      </script>
                   <script>
                       const openPopupBtns = document.getElementById('open-popup-btns');
                   const closePopupBtns = document.getElementById('close-popup-btns');
